@@ -211,7 +211,7 @@ class eventTableViewController: UITableViewController {
         //jsonarray = json!["events"]
         let temp = jsonarray[indexPath.row]
         if temp["logo"]["url"].string == nil{
-            cell.imageView?.image = UIImage(named: "singer.png")
+            cell.eventImage.image = UIImage(named: "singer.png")
         }else{
             cell.eventImage.pin_setImage(from: URL(string: temp["logo"]["url"].string!))
         }

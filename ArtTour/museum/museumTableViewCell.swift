@@ -10,6 +10,16 @@ import UIKit
 
 class museumTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var imageview: UIImageView!
+    
+    
+    @IBOutlet weak var title: UILabel!
+    
+    
+    @IBOutlet weak var type: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

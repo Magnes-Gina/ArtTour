@@ -198,6 +198,7 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				694B0AB622564C3C00111F0A /* singer.png */,
 				697B2282225A36CA009682BF /* loupe.png */,
 				697B227E2259F2E2009682BF /* GoogleService-Info.plist */,
 				697B227822590C3C009682BF /* calendar (1).png */,
@@ -208,7 +209,6 @@
 				694B0ABC225658DF00111F0A /* shrine-remembrance.png */,
 				694B0ABA22564CD000111F0A /* calendar.png */,
 				694B0AA62256385100111F0A /* refresh.png */,
-				694B0AB622564C3C00111F0A /* singer.png */,
 				694B0AB222563CC200111F0A /* map-new.png */,
 				694B0AB022563B6800111F0A /* dancing.png */,
 				694B0AAB225638E500111F0A /* church.png */,

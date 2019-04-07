@@ -144,7 +144,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     @IBAction func refresh(_ sender: Any) {
         landmarks = []
         getData()
-        //self.semaphore.wait()
+        self.semaphore.wait()
         if makers.count == 0{
             clusterManager.clearItems()
             addingmaker()

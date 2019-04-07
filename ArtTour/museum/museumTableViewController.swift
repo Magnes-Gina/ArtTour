@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import PINRemoteImage
 
 
 class museumTableViewController: UITableViewController {
@@ -21,6 +22,8 @@ class museumTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         print(pagecount!)
         print("the result is: \(resultText!)")
         self.navigationItem.title = resultText!
@@ -36,7 +39,7 @@ class museumTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,15 +47,33 @@ class museumTableViewController: UITableViewController {
         return count!
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "museumidentifier", for: indexPath) as! museumTableViewCell
+        let temp = jsonarray![indexPath.row]
+        print(temp["displayTitle"].string!)
+        print("\(temp["media"][0]["thumbnail"]["uri"].string)")
+        
+        if temp["media"][0]["thumbnail"]["uri"].string == nil {
+            cell.imageview.image = UIImage(named: "singer.png")
+            
+        }else{
+            cell.imageview.pin_setImage(from: URL(string: temp["media"][0]["thumbnail"]["uri"].string!))
+        }
+        cell.imageview.layer.masksToBounds = true
+        cell.imageview.layer.cornerRadius = 20
+        cell.title.text = temp["displayTitle"].string!
+        cell.type.text = temp["recordType"].string!
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 150
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
