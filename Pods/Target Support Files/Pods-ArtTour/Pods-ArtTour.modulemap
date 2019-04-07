@@ -1,0 +1,6 @@
+module Pods_ArtTour {
+  umbrella header "Pods-ArtTour-umbrella.h"
+
+  export *
+  module * { export * }
+}
