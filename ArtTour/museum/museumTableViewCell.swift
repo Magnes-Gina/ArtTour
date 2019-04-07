@@ -20,6 +20,9 @@ class museumTableViewCell: UITableViewCell {
     @IBOutlet weak var type: UILabel!
     
     
+    
+    @IBOutlet weak var dateModified: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -43,6 +43,11 @@
 		697B2285225A52DC009682BF /* mDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2284225A52DC009682BF /* mDetailViewController.swift */; };
 		697B2289225A54EA009682BF /* museumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2288225A54EA009682BF /* museumTableViewController.swift */; };
 		697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B228A225A5511009682BF /* museumTableViewCell.swift */; };
+		697B2290225A986B009682BF /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B228F225A986B009682BF /* testViewController.swift */; };
+		697B2292225A9FE0009682BF /* 404-permalink.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2291225A9FE0009682BF /* 404-permalink.png */; };
+		697B2294225AA2DA009682BF /* logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 697B2293225AA2D9009682BF /* logo.jpeg */; };
+		697B2297225AA466009682BF /* blood-type.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2295225AA466009682BF /* blood-type.png */; };
+		697B2298225AA466009682BF /* shakespeare.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2296225AA466009682BF /* shakespeare.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,11 @@
 		697B2284225A52DC009682BF /* mDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mDetailViewController.swift; sourceTree = "<group>"; };
 		697B2288225A54EA009682BF /* museumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumTableViewController.swift; sourceTree = "<group>"; };
 		697B228A225A5511009682BF /* museumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumTableViewCell.swift; sourceTree = "<group>"; };
+		697B228F225A986B009682BF /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		697B2291225A9FE0009682BF /* 404-permalink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "404-permalink.png"; sourceTree = "<group>"; };
+		697B2293225AA2D9009682BF /* logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpeg; sourceTree = "<group>"; };
+		697B2295225AA466009682BF /* blood-type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blood-type.png"; sourceTree = "<group>"; };
+		697B2296225AA466009682BF /* shakespeare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shakespeare.png; sourceTree = "<group>"; };
 		B8B06201E7B45CB3DFEC1A56 /* Pods-ArtTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtTour/Pods-ArtTour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				694B0A632252DAC000111F0A /* AppDelegate.swift */,
+				697B228F225A986B009682BF /* testViewController.swift */,
 				694B0A672252DAC000111F0A /* Main.storyboard */,
 				694B0A6D2252DAC100111F0A /* Assets.xcassets */,
 				694B0A6F2252DAC100111F0A /* LaunchScreen.storyboard */,
@@ -198,6 +209,10 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				697B2295225AA466009682BF /* blood-type.png */,
+				697B2296225AA466009682BF /* shakespeare.png */,
+				697B2293225AA2D9009682BF /* logo.jpeg */,
+				697B2291225A9FE0009682BF /* 404-permalink.png */,
 				694B0AB622564C3C00111F0A /* singer.png */,
 				697B2282225A36CA009682BF /* loupe.png */,
 				697B227E2259F2E2009682BF /* GoogleService-Info.plist */,
@@ -388,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				697B22732258E6FB009682BF /* mel4.png in Resources */,
+				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				694B0A712252DAC100111F0A /* LaunchScreen.storyboard in Resources */,
 				694B0AAE225638E500111F0A /* navigation.png in Resources */,
 				694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */,
@@ -401,12 +417,15 @@
 				697B22772258F9B3009682BF /* previous.png in Resources */,
 				697B227D22590EBF009682BF /* link.png in Resources */,
 				694B0AB122563B6800111F0A /* dancing.png in Resources */,
+				697B2294225AA2DA009682BF /* logo.jpeg in Resources */,
 				694B0AAF225638E500111F0A /* church.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
 				697B227F2259F2E2009682BF /* GoogleService-Info.plist in Resources */,
 				694B0A692252DAC000111F0A /* Main.storyboard in Resources */,
 				697B227A22590C3C009682BF /* calendar (1).png in Resources */,
+				697B2298225AA466009682BF /* shakespeare.png in Resources */,
+				697B2297225AA466009682BF /* blood-type.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +501,7 @@
 			files = (
 				697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */,
 				694B0A662252DAC000111F0A /* ViewController.swift in Sources */,
+				697B2290225A986B009682BF /* testViewController.swift in Sources */,
 				694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */,
 				694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */,
 				697B22752258F122009682BF /* detailViewController.swift in Sources */,

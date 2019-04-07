@@ -114,7 +114,8 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
             }
             //self.showResult()
             let newstr = self.resultsText.replacingOccurrences(of: " ", with: "+")
-            self.getData(requestUrl: self.oringinalurl+newstr)
+            self.oringinalurl = self.oringinalurl+newstr
+            self.getData(requestUrl: self.oringinalurl)
             self.semaphore.wait()
             self.jump()
         }
@@ -166,8 +167,12 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
                 self.resultsText = str
                 break
             }
-            self.showResult()
-            
+            //self.showResult()
+            let newstr = self.resultsText.replacingOccurrences(of: " ", with: "+")
+            self.oringinalurl = self.oringinalurl+newstr
+            self.getData(requestUrl: self.oringinalurl)
+            self.semaphore.wait()
+            self.jump()
             // [END_EXCLUDE]
         }
     }
@@ -211,6 +216,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     }
     
     func jump(){
+        //self.semaphore.signal()
         self.indicator.isHidden = true
         self.indicator.stopAnimating()
         self.performSegue(withIdentifier: "mTable", sender: self)

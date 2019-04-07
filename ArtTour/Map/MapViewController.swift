@@ -235,7 +235,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                     if temp.identifier != nowlandmark.identifier{
                         
                         displayMessage("You are near the \(temp.identifier)", "Landmark Notification ")
-                        notificationCreated(message: "test", title: "test")
+                        notificationCreated(message: "You are near the \(temp.identifier)", title: "Location Notification")
                         nowlandmark = temp
                     }
                 }else{
