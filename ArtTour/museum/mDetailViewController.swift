@@ -24,8 +24,12 @@ class mDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBOutlet weak var backbuttonItem: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.backbuttonItem.layer.cornerRadius = (self.backbuttonItem.frame.height / 2)
         if json!["media"][0]["medium"]["uri"].string == nil{
             contentimage.image = UIImage(named: "404-permalink.png")
         }else{

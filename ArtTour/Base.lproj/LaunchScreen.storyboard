@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="JGg-PP-ASF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Team_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="JGg-PP-ASF">
                                 <rect key="frame" x="76" y="352" width="262" height="192"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="192" id="90y-hn-fCZ"/>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo.jpeg" width="262" height="192"/>
+        <image name="Team_Logo.png" width="215.52000427246094" height="215.52000427246094"/>
     </resources>
 </document>

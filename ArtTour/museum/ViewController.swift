@@ -18,6 +18,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     lazy var vision = Vision.vision()
     var resultsText = ""
     var oringinalurl = "https://collections.museumvictoria.com.au/api/search?query="
+    var oringinalurl2 = " "
     var jsonarray: [JSON] = []
     var json: JSON?
     var count = 0
@@ -114,8 +115,8 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
             }
             //self.showResult()
             let newstr = self.resultsText.replacingOccurrences(of: " ", with: "+")
-            self.oringinalurl = self.oringinalurl+newstr
-            self.getData(requestUrl: self.oringinalurl)
+            self.oringinalurl2 = self.oringinalurl+newstr
+            self.getData(requestUrl: self.oringinalurl2)
             self.semaphore.wait()
             self.jump()
         }
@@ -169,8 +170,9 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
             }
             //self.showResult()
             let newstr = self.resultsText.replacingOccurrences(of: " ", with: "+")
-            self.oringinalurl = self.oringinalurl+newstr
-            self.getData(requestUrl: self.oringinalurl)
+            self.oringinalurl2 = self.oringinalurl+newstr
+            print(self.oringinalurl)
+            self.getData(requestUrl: self.oringinalurl2)
             self.semaphore.wait()
             self.jump()
             // [END_EXCLUDE]
@@ -210,7 +212,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
             destination.pagecount = self.count
             destination.count = self.jsonarray.count
             destination.resultText = self.resultsText
-            destination.originalurl = self.oringinalurl
+            destination.originalurl = self.oringinalurl2
         }
     
     }

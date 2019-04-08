@@ -15,6 +15,10 @@ class detailViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     
     
+    @IBOutlet weak var backbutton: UIButton!
+    
+    
+    
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -34,6 +38,7 @@ class detailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(json!["name"]["text"].string!)
+        self.backbutton.layer.cornerRadius = (self.backbutton.frame.height / 2)
         image.pin_setImage(from: URL(string: (json!["logo"]["original"]["url"].string!)))
         link.isEditable = false
         link.text = json!["url"].string!

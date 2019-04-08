@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U0L-ca-BiD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ioe-LS-tbe">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--landmark surround-->
+        <!--Landmark Surround-->
         <scene sceneID="vt6-Fz-zWm">
             <objects>
                 <viewController id="aEs-Tf-2iK" customClass="MapViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LM6-6O-5Hr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="landmark surround" image="map-new.png" id="EDA-16-lth"/>
+                    <tabBarItem key="tabBarItem" title="Landmark Surround" image="map-new.png" id="EDA-16-lth"/>
                     <connections>
                         <outlet property="Settting" destination="b2r-iY-Nbe" id="X8E-Mo-jgw"/>
                         <outlet property="testview" destination="WGy-7t-kXm" id="jta-pC-adr"/>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmE-XY-pwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="1201"/>
+            <point key="canvasLocation" x="2137" y="1004"/>
         </scene>
         <!--Museum Explorer-->
         <scene sceneID="ebf-fN-UQy">
@@ -113,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfg-8j-CFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="1967"/>
+            <point key="canvasLocation" x="1617" y="1801"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="F7g-45-ptj">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGI-Hv-pDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="1966.9950738916257"/>
+            <point key="canvasLocation" x="2670" y="1814"/>
         </scene>
         <!--Museum Table View Controller-->
         <scene sceneID="RIC-Gl-FsP">
@@ -271,7 +271,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq5-NQ-Dn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3172" y="1982.5123152709361"/>
+            <point key="canvasLocation" x="3807" y="1813"/>
         </scene>
         <!--Event-->
         <scene sceneID="MNJ-Fx-Mzi">
@@ -283,7 +283,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNW-yz-Fxr">
                                 <rect key="frame" x="20" y="636" width="335" height="45"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kPY-kc-9uh"/>
                                 </constraints>
@@ -443,33 +443,35 @@
                                     <constraint firstAttribute="width" constant="40" id="7yE-Vo-gHO"/>
                                     <constraint firstAttribute="height" constant="40" id="p38-Ji-ovD"/>
                                 </constraints>
-                                <state key="normal" title="skip" backgroundImage="right-arrow.png">
+                                <state key="normal" image="skip.png">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="ioe-LS-tbe" kind="show" id="o6O-Wc-Snt"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-Nk-hew">
+                                <rect key="frame" x="0.0" y="138" width="375" height="527"/>
+                            </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kLH-pb-g0F">
-                                <rect key="frame" x="142.66666666666666" y="741" width="90" height="37"/>
+                                <rect key="frame" x="142.66666666666666" y="664" width="90" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="zZI-pe-R0q"/>
                                 </constraints>
+                                <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-Nk-hew">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9XW-Nk-hew" firstAttribute="trailing" secondItem="cge-cW-yJ3" secondAttribute="trailing" id="7y1-GN-9BD"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="leading" secondItem="cge-cW-yJ3" secondAttribute="leading" id="5y6-gX-GFq"/>
                             <constraint firstItem="kLH-pb-g0F" firstAttribute="centerX" secondItem="OzX-yz-UAD" secondAttribute="centerX" id="9T6-lt-NfA"/>
                             <constraint firstItem="cge-cW-yJ3" firstAttribute="trailing" secondItem="geE-dm-hLV" secondAttribute="trailing" constant="20" id="Gzg-Yu-pgL"/>
-                            <constraint firstItem="9XW-Nk-hew" firstAttribute="top" secondItem="cge-cW-yJ3" secondAttribute="top" constant="-44" id="SkD-zs-b9f"/>
-                            <constraint firstItem="9XW-Nk-hew" firstAttribute="leading" secondItem="cge-cW-yJ3" secondAttribute="leading" id="dMy-oB-pIz"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="trailing" secondItem="cge-cW-yJ3" secondAttribute="trailing" id="XBj-ug-qpm"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="top" secondItem="cge-cW-yJ3" secondAttribute="top" constant="94" id="csL-Vx-tgC"/>
+                            <constraint firstItem="geE-dm-hLV" firstAttribute="top" secondItem="9XW-Nk-hew" secondAttribute="bottom" constant="43" id="fs7-Zw-nyk"/>
+                            <constraint firstItem="cge-cW-yJ3" firstAttribute="bottom" secondItem="kLH-pb-g0F" secondAttribute="bottom" constant="77" id="hJx-JU-e4S"/>
                             <constraint firstItem="cge-cW-yJ3" firstAttribute="bottom" secondItem="geE-dm-hLV" secondAttribute="bottom" constant="30" id="iLt-Pf-LX8"/>
-                            <constraint firstItem="9XW-Nk-hew" firstAttribute="bottom" secondItem="cge-cW-yJ3" secondAttribute="bottom" constant="34" id="kat-rS-7a3"/>
-                            <constraint firstItem="cge-cW-yJ3" firstAttribute="bottom" secondItem="kLH-pb-g0F" secondAttribute="bottom" id="pVu-Sx-mNO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cge-cW-yJ3"/>
                     </view>
@@ -480,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBR-Cp-gqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1551.2" y="1193.3497536945813"/>
+            <point key="canvasLocation" x="-1378.4000000000001" y="917.73399014778329"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="s7u-Hg-jVl">
@@ -657,7 +659,8 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSq-aA-OZh">
-                                <rect key="frame" x="20" y="108" width="32" height="32"/>
+                                <rect key="frame" x="20" y="50" width="32" height="32"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="F5e-Bk-AR5"/>
                                     <constraint firstAttribute="height" constant="32" id="hwc-g2-aer"/>
@@ -671,7 +674,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ytB-Ic-Dfq" firstAttribute="top" secondItem="0s6-hT-ray" secondAttribute="top" id="4Gf-o5-Fe7"/>
-                            <constraint firstItem="qSq-aA-OZh" firstAttribute="top" secondItem="dnK-De-rqj" secondAttribute="top" constant="20" id="8TP-7b-0Vj"/>
+                            <constraint firstItem="qSq-aA-OZh" firstAttribute="top" secondItem="F0c-vd-P4X" secondAttribute="top" constant="50" id="8TP-7b-0Vj"/>
                             <constraint firstItem="b0N-36-uew" firstAttribute="leading" secondItem="dnK-De-rqj" secondAttribute="leading" id="BCI-zQ-kf0"/>
                             <constraint firstItem="dnK-De-rqj" firstAttribute="trailing" secondItem="b0N-36-uew" secondAttribute="trailing" id="GBq-Xd-ogT"/>
                             <constraint firstItem="qSq-aA-OZh" firstAttribute="leading" secondItem="dnK-De-rqj" secondAttribute="leading" constant="20" id="Lwx-US-4jq"/>
@@ -683,6 +686,7 @@
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="address" destination="tEJ-in-363" id="C6z-eS-HI8"/>
+                        <outlet property="backbutton" destination="qSq-aA-OZh" id="YUX-10-YSo"/>
                         <outlet property="eventDate" destination="dtp-DT-t26" id="Uau-OX-1xc"/>
                         <outlet property="eventTitle" destination="miK-CT-JKP" id="T3h-KZ-uIm"/>
                         <outlet property="eventdescription" destination="HwV-2A-5xq" id="b2S-Tu-RZE"/>
@@ -823,7 +827,8 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzC-1K-Tcn">
-                                <rect key="frame" x="20" y="108" width="32" height="32"/>
+                                <rect key="frame" x="20" y="50" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="k7H-8u-Pfh"/>
                                     <constraint firstAttribute="width" constant="32" id="u9x-M1-XdV"/>
@@ -836,7 +841,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CzC-1K-Tcn" firstAttribute="top" secondItem="v2H-Db-iLt" secondAttribute="top" constant="20" id="84g-5t-PYW"/>
+                            <constraint firstItem="CzC-1K-Tcn" firstAttribute="top" secondItem="EKC-92-3yz" secondAttribute="top" constant="50" id="84g-5t-PYW"/>
                             <constraint firstItem="evd-7g-qxH" firstAttribute="leading" secondItem="v2H-Db-iLt" secondAttribute="leading" id="Sr3-dn-2bb"/>
                             <constraint firstItem="Ccs-TR-qr6" firstAttribute="top" secondItem="tz0-v6-IL5" secondAttribute="top" id="U8y-U0-lX8"/>
                             <constraint firstItem="v2H-Db-iLt" firstAttribute="trailing" secondItem="evd-7g-qxH" secondAttribute="trailing" id="UMH-sJ-mLm"/>
@@ -849,6 +854,7 @@
                     <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="authors" destination="Dl9-zk-l70" id="Ynh-mA-nel"/>
+                        <outlet property="backbuttonItem" destination="CzC-1K-Tcn" id="o8S-7j-rag"/>
                         <outlet property="contentimage" destination="Ccs-TR-qr6" id="IlP-2v-VEf"/>
                         <outlet property="contetn" destination="9jO-4f-0AJ" id="vpo-uj-LNe"/>
                         <outlet property="datemodified" destination="3pV-B0-n4J" id="D0i-iH-hjz"/>
@@ -858,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnp-TL-X2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4629.6000000000004" y="2017.9802955665025"/>
+            <point key="canvasLocation" x="5169" y="1820"/>
         </scene>
     </scenes>
     <resources>
@@ -875,7 +881,7 @@
         <image name="navigation.png" width="46.428211212158203" height="46.428211212158203"/>
         <image name="previous.png" width="384" height="384"/>
         <image name="refresh.png" width="384" height="384"/>
-        <image name="right-arrow.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="shakespeare.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="skip.png" width="200" height="200"/>
     </resources>
 </document>
