@@ -32,13 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc_2 = storyboard_1.instantiateViewController(withIdentifier: "mainbar")
         if lauchedBefore{
             print("not first time lunch")
-            UIApplication.shared.windows.first?.rootViewController = vc_2
+            //UIApplication.shared.windows.first?.rootViewController = vc_2
             //UIApplication.shared.windows.first?.makeKeyAndVisible()
             
         }else{
             print("first time to launch")
             UserDefaults.standard.set(true, forKey: "lanchedBefore")
-            UIApplication.shared.windows.first?.rootViewController = vc
+            //UIApplication.shared.windows.first?.rootViewController = vc
             //UIApplication.shared.keyWindow?.makeKeyAndVisible()
         }
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ioe-LS-tbe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U0L-ca-BiD">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -437,29 +437,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geE-dm-hLV">
-                                <rect key="frame" x="10" y="511" width="355" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geE-dm-hLV">
+                                <rect key="frame" x="315" y="708" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7yE-Vo-gHO"/>
+                                    <constraint firstAttribute="height" constant="40" id="p38-Ji-ovD"/>
+                                </constraints>
+                                <state key="normal" title="skip" backgroundImage="right-arrow.png">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="ioe-LS-tbe" kind="show" id="o6O-Wc-Snt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guidence will be put here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdS-IK-H5I">
-                                <rect key="frame" x="0.0" y="330" width="375" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kLH-pb-g0F">
+                                <rect key="frame" x="142.66666666666666" y="741" width="90" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="zZI-pe-R0q"/>
+                                </constraints>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-Nk-hew">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cge-cW-yJ3" firstAttribute="trailing" secondItem="geE-dm-hLV" secondAttribute="trailing" constant="10" id="1Eg-Ko-FzO"/>
-                            <constraint firstItem="geE-dm-hLV" firstAttribute="top" secondItem="cge-cW-yJ3" secondAttribute="top" constant="467" id="Qqb-vJ-UAV"/>
-                            <constraint firstItem="geE-dm-hLV" firstAttribute="leading" secondItem="cge-cW-yJ3" secondAttribute="leading" constant="10" id="eFj-7b-Xrb"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="trailing" secondItem="cge-cW-yJ3" secondAttribute="trailing" id="7y1-GN-9BD"/>
+                            <constraint firstItem="kLH-pb-g0F" firstAttribute="centerX" secondItem="OzX-yz-UAD" secondAttribute="centerX" id="9T6-lt-NfA"/>
+                            <constraint firstItem="cge-cW-yJ3" firstAttribute="trailing" secondItem="geE-dm-hLV" secondAttribute="trailing" constant="20" id="Gzg-Yu-pgL"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="top" secondItem="cge-cW-yJ3" secondAttribute="top" constant="-44" id="SkD-zs-b9f"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="leading" secondItem="cge-cW-yJ3" secondAttribute="leading" id="dMy-oB-pIz"/>
+                            <constraint firstItem="cge-cW-yJ3" firstAttribute="bottom" secondItem="geE-dm-hLV" secondAttribute="bottom" constant="30" id="iLt-Pf-LX8"/>
+                            <constraint firstItem="9XW-Nk-hew" firstAttribute="bottom" secondItem="cge-cW-yJ3" secondAttribute="bottom" constant="34" id="kat-rS-7a3"/>
+                            <constraint firstItem="cge-cW-yJ3" firstAttribute="bottom" secondItem="kLH-pb-g0F" secondAttribute="bottom" id="pVu-Sx-mNO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cge-cW-yJ3"/>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="kLH-pb-g0F" id="2nH-kn-NMN"/>
+                        <outlet property="scrollView" destination="9XW-Nk-hew" id="HcP-rU-8Wb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBR-Cp-gqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -858,6 +875,7 @@
         <image name="navigation.png" width="46.428211212158203" height="46.428211212158203"/>
         <image name="previous.png" width="384" height="384"/>
         <image name="refresh.png" width="384" height="384"/>
+        <image name="right-arrow.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="shakespeare.png" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
 </document>
