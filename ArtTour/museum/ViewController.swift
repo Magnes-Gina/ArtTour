@@ -53,7 +53,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         present(resultAlertController,animated: true,completion: nil)
         print(resultsText)
         print(resultsText)
-        print(resultsText)
+       
     }
     
     
