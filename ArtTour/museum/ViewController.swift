@@ -52,6 +52,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         self.indicator.stopAnimating()
         present(resultAlertController,animated: true,completion: nil)
         print(resultsText)
+        print(resultsText)
     }
     
     
