@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>102503588465-2be243r8rboumtm98ml3e0t2c78l24np.apps.googleusercontent.com</string>
+	<string>102503588465-d79124pkevn8ch5or02t407bp9mgkior.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.102503588465-2be243r8rboumtm98ml3e0t2c78l24np</string>
+	<string>com.googleusercontent.apps.102503588465-d79124pkevn8ch5or02t407bp9mgkior</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAC0j2FHlqas5jPixhoobDrTy3OEx-eCKc</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Monash.ArtTour</string>
+	<string>Monash.ArtTourV2</string>
 	<key>PROJECT_ID</key>
 	<string>arttour-1553820042607</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:102503588465:ios:04107bbda885e3a1</string>
+	<string>1:102503588465:ios:8605560ef7a8afd1</string>
 	<key>DATABASE_URL</key>
 	<string>https://arttour-1553820042607.firebaseio.com</string>
 </dict>

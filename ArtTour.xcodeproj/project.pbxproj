@@ -30,6 +30,7 @@
 		694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */ = {isa = PBXBuildFile; fileRef = 694B0ABC225658DF00111F0A /* shrine-remembrance.png */; };
 		694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC022584F3E00111F0A /* EventTableViewCell.swift */; };
 		694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC22258532300111F0A /* eventTableViewController.swift */; };
+		695CCD6622602ECF00A9E4C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 695CCD6522602ECF00A9E4C9 /* GoogleService-Info.plist */; };
 		695F616E225B557200AD8120 /* Team_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616D225B557200AD8120 /* Team_Logo.png */; };
 		695F6170225B5E6F00AD8120 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616F225B5E6F00AD8120 /* skip.png */; };
 		695F6176225B6E6600AD8120 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 695F6175225B6E6600AD8120 /* guide1.jpeg */; };
@@ -42,7 +43,6 @@
 		697B227A22590C3C009682BF /* calendar (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 697B227822590C3C009682BF /* calendar (1).png */; };
 		697B227B22590C3C009682BF /* map (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 697B227922590C3C009682BF /* map (1).png */; };
 		697B227D22590EBF009682BF /* link.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B227C22590EBE009682BF /* link.png */; };
-		697B227F2259F2E2009682BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 697B227E2259F2E2009682BF /* GoogleService-Info.plist */; };
 		697B2281225A08BC009682BF /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2280225A08BC009682BF /* UIUtilities.swift */; };
 		697B2283225A36CA009682BF /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2282225A36CA009682BF /* loupe.png */; };
 		697B2285225A52DC009682BF /* mDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2284225A52DC009682BF /* mDetailViewController.swift */; };
@@ -103,6 +103,7 @@
 		694B0ABC225658DF00111F0A /* shrine-remembrance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shrine-remembrance.png"; sourceTree = "<group>"; };
 		694B0AC022584F3E00111F0A /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		694B0AC22258532300111F0A /* eventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewController.swift; sourceTree = "<group>"; };
+		695CCD6522602ECF00A9E4C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		695F616D225B557200AD8120 /* Team_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Team_Logo.png; sourceTree = "<group>"; };
 		695F616F225B5E6F00AD8120 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		695F6175225B6E6600AD8120 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		697B227822590C3C009682BF /* calendar (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar (1).png"; sourceTree = "<group>"; };
 		697B227922590C3C009682BF /* map (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map (1).png"; sourceTree = "<group>"; };
 		697B227C22590EBE009682BF /* link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = link.png; sourceTree = "<group>"; };
-		697B227E2259F2E2009682BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		697B2280225A08BC009682BF /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		697B2282225A36CA009682BF /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
 		697B2284225A52DC009682BF /* mDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mDetailViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +180,7 @@
 		694B0A622252DAC000111F0A /* ArtTour */ = {
 			isa = PBXGroup;
 			children = (
+				695CCD6522602ECF00A9E4C9 /* GoogleService-Info.plist */,
 				694B0A632252DAC000111F0A /* AppDelegate.swift */,
 				697B228F225A986B009682BF /* testViewController.swift */,
 				694B0A672252DAC000111F0A /* Main.storyboard */,
@@ -227,7 +228,6 @@
 				697B2291225A9FE0009682BF /* 404-permalink.png */,
 				694B0AB622564C3C00111F0A /* singer.png */,
 				697B2282225A36CA009682BF /* loupe.png */,
-				697B227E2259F2E2009682BF /* GoogleService-Info.plist */,
 				697B227822590C3C009682BF /* calendar (1).png */,
 				697B227C22590EBE009682BF /* link.png */,
 				697B227922590C3C009682BF /* map (1).png */,
@@ -435,11 +435,11 @@
 				694B0AAF225638E500111F0A /* church.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
-				697B227F2259F2E2009682BF /* GoogleService-Info.plist in Resources */,
 				694B0A692252DAC000111F0A /* Main.storyboard in Resources */,
 				697B227A22590C3C009682BF /* calendar (1).png in Resources */,
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
 				697B2297225AA466009682BF /* blood-type.png in Resources */,
+				695CCD6622602ECF00A9E4C9 /* GoogleService-Info.plist in Resources */,
 				695F6170225B5E6F00AD8120 /* skip.png in Resources */,
 				695F616E225B557200AD8120 /* Team_Logo.png in Resources */,
 			);
@@ -707,15 +707,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTour;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtTour-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -730,15 +733,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTour;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtTour-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -752,7 +758,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = D4E88Q87ES;
 				INFOPLIST_FILE = ArtTourTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +779,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = D4E88Q87ES;
 				INFOPLIST_FILE = ArtTourTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
