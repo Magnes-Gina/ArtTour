@@ -43,6 +43,20 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
     let store = UserDefaults.standard
     
+    
+    @IBOutlet weak var button1: UIButton!
+    
+    
+    @IBOutlet weak var button2: UIButton!
+    
+    
+    @IBOutlet weak var button3: UIButton!
+    
+    
+    
+    @IBOutlet weak var button4: UIButton!
+    
+    
     @IBAction func clear(_ sender: Any) {
         clusterManager.clearItems()
         geos = [];
@@ -162,6 +176,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
+        self.button1.layer.cornerRadius = (self.button1.frame.height / 2)
+        self.button2.layer.cornerRadius = (self.button2.frame.height / 2)
+        self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
+        self.button4.layer.cornerRadius = (self.button4.frame.height / 2)
         /*var bgTask = UIBackgroundTaskIdentifier(rawValue: <#Int#>)
         bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
             UIApplication.shared.endBackgroundTask(bgTask)

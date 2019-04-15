@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2r-iY-Nbe">
                                 <rect key="frame" x="323" y="144" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="PAU-eR-KPp"/>
                                     <constraint firstAttribute="width" constant="32" id="Vh2-tG-7fq"/>
@@ -34,6 +35,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-Q9-NbC">
                                 <rect key="frame" x="323" y="196" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="54d-3K-pvJ"/>
                                     <constraint firstAttribute="height" constant="32" id="qDG-hr-764"/>
@@ -45,6 +47,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFu-Mz-hQ9">
                                 <rect key="frame" x="323" y="248" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="RSo-Tq-pfb"/>
                                     <constraint firstAttribute="width" constant="32" id="Vcz-VA-F9Z"/>
@@ -56,6 +59,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-tH-w0c">
                                 <rect key="frame" x="323" y="300" width="32" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="f3f-rG-336"/>
                                     <constraint firstAttribute="width" constant="32" id="pCz-5J-ebk"/>
@@ -90,6 +94,10 @@
                     <tabBarItem key="tabBarItem" title="Landmark Surround" image="map-new.png" id="EDA-16-lth"/>
                     <connections>
                         <outlet property="Settting" destination="b2r-iY-Nbe" id="X8E-Mo-jgw"/>
+                        <outlet property="button1" destination="b2r-iY-Nbe" id="tOi-U9-FAJ"/>
+                        <outlet property="button2" destination="uxh-Q9-NbC" id="o2s-L5-XLf"/>
+                        <outlet property="button3" destination="QFu-Mz-hQ9" id="jz7-jC-tIg"/>
+                        <outlet property="button4" destination="Asn-tH-w0c" id="e8M-uS-uwV"/>
                         <outlet property="testview" destination="WGy-7t-kXm" id="jta-pC-adr"/>
                         <segue destination="NTM-vb-j8u" kind="show" identifier="mapDetail" id="TYs-hd-N36"/>
                     </connections>
