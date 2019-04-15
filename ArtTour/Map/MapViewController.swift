@@ -188,6 +188,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         
     }
     
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        self.performSegue(withIdentifier: "mapDetail", sender: self)
+        
+    }
+    
     
     
     func addingmaker()
@@ -208,6 +213,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         evaluateClosetRegions()
     }
     
+   
     //func locat
     
     func evaluateClosetRegions(){

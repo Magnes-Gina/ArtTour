@@ -31,6 +31,7 @@
 		694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC022584F3E00111F0A /* EventTableViewCell.swift */; };
 		694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC22258532300111F0A /* eventTableViewController.swift */; };
 		695CCD6622602ECF00A9E4C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 695CCD6522602ECF00A9E4C9 /* GoogleService-Info.plist */; };
+		695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */; };
 		695F616E225B557200AD8120 /* Team_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616D225B557200AD8120 /* Team_Logo.png */; };
 		695F6170225B5E6F00AD8120 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616F225B5E6F00AD8120 /* skip.png */; };
 		695F6176225B6E6600AD8120 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 695F6175225B6E6600AD8120 /* guide1.jpeg */; };
@@ -104,6 +105,7 @@
 		694B0AC022584F3E00111F0A /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		694B0AC22258532300111F0A /* eventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewController.swift; sourceTree = "<group>"; };
 		695CCD6522602ECF00A9E4C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapDetailViewController.swift; sourceTree = "<group>"; };
 		695F616D225B557200AD8120 /* Team_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Team_Logo.png; sourceTree = "<group>"; };
 		695F616F225B5E6F00AD8120 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		695F6175225B6E6600AD8120 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				694B0A942252EB4C00111F0A /* MapViewController.swift */,
+				695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */,
+				695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */,
 				694B0A662252DAC000111F0A /* ViewController.swift in Sources */,
 				697B2290225A986B009682BF /* testViewController.swift in Sources */,
 				694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */,
