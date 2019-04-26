@@ -100,6 +100,7 @@
                         <outlet property="button4" destination="Asn-tH-w0c" id="e8M-uS-uwV"/>
                         <outlet property="testview" destination="WGy-7t-kXm" id="jta-pC-adr"/>
                         <segue destination="NTM-vb-j8u" kind="show" identifier="mapDetail" id="TYs-hd-N36"/>
+                        <segue destination="2lk-xd-eKw" kind="show" identifier="artworkDetail" id="TuU-sJ-fO4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmE-XY-pwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,22 +115,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upd-pj-eOI">
-                                <rect key="frame" x="164" y="297" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5s-Jj-Szm" customClass="WKYTPlayerView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="210"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="dU2-kr-C4g"/>
+                                    <constraint firstAttribute="height" constant="210" id="sUZ-MF-QSb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landmark Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTw-PU-XdV">
+                                <rect key="frame" x="16" y="284" width="343" height="25.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpt-uG-agc">
+                                <rect key="frame" x="16" y="448" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saved:" destination="NTM-vb-j8u" eventType="touchUpInside" id="jw4-6E-B2e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upd-pj-eOI">
+                                <rect key="frame" x="16" y="391" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="back:" destination="NTM-vb-j8u" eventType="touchUpInside" id="u81-OZ-wJw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ijv-4f-aQn" firstAttribute="bottom" secondItem="wpt-uG-agc" secondAttribute="bottom" constant="300" id="3qk-YO-KDx"/>
+                            <constraint firstItem="wpt-uG-agc" firstAttribute="leading" secondItem="Ijv-4f-aQn" secondAttribute="leading" constant="16" id="5eb-QC-Fn5"/>
+                            <constraint firstItem="b5s-Jj-Szm" firstAttribute="leading" secondItem="Ijv-4f-aQn" secondAttribute="leading" id="7XW-eQ-ePI"/>
+                            <constraint firstItem="HTw-PU-XdV" firstAttribute="top" secondItem="b5s-Jj-Szm" secondAttribute="bottom" constant="30" id="7fj-lm-hd0"/>
+                            <constraint firstItem="Ijv-4f-aQn" firstAttribute="trailing" secondItem="wpt-uG-agc" secondAttribute="trailing" constant="16" id="BKf-d0-tll"/>
+                            <constraint firstItem="Ijv-4f-aQn" firstAttribute="trailing" secondItem="Upd-pj-eOI" secondAttribute="trailing" constant="16" id="DkG-qx-y7t"/>
+                            <constraint firstItem="b5s-Jj-Szm" firstAttribute="top" secondItem="Ijv-4f-aQn" secondAttribute="top" id="J8D-Y2-c0E"/>
+                            <constraint firstItem="wpt-uG-agc" firstAttribute="top" secondItem="Upd-pj-eOI" secondAttribute="bottom" constant="27" id="JwV-Uw-FLx"/>
+                            <constraint firstItem="Upd-pj-eOI" firstAttribute="leading" secondItem="Ijv-4f-aQn" secondAttribute="leading" constant="16" id="QH9-rA-gsf"/>
+                            <constraint firstItem="Ijv-4f-aQn" firstAttribute="trailing" secondItem="HTw-PU-XdV" secondAttribute="trailing" constant="16" id="hKo-ZF-ee7"/>
+                            <constraint firstItem="HTw-PU-XdV" firstAttribute="leading" secondItem="Ijv-4f-aQn" secondAttribute="leading" constant="16" id="vxR-Ay-e9d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ijv-4f-aQn"/>
                     </view>
+                    <connections>
+                        <outlet property="landmark_name" destination="HTw-PU-XdV" id="g4H-oh-lEW"/>
+                        <outlet property="savedButton" destination="wpt-uG-agc" id="RRB-Iv-l51"/>
+                        <outlet property="youtube" destination="b5s-Jj-Szm" id="k7Q-cq-Arn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4r-h2-aHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3110" y="1014"/>
+            <point key="canvasLocation" x="3109.5999999999999" y="1013.7931034482759"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="S6b-Fa-DVo">
+            <objects>
+                <viewController id="2lk-xd-eKw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4F-VK-1nL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Hdn-Vf-t5A"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyf-JK-mNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3100" y="1761"/>
         </scene>
         <!--Museum Explorer-->
         <scene sceneID="ebf-fN-UQy">
@@ -147,7 +207,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfg-8j-CFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="1801"/>
+            <point key="canvasLocation" x="1964" y="2498"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="F7g-45-ptj">
@@ -225,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGI-Hv-pDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="1814"/>
+            <point key="canvasLocation" x="3017" y="2511"/>
         </scene>
         <!--Museum Table View Controller-->
         <scene sceneID="RIC-Gl-FsP">
@@ -305,7 +365,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xq5-NQ-Dn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3807" y="1813"/>
+            <point key="canvasLocation" x="4153" y="2510"/>
         </scene>
         <!--Event-->
         <scene sceneID="MNJ-Fx-Mzi">
@@ -898,7 +958,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnp-TL-X2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5169" y="1820"/>
+            <point key="canvasLocation" x="5516" y="2517"/>
         </scene>
     </scenes>
     <resources>

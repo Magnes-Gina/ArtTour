@@ -17,8 +17,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyAJtfy0t8sETsS8_M50d3M9tWxLKdm59TQ")
@@ -40,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "lanchedBefore")
             UIApplication.shared.windows.first?.rootViewController = vc
             UIApplication.shared.keyWindow?.makeKeyAndVisible()
+            
         }
         
         return true

@@ -1,0 +1,6 @@
+module YoutubePlayer_in_WKWebView {
+  umbrella header "YoutubePlayer-in-WKWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}

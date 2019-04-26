@@ -110,6 +110,7 @@ PODS:
     - PINRemoteImage/Core
   - Protobuf (3.6.1)
   - SwiftyJSON (4.1.0)
+  - YoutubePlayer-in-WKWebView (0.2.3)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -119,6 +120,7 @@ DEPENDENCIES:
   - GooglePlaces
   - PINRemoteImage
   - SwiftyJSON (~> 4.0)
+  - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -143,6 +145,7 @@ SPEC REPOS:
     - PINRemoteImage
     - Protobuf
     - SwiftyJSON
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
@@ -166,7 +169,8 @@ SPEC CHECKSUMS:
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  YoutubePlayer-in-WKWebView: 9cfe2a1208c91f82d5cc5eaff1f0dfc8552dd3f1
 
-PODFILE CHECKSUM: 9d758931f03c839c7903426ce97433b5a213f1e1
+PODFILE CHECKSUM: 623abc3593cd480edaf7dc51304e9986c4793010
 
 COCOAPODS: 1.6.1

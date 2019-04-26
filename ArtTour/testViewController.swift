@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class testViewController: UIViewController,UIScrollViewDelegate{
 
+    //let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
+    //var landmarks = [Landmark]()
+    
     
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -36,6 +40,25 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     }
     //test
     
+    
+    /*func getData(){
+        guard let downloadURL = url else { return }
+        URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
+            //CBToast.showToastAction(message: "Download Data!")
+            guard let data = data, error == nil,urlResponse != nil else {
+                print("wrong")
+                return
+            }
+            do{
+                self.landmarks = try JSONDecoder().decode([Landmark].self,from: data)
+                for item in landmarks{
+                    let l2 = Landmark2(context: PersistanceServe.context)
+                }
+            }catch let error as NSError{
+                print("error: \(error)")
+            }
+            }.resume()
+    }*/
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //

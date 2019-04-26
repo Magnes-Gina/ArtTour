@@ -12,12 +12,12 @@ import CoreLocation
 import UserNotifications
 
 struct Landmark: Decodable {
-    let Id: Int
-    let Theme: String
-    let SubTheme: String
-    let FeatureName: String
-    let latitude: Double
-    let longtitude: Double
+    let Landmark_id: Int
+    let Landmark_name: String
+    let Landmark_latitude: Double
+    let Landmark_longtitude: Double
+    let Category_id: Int
+    let video: String
 }
 
 class POIItem: NSObject,GMUClusterItem{
@@ -25,12 +25,14 @@ class POIItem: NSObject,GMUClusterItem{
     var name: String!
     var title: String!
     var snippet: String!
+    var category: Int!
     
-    init(position: CLLocationCoordinate2D,name: String,title:String,snippet:String) {
+    init(position: CLLocationCoordinate2D,name: String,title:String,snippet:String,category: Int) {
         self.position = position
         self.name = name
         self.title = title
         self.snippet = snippet
+        self.category = category
     }
 }
 
@@ -42,7 +44,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var makers: [GMSMarker] = []
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
     let store = UserDefaults.standard
-    
+    var selectlandmark: Landmark?
     
     @IBOutlet weak var button1: UIButton!
     
@@ -207,8 +209,21 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        for item in landmarks{
+            if marker.title == item.Landmark_name{
+                selectlandmark = item
+            }
+        }
         self.performSegue(withIdentifier: "mapDetail", sender: self)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? mapDetailViewController{
+            destination.landmark = selectlandmark
+        }
     }
     
     
@@ -217,8 +232,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     {
         var index = 0
         for landmark in self.landmarks{
-            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.latitude,landmark.longtitude),title: landmark.FeatureName,snippet: landmark.SubTheme)
-            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.latitude,landmark.longtitude), radius: 70, identifier: landmark.FeatureName)
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
             
@@ -281,8 +296,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         print(region.identifier)
     }*/
     
-    func generatePOIItems(accessibilityLabel: String,position: CLLocationCoordinate2D,title:String,snippet:String){
-        let item = POIItem(position: position, name: accessibilityLabel,title: title,snippet: snippet)
+    func generatePOIItems(accessibilityLabel: String,position: CLLocationCoordinate2D,title:String,snippet:String,category: Int){
+        let item = POIItem(position: position, name: accessibilityLabel,title: title,snippet: snippet,category: category)
         
         self.clusterManager.add(item)
         
