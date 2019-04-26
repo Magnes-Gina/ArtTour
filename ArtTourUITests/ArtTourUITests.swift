@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+import CoreData
 class ArtTourUITests: XCTestCase {
 
     override func setUp() {

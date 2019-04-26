@@ -8,13 +8,15 @@
 
 import UIKit
 import YoutubePlayer_in_WKWebView
-
+import CoreData
 
 class mapDetailViewController: UIViewController {
 
     
     var landmark: Landmark?
     
+    
+    @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var savedButton: UIButton!
     @IBAction func saved(_ sender: Any) {
@@ -29,11 +31,37 @@ class mapDetailViewController: UIViewController {
         //self.navigationController?.popViewController(animated: true)
     }
     
+    private var managedObjectContext: NSManagedObjectContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
+        super.init(coder: aDecoder)!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         youtube.load(withVideoId: landmark!.video)
         landmark_name.text = landmark!.Landmark_name
+        getCategroy()
         // Do any additional setup after loading the view.
+    }
+    
+    func getCategroy(){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Category")
+        do {
+            let tempCat = try managedObjectContext.fetch(fetchRequest) as! [Category]
+            for item in tempCat{
+                if landmark!.Category_id == Int(item.category_id) {
+                    categoryLabel.text = "Category: \(item.category_name!)"
+                    break
+                }
+                
+            }
+        }
+        catch {
+            fatalError("Fail to load list CoreData")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

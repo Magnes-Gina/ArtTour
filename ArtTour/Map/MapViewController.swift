@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import UserNotifications
+import CoreData
 
 struct Landmark: Decodable {
     let Landmark_id: Int
@@ -40,11 +41,27 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     let semaphore = DispatchSemaphore(value: 0)
     final let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
     var landmarks = [Landmark]()
+    var landmarks2 = [Landmark2]()
     var geos : [CLCircularRegion] = []
     var makers: [GMSMarker] = []
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
     let store = UserDefaults.standard
     var selectlandmark: Landmark?
+    private var managedObjectContext: NSManagedObjectContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
+        super.init(coder: aDecoder)!
+    }
+    
+    
+    @IBOutlet var choiceView: UIView!
+    
+    @IBAction func downButton(_ sender: Any) {
+        animatedOut()
+    }
+    
     
     @IBOutlet weak var button1: UIButton!
     
@@ -158,14 +175,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     @IBAction func refresh(_ sender: Any) {
-        landmarks = []
+        /*landmarks = []
         getData()
         self.semaphore.wait()
         if makers.count == 0{
             clusterManager.clearItems()
             addingmaker()
             //self.semaphore.signal()
-        }
+        }*/
+        animatedIn()
         
     }
     
@@ -200,21 +218,48 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         //let newmark = store.object(forKey: "landmark")
         
         getData()
-        semaphore.wait()
+        //semaphore.wait()
         addingmaker()
+        
         //store.set("what",forKey: "landmark")
         //self.semaphore.signal()
-        
+        choiceView.layer.cornerRadius = 5
         
     }
     
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        for item in landmarks{
-            if marker.title == item.Landmark_name{
-                selectlandmark = item
-            }
+    func animatedIn(){
+        self.view.addSubview(choiceView)
+        choiceView.center = self.view.center
+        
+        choiceView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
+        choiceView.alpha = 0
+        UIView.animate(withDuration: 0.4){
+            self.choiceView.alpha = 1
+            self.choiceView.transform = CGAffineTransform.identity
         }
-        self.performSegue(withIdentifier: "mapDetail", sender: self)
+    }
+    
+    func animatedOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.choiceView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
+            self.choiceView.alpha = 0
+        }){ (success: Bool) in
+            self.choiceView.removeFromSuperview()
+        }
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        let item2 = marker.userData as? POIItem
+        if item2!.category == 1 || item2!.category == 2 || item2!.category == 9 {
+            for item in landmarks{
+                if marker.title == item.Landmark_name{
+                    selectlandmark = item
+                }
+            }
+            self.performSegue(withIdentifier: "mapDetail", sender: self)
+        }
+        
         
     }
     
@@ -340,7 +385,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func getData(){
-        guard let downloadURL = url else { return }
+        /*guard let downloadURL = url else { return }
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
            CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
@@ -354,7 +399,18 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             }catch let error as NSError{
                 print("error: \(error)")
             }
-        }.resume()
+        }.resume()*/
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Landmark2")
+        do {
+            landmarks2 = try managedObjectContext.fetch(fetchRequest) as! [Landmark2]
+            for item in landmarks2{
+                let temp = Landmark(Landmark_id: Int(item.landmark_id), Landmark_name: item.landmark_name!, Landmark_latitude: item.landmark_latitude, Landmark_longtitude: item.landmark_longtitude, Category_id: Int(item.category_id), video: item.video!)
+                landmarks.append(temp)
+            }
+        }
+        catch {
+            fatalError("Fail to load list CoreData")
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
