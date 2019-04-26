@@ -14,20 +14,20 @@ struct tempcat: Decodable {
 }
 
 struct artisttemp: Decodable {
-    let artist_id: Int
-    let artist_name: String
+    let Artist_id: Int
+    let Artist_name: String
 }
 
 struct artworktemp: Decodable{
-    let artwork_id: Int
-    let artwork_name: String
-    let artwork_address: String
-    let artwork_structure: String
-    let artwork_description: String
-    let artwork_date: Int
-    let artwork_latitude: Double
-    let artwork_longtitude: Double
-    let artist_id: Int
+    let ArtWork_id: Int
+    let ArtWork_name: String
+    let ArtWork_address: String
+    let ArtWork_structure: String
+    let ArtWork_description: String
+    let ArtWork_date: Int
+    let ArtWork_latitude: Double
+    let ArtWork_longtitude: Double
+    let Artist_id: Int
     let Category_id: Int
 }
 
@@ -74,6 +74,8 @@ class testViewController: UIViewController,UIScrollViewDelegate{
         self.view.sendSubviewToBack(scrollView)
         getData()
         getData2()
+        getData3()
+        getData4()
     }
     //test
     
@@ -138,8 +140,9 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                 self.artiststemp = try JSONDecoder().decode([artisttemp].self,from: data)
                 for item in self.artiststemp{
                     let newArtist = NSEntityDescription.insertNewObject(forEntityName: "Artist", into: self.managedObjectContext!) as! Artist
-                    newArtist.artist_id = Int16(item.artist_id)
-                    newArtist.artist_name = item.artist_name
+                    newArtist.artist_id = Int16(item.Artist_id)
+                    newArtist.artist_name = item.Artist_name
+                    print(item.Artist_id)
                     try self.managedObjectContext?.save()
                 }
             }catch let error as NSError{
@@ -160,16 +163,17 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                 self.artworks = try JSONDecoder().decode([artworktemp].self,from: data)
                 for item in self.artworks{
                     let newartwork = NSEntityDescription.insertNewObject(forEntityName: "ArtWork", into: self.managedObjectContext!) as! ArtWork
-                    newartwork.artwork_id = Int16(item.artwork_id)
-                    newartwork.artwork_name = item.artwork_name
-                    newartwork.artwork_address = item.artwork_address
-                    newartwork.artwork_structure = item.artwork_structure
-                    newartwork.artwork_description = item.artwork_description
-                    newartwork.artwork_latitude = item.artwork_latitude
-                    newartwork.artwork_longtitude = item.artwork_longtitude
-                    newartwork.artist_id = Int16(item.artist_id)
+                    newartwork.artwork_id = Int16(item.ArtWork_id)
+                    newartwork.artwork_name = item.ArtWork_name
+                    newartwork.artwork_address = item.ArtWork_address
+                    newartwork.artwork_structure = item.ArtWork_structure
+                    newartwork.artwork_description = item.ArtWork_description
+                    newartwork.artwork_latitude = item.ArtWork_latitude
+                    newartwork.artwork_longtitude = item.ArtWork_longtitude
+                    newartwork.artist_id = Int16(item.Artist_id)
                     newartwork.category_id = Int16(item.Category_id)
-                    newartwork.artwork_date = Int16(item.artwork_date)
+                    newartwork.artwork_date = Int16(item.ArtWork_date)
+                    print(item.ArtWork_id)
                     try self.managedObjectContext?.save()
                 }
             }catch let error as NSError{

@@ -42,6 +42,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     final let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
     var landmarks = [Landmark]()
     var landmarks2 = [Landmark2]()
+    var artworks = [ArtWork]()
+    var artworktemps = [artworktemp]()
+    
     var geos : [CLCircularRegion] = []
     var makers: [GMSMarker] = []
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
@@ -55,28 +58,524 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         super.init(coder: aDecoder)!
     }
     
-    
     @IBOutlet var choiceView: UIView!
-    
     @IBAction func downButton(_ sender: Any) {
+        buskerButton.isSelected = false
+        bellsButton.isSelected = false
+        alllandmarkbutton.isSelected = false
+        allartworkbutton.isSelected = false
+        othersbutton.isSelected = false
+        bridgebutton.isSelected = false
+        gallerybutton.isSelected = false
+        fountaionButton.isSelected = false
+        indigenousButton.isSelected = false
+        memorialButton.isSelected = false
+        publicbuildingButton.isSelected = false
+        sculptureButton.isSelected = false
+        bellbool = false
+        othersbool = false
+        bridgebool = false
+        gallerybool = false
+        fountainbool = false
+        indigenousbool = false
+        memorialbool = false
+        publicbuildingbool = false
+        scilpturebool = false
+        allbuskerbool = false
+        alllandmarkbool = false
+        allartworkbool = false
+        animatedOut()
+    }
+    
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    
+    
+    var gallerybool = false
+    var bridgebool = false
+    var bellbool = false
+    var fountainbool = false
+    var indigenousbool = false
+    var memorialbool = false
+    var publicbuildingbool = false
+    var scilpturebool = false
+    var othersbool = false
+    var allartworkbool = false
+    var alllandmarkbool = false
+    var allbuskerbool = false
+    
+    @IBOutlet weak var buskerButton: UIButton!
+    @IBOutlet weak var alllandmarkbutton: UIButton!
+    @IBOutlet weak var allartworkbutton: UIButton!
+    @IBOutlet weak var othersbutton: UIButton!
+    @IBOutlet weak var bridgebutton: UIButton!
+    @IBOutlet weak var publicbuildingButton: UIButton!
+    @IBOutlet weak var memorialButton: UIButton!
+    @IBOutlet weak var indigenousButton: UIButton!
+    @IBOutlet weak var fountaionButton: UIButton!
+    @IBOutlet weak var bellsButton: UIButton!
+    @IBOutlet weak var gallerybutton: UIButton!
+    @IBOutlet weak var sculptureButton: UIButton!
+    
+    
+    @IBAction func sculptureaction(_ sender: UIButton) {
+        if sender.isSelected{
+            scilpturebool = false
+            sender.isSelected = false
+        }else{
+            scilpturebool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func galleryaction(_ sender: UIButton) {
+        if sender.isSelected{
+            gallerybool = false
+            sender.isSelected = false
+        }else{
+            gallerybool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func bellsaction(_ sender: UIButton) {
+        if sender.isSelected{
+            bellbool = false
+            sender.isSelected = false
+        }else{
+            bellbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func fountaionaction(_ sender: UIButton) {
+        if sender.isSelected{
+            fountainbool = false
+            sender.isSelected = false
+        }else{
+            fountainbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func indigenousaction(_ sender: UIButton) {
+        if sender.isSelected{
+            indigenousbool = false
+            sender.isSelected = false
+        }else{
+            indigenousbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func memorialaction(_ sender: UIButton) {
+        if sender.isSelected{
+            memorialbool = false
+            sender.isSelected = false
+        }else{
+            memorialbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func publicbuildingaction(_ sender: UIButton) {
+        if sender.isSelected{
+            publicbuildingbool = false
+            sender.isSelected = false
+        }else{
+            publicbuildingbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func bridgeaction(_ sender: UIButton) {
+        if sender.isSelected{
+            bridgebool = false
+            sender.isSelected = false
+        }else{
+            bridgebool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func othersaction(_ sender: UIButton) {
+        if sender.isSelected{
+            othersbool = false
+            sender.isSelected = false
+        }else{
+            othersbool = true
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            buskerButton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    @IBAction func allarworkaction(_ sender: UIButton) {
+        if sender.isSelected{
+            allartworkbool = false
+            sender.isSelected = false
+        }else{
+            allartworkbool = true
+            
+            bellbool = false
+            othersbool = false
+            bridgebool = false
+            gallerybool = false
+            fountainbool = false
+            indigenousbool = false
+            memorialbool = false
+            publicbuildingbool = false
+            scilpturebool = false
+            allbuskerbool = false
+            alllandmarkbool = false
+            
+            alllandmarkbutton.isSelected = false
+            buskerButton.isSelected = false
+            bellsButton.isSelected = false
+            othersbutton.isSelected = false
+            bridgebutton.isSelected = false
+            gallerybutton.isSelected = false
+            fountaionButton.isSelected = false
+            indigenousButton.isSelected = false
+            memorialButton.isSelected = false
+            publicbuildingButton.isSelected = false
+            sculptureButton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    
+    @IBAction func busker(_ sender: UIButton) {
+        if sender.isSelected{
+            allbuskerbool = false
+            sender.isSelected = false
+        }else{
+            allbuskerbool = true
+            
+            bellbool = false
+            othersbool = false
+            bridgebool = false
+            gallerybool = false
+            fountainbool = false
+            indigenousbool = false
+            memorialbool = false
+            publicbuildingbool = false
+            scilpturebool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            
+            alllandmarkbutton.isSelected = false
+            allartworkbutton.isSelected = false
+            bellsButton.isSelected = false
+            othersbutton.isSelected = false
+            bridgebutton.isSelected = false
+            gallerybutton.isSelected = false
+            fountaionButton.isSelected = false
+            indigenousButton.isSelected = false
+            memorialButton.isSelected = false
+            publicbuildingButton.isSelected = false
+            sculptureButton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    
+    @IBAction func alllandmarkbutton(_ sender: UIButton) {
+        if sender.isSelected{
+            alllandmarkbool = false
+            sender.isSelected = false
+        }else{
+            alllandmarkbool = true
+            
+            bellbool = false
+            othersbool = false
+            bridgebool = false
+            gallerybool = false
+            fountainbool = false
+            indigenousbool = false
+            memorialbool = false
+            publicbuildingbool = false
+            scilpturebool = false
+            allbuskerbool = false
+            allartworkbool = false
+            
+            buskerButton.isSelected = false
+            allartworkbutton.isSelected = false
+            bellsButton.isSelected = false
+            othersbutton.isSelected = false
+            bridgebutton.isSelected = false
+            gallerybutton.isSelected = false
+            fountaionButton.isSelected = false
+            indigenousButton.isSelected = false
+            memorialButton.isSelected = false
+            publicbuildingButton.isSelected = false
+            sculptureButton.isSelected = false
+            sender.isSelected = true
+        }
+    }
+    
+    
+    
+    @IBAction func confirmaction(_ sender: UIButton) {
+        if !gallerybool && !bridgebool && !bellbool && !fountainbool && !indigenousbool && !memorialbool && !publicbuildingbool && !scilpturebool && !othersbool && !allbuskerbool && !allartworkbool && !alllandmarkbool {
+            displayMessage("At least choose one filter", "Warning")
+        }else{
+            
+            allartworkbutton.isSelected = false
+            alllandmarkbutton.isSelected = false
+            buskerButton.isSelected = false
+            bellsButton.isSelected = false
+            othersbutton.isSelected = false
+            bridgebutton.isSelected = false
+            gallerybutton.isSelected = false
+            fountaionButton.isSelected = false
+            indigenousButton.isSelected = false
+            memorialButton.isSelected = false
+            publicbuildingButton.isSelected = false
+            sculptureButton.isSelected = false
+            //
+            if allbuskerbool || alllandmarkbool || allartworkbool {
+                if allbuskerbool {
+                    addbusker()
+                }else if alllandmarkbool{
+                    testview.clear()
+                    clusterManager.clearItems()
+                    addingmaker()
+                }else{
+                    testview.clear()
+                    clusterManager.clearItems()
+                    addingmaker2()
+                }
+            }else{
+                geos = []
+                testview.clear()
+                clusterManager.clearItems()
+                if gallerybool{
+                    for landmark in self.landmarks{
+                        if landmark.Category_id == 1{
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if bridgebool{
+                    for landmark in self.landmarks{
+                        if landmark.Category_id == 2{
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if othersbool{
+                    for landmark in self.landmarks{
+                        if landmark.Category_id == 9{
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if bellbool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 3{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if fountainbool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 4{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if indigenousbool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 5{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if memorialbool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 6{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if publicbuildingbool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 7{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                if scilpturebool{
+                    for item in self.artworktemps{
+                        if item.Category_id == 8{
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                            geoLocation.notifyOnEntry = true
+                            geos.append(geoLocation)
+                        }
+                    }
+                }
+                self.clusterManager.cluster()
+            }
+            //
+            bellbool = false
+            othersbool = false
+            bridgebool = false
+            gallerybool = false
+            fountainbool = false
+            indigenousbool = false
+            memorialbool = false
+            publicbuildingbool = false
+            scilpturebool = false
+            allbuskerbool = false
+            alllandmarkbool = false
+            allartworkbool = false
+            animatedOut()
+        }
+    }
+    
+    
+    @IBAction func allaction(_ sender: UIButton) {
+        
+        buskerButton.isSelected = false
+        bellsButton.isSelected = false
+        alllandmarkbutton.isSelected = false
+        allartworkbutton.isSelected = false
+        othersbutton.isSelected = false
+        bridgebutton.isSelected = false
+        gallerybutton.isSelected = false
+        fountaionButton.isSelected = false
+        indigenousButton.isSelected = false
+        memorialButton.isSelected = false
+        publicbuildingButton.isSelected = false
+        sculptureButton.isSelected = false
+        //
+        geos = []
+        testview.clear()
+        clusterManager.clearItems()
+        for landmark in self.landmarks{
+            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+            geoLocation.notifyOnEntry = true
+            geos.append(geoLocation)
+            
+        }
+        for item in self.artworktemps{
+            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_name)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+            geoLocation.notifyOnEntry = true
+            geos.append(geoLocation)
+            
+        }
+        self.clusterManager.cluster()
+        
+        //
+        bellbool = false
+        othersbool = false
+        bridgebool = false
+        gallerybool = false
+        fountainbool = false
+        indigenousbool = false
+        memorialbool = false
+        publicbuildingbool = false
+        scilpturebool = false
+        allbuskerbool = false
+        alllandmarkbool = false
+        allartworkbool = false
         animatedOut()
     }
     
     
-    @IBOutlet weak var button1: UIButton!
     
-    
-    @IBOutlet weak var button2: UIButton!
-    
-    
-    @IBOutlet weak var button3: UIButton!
-    
-    
-    
-    @IBOutlet weak var button4: UIButton!
-    
-    
-    @IBAction func clear(_ sender: Any) {
+    func addbusker(){
         clusterManager.clearItems()
         geos = [];
         nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
@@ -196,10 +695,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
-        self.button1.layer.cornerRadius = (self.button1.frame.height / 2)
+        
         self.button2.layer.cornerRadius = (self.button2.frame.height / 2)
         self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
-        self.button4.layer.cornerRadius = (self.button4.frame.height / 2)
+       
         /*var bgTask = UIBackgroundTaskIdentifier(rawValue: <#Int#>)
         bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
             UIApplication.shared.endBackgroundTask(bgTask)
@@ -218,6 +717,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         //let newmark = store.object(forKey: "landmark")
         
         getData()
+        getData2()
         //semaphore.wait()
         addingmaker()
         
@@ -250,15 +750,19 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        let item2 = marker.userData as? POIItem
-        if item2!.category == 1 || item2!.category == 2 || item2!.category == 9 {
-            for item in landmarks{
-                if marker.title == item.Landmark_name{
-                    selectlandmark = item
+        if let item2 = marker.userData as? POIItem{
+            if item2.category == 1 || item2.category == 2 || item2.category == 9 {
+                for item in landmarks{
+                    if marker.title == item.Landmark_name{
+                        selectlandmark = item
+                    }
                 }
+                self.performSegue(withIdentifier: "mapDetail", sender: self)
+            }else{
+                self.performSegue(withIdentifier: "artworkDetail", sender: self)
             }
-            self.performSegue(withIdentifier: "mapDetail", sender: self)
         }
+        
         
         
     }
@@ -276,9 +780,25 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     func addingmaker()
     {
         var index = 0
+        geos = []
         for landmark in self.landmarks{
             self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+            geoLocation.notifyOnEntry = true
+            geos.append(geoLocation)
+            
+            index += 1
+        }
+        self.clusterManager.cluster()
+    }
+    
+    func addingmaker2()
+    {
+        var index = 0
+        geos = []
+        for item in self.artworktemps{
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
             
@@ -385,21 +905,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func getData(){
-        /*guard let downloadURL = url else { return }
-        URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
-           CBToast.showToastAction(message: "Download Data!")
-            guard let data = data, error == nil,urlResponse != nil else {
-                print("wrong")
-                return
-            }
-            do{
-                self.landmarks = try JSONDecoder().decode([Landmark].self,from: data)
-                self.semaphore.signal()
-                
-            }catch let error as NSError{
-                print("error: \(error)")
-            }
-        }.resume()*/
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Landmark2")
         do {
             landmarks2 = try managedObjectContext.fetch(fetchRequest) as! [Landmark2]
@@ -410,6 +915,22 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
         catch {
             fatalError("Fail to load list CoreData")
+        }
+    }
+    
+    func getData2(){
+        print("2333333")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ArtWork")
+        do {
+            artworks = try managedObjectContext.fetch(fetchRequest) as! [ArtWork]
+            for item in artworks{
+                print("hhhhhh")
+                let temp = artworktemp(ArtWork_id: Int(item.artist_id), ArtWork_name: item.artwork_name!, ArtWork_address: item.artwork_address!, ArtWork_structure: item.artwork_structure!, ArtWork_description: item.artwork_description!, ArtWork_date: Int(item.artwork_date), ArtWork_latitude: item.artwork_latitude, ArtWork_longtitude: item.artwork_longtitude, Artist_id: Int(item.artist_id), Category_id: Int(item.category_id))
+                artworktemps.append(temp)
+            }
+        }
+        catch {
+            fatalError("Fail to load list CoreData5555")
         }
     }
     
