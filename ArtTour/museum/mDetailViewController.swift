@@ -14,18 +14,34 @@ class mDetailViewController: UIViewController {
 
     var json: JSON?
     
+    
+    @IBAction func readmore(_ sender: Any) {
+        self.performSegue(withIdentifier: "contentSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? contentViewController{
+            destination.str = newstr
+        }
+    }
+    
+    
+    
     @IBOutlet weak var contentimage: UIImageView!
     @IBOutlet weak var displaytitle: UILabel!
     @IBOutlet weak var datemodified: UILabel!
     @IBOutlet weak var recordtype: UILabel!
     @IBOutlet weak var authors: UILabel!
-    @IBOutlet weak var contetn: UITextView!
+   
+    @IBOutlet weak var content: UILabel!
     @IBAction func backbutton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBOutlet weak var backbuttonItem: UIButton!
+    var newstr = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +70,15 @@ class mDetailViewController: UIViewController {
             break
         }
         if json!["content"].string != nil {
-            contetn.text = json!["content"].string!
+            newstr = json!["content"].string!
         }else if json!["objectSummary"].string != nil{
-            contetn.text = json!["objectSummary"].string!
+            newstr = json!["objectSummary"].string!
         }else if json!["biology"].string != nil{
-            contetn.text = json!["biology"].string!
+            newstr = json!["biology"].string!
         }else{
-            contetn.text = "No Description"
+            newstr = "No Description"
         }
+        content.attributedText = newstr.htmlToAttributedString
         var str = ""
         if json!["authors"].count != 0 {
             for n in 0...json!["authors"].count{

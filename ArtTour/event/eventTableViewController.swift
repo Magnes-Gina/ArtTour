@@ -211,8 +211,12 @@ class eventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("---------------------")
-        print(count)
+        if count == 0 {
+            self.tableView.setEmptyView(title: "No event found!.", message: "Please try something else!")
+        }
+        else {
+            self.tableView.restore()
+        }
         return count
     }
 
@@ -309,6 +313,8 @@ class eventTableViewController: UITableViewController {
             CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
+                //self.navigationController?.popToRootViewController(animated: true)
+                print("wrong2")
                 return
             }
             do{

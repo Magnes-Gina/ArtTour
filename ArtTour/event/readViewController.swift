@@ -10,11 +10,13 @@ import UIKit
 
 class readViewController: UIViewController {
 
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textLabel: UITextView!
+    
     var newstr = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-            textLabel.text = newstr
+        textLabel.isEditable = false
+        textLabel.text = newstr
         // Do any additional setup after loading the view.
     }
     
