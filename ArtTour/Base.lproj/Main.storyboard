@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Landmark Surround-->
+        <!--Landmark Map-->
         <scene sceneID="vt6-Fz-zWm">
             <objects>
                 <viewController id="aEs-Tf-2iK" customClass="MapViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LM6-6O-5Hr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Landmark Surround" image="map-new.png" id="EDA-16-lth"/>
+                    <tabBarItem key="tabBarItem" title="Landmark Map" image="map-new.png" id="EDA-16-lth"/>
                     <connections>
                         <outlet property="allartworkbutton" destination="xsi-Ji-Rg5" id="P2s-Zo-QNX"/>
                         <outlet property="alllandmarkbutton" destination="7rl-aZ-b1q" id="ikT-F4-VhT"/>
@@ -702,11 +702,11 @@
             </objects>
             <point key="canvasLocation" x="4984.8000000000002" y="1760.8374384236454"/>
         </scene>
-        <!--Museum Explorer-->
+        <!--Image Recognition-->
         <scene sceneID="ebf-fN-UQy">
             <objects>
                 <navigationController id="67b-GQ-UH7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Museum Explorer" image="loupe.png" id="6Oi-g0-bvW"/>
+                    <tabBarItem key="tabBarItem" title="Image Recognition" image="loupe.png" id="6Oi-g0-bvW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nk3-ZG-W0R">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -2007,12 +2007,6 @@
                                                     <constraint firstAttribute="width" constant="48" id="zbT-zk-Gfy"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-07-01T00:00:01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pV-B0-n4J">
-                                                <rect key="frame" x="99" y="551" width="183" height="21"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shakespeare.png" translatesAutoresizingMaskIntoConstraints="NO" id="OUf-1j-xoN">
                                                 <rect key="frame" x="20" y="634" width="48" height="48"/>
                                                 <constraints>
@@ -2043,7 +2037,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caulfield campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THb-cL-Exs">
-                                                <rect key="frame" x="99" y="717" width="268" height="21"/>
+                                                <rect key="frame" x="99" y="731" width="268" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2064,14 +2058,20 @@
                                                     <action selector="readmore:" destination="q4T-5a-kcK" eventType="touchUpInside" id="77k-pk-DZx"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-07-01T00:00:01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pV-B0-n4J">
+                                                <rect key="frame" x="99" y="565" width="183" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Ccs-TR-qr6" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" id="0ME-Q0-esZ"/>
                                             <constraint firstItem="aJo-u7-iYR" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="59y-ST-2Mb"/>
-                                            <constraint firstItem="3pV-B0-n4J" firstAttribute="top" secondItem="7TM-KU-U2a" secondAttribute="bottom" constant="59" id="8SL-sz-fUE"/>
+                                            <constraint firstItem="3pV-B0-n4J" firstAttribute="top" secondItem="7TM-KU-U2a" secondAttribute="bottom" constant="73" id="8SL-sz-fUE"/>
                                             <constraint firstItem="hQl-dC-0f1" firstAttribute="top" secondItem="OUf-1j-xoN" secondAttribute="bottom" constant="35" id="A1d-GC-VGL"/>
-                                            <constraint firstItem="THb-cL-Exs" firstAttribute="top" secondItem="Dl9-zk-l70" secondAttribute="bottom" constant="35" id="B2H-Ug-IGz"/>
+                                            <constraint firstItem="THb-cL-Exs" firstAttribute="top" secondItem="Dl9-zk-l70" secondAttribute="bottom" constant="49" id="B2H-Ug-IGz"/>
                                             <constraint firstItem="hQl-dC-0f1" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="BoK-Jg-5N1"/>
                                             <constraint firstItem="OUf-1j-xoN" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="CZn-lF-M6e"/>
                                             <constraint firstItem="7TM-KU-U2a" firstAttribute="top" secondItem="Ccs-TR-qr6" secondAttribute="bottom" constant="52" id="EiQ-US-kol"/>
@@ -2080,7 +2080,7 @@
                                             <constraint firstItem="aJo-u7-iYR" firstAttribute="top" secondItem="cvl-ZG-ZXn" secondAttribute="bottom" constant="8" id="IpK-Qx-Xe1"/>
                                             <constraint firstItem="VTM-ht-uhd" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="KxI-pn-EEy"/>
                                             <constraint firstItem="Dl9-zk-l70" firstAttribute="leading" secondItem="OUf-1j-xoN" secondAttribute="trailing" constant="31" id="O5P-My-RcQ"/>
-                                            <constraint firstItem="Dl9-zk-l70" firstAttribute="top" secondItem="3pV-B0-n4J" secondAttribute="bottom" constant="62" id="PB8-1N-6zn"/>
+                                            <constraint firstItem="Dl9-zk-l70" firstAttribute="top" secondItem="3pV-B0-n4J" secondAttribute="bottom" constant="48" id="PB8-1N-6zn"/>
                                             <constraint firstItem="7TM-KU-U2a" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="14" id="PBm-V5-7R4"/>
                                             <constraint firstItem="cvl-ZG-ZXn" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="S8p-DV-s6f"/>
                                             <constraint firstItem="n6J-Zf-1SQ" firstAttribute="leading" secondItem="tz0-v6-IL5" secondAttribute="leading" constant="20" id="Ti6-4j-fGa"/>

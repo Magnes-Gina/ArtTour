@@ -52,18 +52,18 @@ class mDetailViewController: UIViewController {
             contentimage.pin_setImage(from: URL(string: json!["media"][0]["medium"]["uri"].string!))
         }
         displaytitle.text = json!["displayTitle"].string!
-        recordtype.text = json!["recordType"].string!
+        recordtype.text = json!["recordType"].string!.uppercased()
         switch recordtype.text{
-        case "article":
+        case "article".uppercased():
             recordtype.textColor = UIColor.blue
             break
-        case "item":
+        case "item".uppercased():
             recordtype.textColor = UIColor.red
             break
-        case "specimen":
+        case "specimen".uppercased():
             recordtype.textColor = UIColor.purple
             break
-        case "species":
+        case "species".uppercased():
             recordtype.textColor = UIColor.green
             break
         default:
@@ -94,7 +94,16 @@ class mDetailViewController: UIViewController {
         if json!["dateModified"].string == nil{
             datemodified.text = "Not Clear"
         }else{
-            datemodified.text = json!["dateModified"].string!
+            var strtemp = json!["dateModified"].string!
+            strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
+            strtemp = strtemp.replacingOccurrences(of: "Z", with: "")
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let datetemp = df.date(from: strtemp)
+            let df2 = DateFormatter()
+            df2.dateFormat = "MMM dd yyyy HH:mm:ss"
+            let newstr = df2.string(from: datetemp!)
+            datemodified.text = newstr
         }
         // Do any additional setup after loading the view.
     }

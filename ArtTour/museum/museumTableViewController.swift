@@ -83,18 +83,18 @@ class museumTableViewController: UITableViewController {
         cell.imageview.layer.masksToBounds = true
         cell.imageview.layer.cornerRadius = 20
         cell.title.text = temp["displayTitle"].string!
-        cell.type.text = temp["recordType"].string!
+        cell.type.text = temp["recordType"].string!.uppercased()
         switch cell.type.text!{
-        case "article":
+        case "article".uppercased():
             cell.type.textColor = UIColor.blue
             break
-        case "item":
+        case "item".uppercased():
             cell.type.textColor = UIColor.red
             break
-        case "specimen":
+        case "specimen".uppercased():
             cell.type.textColor = UIColor.purple
             break
-        case "species":
+        case "species".uppercased():
             cell.type.textColor = UIColor.green
             break
         default:
@@ -104,7 +104,17 @@ class museumTableViewController: UITableViewController {
             cell.dateModified.text = "Not Clear"
             
         }else{
-            cell.dateModified.text = temp["dateModified"].string!
+            var strtemp = temp["dateModified"].string!
+            strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
+            strtemp = strtemp.replacingOccurrences(of: "Z", with: "")
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let datetemp = df.date(from: strtemp)
+            let df2 = DateFormatter()
+            df2.dateFormat = "MMM dd yyyy HH:mm:ss"
+            let newstr = df2.string(from: datetemp!)
+            cell.dateModified.text = newstr
+            //cell.dateModified.text = temp["dateModified"].string!
         }
         // Configure the cell...
 
