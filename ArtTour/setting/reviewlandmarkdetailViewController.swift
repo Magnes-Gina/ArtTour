@@ -18,6 +18,9 @@ class reviewlandmarkdetailViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     @IBAction func deletefromlist(_ sender: Any) {
         managedObjectContext.delete(landmark!)
         do{
@@ -48,6 +51,7 @@ class reviewlandmarkdetailViewController: UIViewController {
             }
         }
         youtubeView.load(withVideoId: landmark!.video!)
+        self.deleteButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     

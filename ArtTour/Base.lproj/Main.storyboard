@@ -502,6 +502,7 @@
                         <viewLayoutGuide key="safeArea" id="Ijv-4f-aQn"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Upd-pj-eOI" id="WLW-og-eUJ"/>
                         <outlet property="categoryLabel" destination="HbV-Cu-Bn9" id="L1Z-3P-E9H"/>
                         <outlet property="landmark_name" destination="HTw-PU-XdV" id="g4H-oh-lEW"/>
                         <outlet property="savedButton" destination="wpt-uG-agc" id="RRB-Iv-l51"/>
@@ -3037,6 +3038,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="Dfw-vU-viu" id="gRS-CV-aI1"/>
+                        <outlet property="deleteButton" destination="as4-9t-nB5" id="7hx-zh-Oud"/>
                         <outlet property="namelabel" destination="t74-5k-3ba" id="rcq-Dz-Bk1"/>
                         <outlet property="youtubeView" destination="qxV-yJ-QAi" id="nto-aH-nZr"/>
                     </connections>
@@ -3208,6 +3210,7 @@
                         <outlet property="artistLabel" destination="e1Y-4s-Osb" id="w31-Oi-Flf"/>
                         <outlet property="categorylabel" destination="ezv-Bb-GHF" id="hjc-xw-1VA"/>
                         <outlet property="datelabel" destination="vfV-di-eZy" id="nUa-yt-YSv"/>
+                        <outlet property="deleteButton" destination="ySB-CV-TyI" id="Dao-Jp-sKp"/>
                         <outlet property="namelabel" destination="i6q-2b-0RP" id="UsI-sB-GXp"/>
                         <outlet property="profileimg" destination="h3H-oR-SKm" id="EfP-wf-znN"/>
                         <outlet property="structurelabel" destination="T9f-dq-3Lt" id="crL-wO-1N0"/>

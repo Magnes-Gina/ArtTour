@@ -12,6 +12,7 @@ import CoreData
 class reviewartworkdetailViewController: UIViewController {
 
     
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var profileimg: UIImageView!
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var categorylabel: UILabel!
@@ -25,6 +26,7 @@ class reviewartworkdetailViewController: UIViewController {
         if artwork!.artwork_description == "0"{
             displayMessage("This ArtWork Doesn't have more information", "Sorry")
         }else{
+            print(artwork!.artwork_description!)
             UIApplication.shared.open(URL(string: "\(artwork!.artwork_description!)")!, options: [:], completionHandler: nil)
         }
     }
@@ -88,6 +90,7 @@ class reviewartworkdetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.deleteButton.layer.cornerRadius = 5
         if Int(artwork!.category_id) == 8{
             profileimg.image = UIImage(named: "smallsculpture.png")
         }

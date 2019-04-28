@@ -20,6 +20,9 @@ class mapDetailViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var savedButton: UIButton!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
     @IBAction func saved(_ sender: Any) {
         if !saved{
             //save
@@ -82,6 +85,8 @@ class mapDetailViewController: UIViewController {
         youtube.load(withVideoId: landmark!.video)
         landmark_name.text = landmark!.Landmark_name
         getCategroy()
+        self.backButton.layer.cornerRadius = 5
+        self.savedButton.layer.cornerRadius = 5
         //check()
         // Do any additional setup after loading the view.
     }
