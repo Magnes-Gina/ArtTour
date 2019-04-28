@@ -168,17 +168,29 @@ class eventTableViewController: UITableViewController {
     var page = 0
     var pagenow = 1;
     let semaphore = DispatchSemaphore(value: 0)
-    var requesturl = "https://www.eventbriteapi.com/v3/events/search/?token=WEH7N6CEZAQ35WUQE6AM&location.address=Melbourne&categories=105&expand=venue"
+    var orinrequesturl = "https://www.eventbriteapi.com/v3/events/search/?token=WEH7N6CEZAQ35WUQE6AM&location.address=Melbourne&expand=venue"
+    var requesturl = ""
+    var time = "Anytime"
+    var mood = "Anything"
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        self.getData(requestUrl: requesturl)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         //self.tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "eventIdentifier")
-        //getData()
+        requesturl = orinrequesturl
+        if time != "Anytime"{
+            requesturl = requesturl + "&" + time
+        }
+        if mood != "Anything"
+        {
+            requesturl = requesturl + "&" + mood
+        }
+        print(requesturl)
+        self.getData(requestUrl: requesturl)
         semaphore.wait()
         self.tableView.reloadData()
         //count = json!["pagination"]["object_count"].int!
@@ -219,7 +231,15 @@ class eventTableViewController: UITableViewController {
         cell.eventImage.layer.cornerRadius = 20
         //print(temp["start"]["local"].string!)
         //print(indexPath.row)
-        cell.time.text = temp["start"]["local"].string!
+        var strtemp = temp["start"]["local"].string!
+        strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let datetemp = df.date(from: strtemp)
+        let df2 = DateFormatter()
+        df2.dateFormat = "MMM dd yyyy hh:mm:ss"
+        let newstr = df2.string(from: datetemp!)
+        cell.time.text = newstr
         //cell.time.text = "NONE"
         cell.title.text = temp["name"]["text"].string!
         cell.address.text = temp["venue"]["address"]["localized_address_display"].string!

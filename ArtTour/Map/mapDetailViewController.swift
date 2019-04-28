@@ -14,13 +14,51 @@ class mapDetailViewController: UIViewController {
 
     
     var landmark: Landmark?
+    var saveds = [SavedLandmark]()
     
-    
+    var saved = false
     @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var savedButton: UIButton!
     @IBAction func saved(_ sender: Any) {
-    
+        if !saved{
+            //save
+            let newlandmark = NSEntityDescription.insertNewObject(forEntityName: "SavedLandmark", into: self.managedObjectContext) as! SavedLandmark
+            newlandmark.landmark_id = Int16(landmark!.Landmark_id)
+            newlandmark.landmark_name = landmark!.Landmark_name
+            newlandmark.landmark_latitude = landmark!.Landmark_latitude
+            newlandmark.landmark_longtitude = landmark!.Landmark_longtitude
+            newlandmark.category_id = Int16(landmark!.Category_id)
+            newlandmark.video = landmark!.video
+            do{
+                try self.managedObjectContext.save()
+                saved = true
+                savedButton.setTitle("Cancell Save", for: .normal)
+                savedButton.backgroundColor = UIColor.lightGray
+                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
+                saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
+            }catch{
+                fatalError("Fail to save CoreData")
+            }
+        }else{
+            
+            for item in saveds{
+                if landmark?.Landmark_id == Int(item.landmark_id){
+                    print("want to delete")
+                    managedObjectContext.delete(item)
+                    do{
+                        try self.managedObjectContext.save()
+                        saved = false
+                        savedButton.setTitle("Save to Visited", for: .normal)
+                        savedButton.backgroundColor = UIColor.black
+                        
+                    }catch{
+                        fatalError("Fail to save CoreData")
+                    }
+                    break
+                }
+            }
+        }
     
     }
     
@@ -44,7 +82,26 @@ class mapDetailViewController: UIViewController {
         youtube.load(withVideoId: landmark!.video)
         landmark_name.text = landmark!.Landmark_name
         getCategroy()
+        //check()
         // Do any additional setup after loading the view.
+    }
+    
+    func check(){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
+        do{
+            saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
+            for item in saveds{
+                if landmark?.Landmark_id == Int(item.landmark_id){
+                    saved = true
+                    savedButton.setTitle("Cancell Save", for: .normal)
+                    savedButton.backgroundColor = UIColor.lightGray
+                    print("find saved!")
+                    break
+                }
+            }
+        }catch{
+            fatalError("Fail to load CoreData")
+        }
     }
     
     func getCategroy(){
@@ -67,6 +124,7 @@ class mapDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //
         super.viewWillAppear(animated)
+        check()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

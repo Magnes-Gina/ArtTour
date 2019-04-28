@@ -50,6 +50,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
     let store = UserDefaults.standard
     var selectlandmark: Landmark?
+    var selectArtWork: artworktemp?
     private var managedObjectContext: NSManagedObjectContext
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,6 +58,13 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
         super.init(coder: aDecoder)!
     }
+    
+    
+    @IBAction func collectionAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "progressSegue", sender: self)
+    }
+    
+    
     
     @IBOutlet var choiceView: UIView!
     @IBAction func downButton(_ sender: Any) {
@@ -90,6 +98,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
+    @IBOutlet weak var collectionButton: UIButton!
     
     var gallerybool = false
     var bridgebool = false
@@ -674,16 +683,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     @IBAction func refresh(_ sender: Any) {
-        /*landmarks = []
-        getData()
-        self.semaphore.wait()
-        if makers.count == 0{
-            clusterManager.clearItems()
-            addingmaker()
-            //self.semaphore.signal()
-        }*/
         animatedIn()
-        
     }
     
     @IBOutlet weak var Settting: UIButton!
@@ -698,11 +698,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         
         self.button2.layer.cornerRadius = (self.button2.frame.height / 2)
         self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
-       
-        /*var bgTask = UIBackgroundTaskIdentifier(rawValue: <#Int#>)
-        bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
-            UIApplication.shared.endBackgroundTask(bgTask)
-        })*/
+        self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 2)
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
@@ -718,11 +714,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         
         getData()
         getData2()
-        //semaphore.wait()
         addingmaker()
-        
-        //store.set("what",forKey: "landmark")
-        //self.semaphore.signal()
         choiceView.layer.cornerRadius = 5
         
     }
@@ -759,6 +751,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 }
                 self.performSegue(withIdentifier: "mapDetail", sender: self)
             }else{
+                for item in artworktemps{
+                    if marker.title == item.ArtWork_name{
+                        selectArtWork = item
+                    }
+                }
                 self.performSegue(withIdentifier: "artworkDetail", sender: self)
             }
         }
@@ -772,6 +769,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         // Pass the selected object to the new view controller.
         if let destination = segue.destination as? mapDetailViewController{
             destination.landmark = selectlandmark
+        }
+        if let destination = segue.destination as? ArtWorkViewController{
+            destination.artwork = selectArtWork
         }
     }
     
@@ -885,7 +885,34 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
         if let temp = (marker.userData as? POIItem){
-            marker.iconView = UIImageView(image: UIImage(named: "shrine-remembrance.png"))
+            if temp.category! == 9{
+                marker.iconView = UIImageView(image: UIImage(named: "shrine-remembrance.png"))
+            }
+            if temp.category! == 8{
+                marker.iconView = UIImageView(image: UIImage(named: "smallsculpture.png"))
+            }
+            if temp.category! == 7{
+                marker.iconView = UIImageView(image: UIImage(named: "smallpublicbuilding.png"))
+            }
+            if temp.category! == 6{
+                marker.iconView = UIImageView(image: UIImage(named: "smallmemorial.png"))
+            }
+            if temp.category! == 5{
+                marker.iconView = UIImageView(image: UIImage(named: "smallindigenous.png"))
+            }
+            if temp.category! == 4{
+                marker.iconView = UIImageView(image: UIImage(named: "smallfountain.png"))
+            }
+            if temp.category! == 3{
+                marker.iconView = UIImageView(image: UIImage(named: "smallbell.png"))
+            }
+            if temp.category! == 2{
+                marker.iconView = UIImageView(image: UIImage(named: "smallbridge.png"))
+            }
+            if temp.category! == 1{
+                marker.iconView = UIImageView(image: UIImage(named: "smallgallery.png"))
+            }
+        
             
         }
     }
@@ -999,15 +1026,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
