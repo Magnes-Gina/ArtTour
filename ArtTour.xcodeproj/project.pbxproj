@@ -31,6 +31,9 @@
 		6948A17E22750C8B0098AF3F /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A17A22750C8B0098AF3F /* car.png */; };
 		6948A17F22750C8B0098AF3F /* trekking.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A17B22750C8B0098AF3F /* trekking.png */; };
 		6948A18122750D3B0098AF3F /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A18022750D3B0098AF3F /* heart.png */; };
+		6948A18322759F1C0098AF3F /* imagereco.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A18222759F1C0098AF3F /* imagereco.png */; };
+		6948A1852275A32D0098AF3F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A1842275A32D0098AF3F /* camera.png */; };
+		6948A1872275A7B90098AF3F /* artevent.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6948A1862275A7B90098AF3F /* artevent.jpeg */; };
 		694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0A632252DAC000111F0A /* AppDelegate.swift */; };
 		694B0A662252DAC000111F0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0A652252DAC000111F0A /* ViewController.swift */; };
 		694B0A692252DAC000111F0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694B0A672252DAC000111F0A /* Main.storyboard */; };
@@ -205,6 +208,9 @@
 		6948A17A22750C8B0098AF3F /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		6948A17B22750C8B0098AF3F /* trekking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trekking.png; sourceTree = "<group>"; };
 		6948A18022750D3B0098AF3F /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		6948A18222759F1C0098AF3F /* imagereco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagereco.png; sourceTree = "<group>"; };
+		6948A1842275A32D0098AF3F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		6948A1862275A7B90098AF3F /* artevent.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = artevent.jpeg; sourceTree = "<group>"; };
 		694B0A602252DAC000111F0A /* ArtTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		694B0A632252DAC000111F0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		694B0A652252DAC000111F0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -431,6 +437,9 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6948A1862275A7B90098AF3F /* artevent.jpeg */,
+				6948A1842275A32D0098AF3F /* camera.png */,
+				6948A18222759F1C0098AF3F /* imagereco.png */,
 				6948A18022750D3B0098AF3F /* heart.png */,
 				6948A17922750C8B0098AF3F /* bicycle.png */,
 				6948A17A22750C8B0098AF3F /* car.png */,
@@ -720,8 +729,10 @@
 				69587CCD227368000051E4A6 /* indigenous.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
+				6948A1872275A7B90098AF3F /* artevent.jpeg in Resources */,
 				69587D1D227435B70051E4A6 /* satisfied.png in Resources */,
 				694B0A692252DAC000111F0A /* Main.storyboard in Resources */,
+				6948A1852275A32D0098AF3F /* camera.png in Resources */,
 				697B227A22590C3C009682BF /* calendar (1).png in Resources */,
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
@@ -734,6 +745,7 @@
 				6948A15222746B680098AF3F /* settings.png in Resources */,
 				695F6170225B5E6F00AD8120 /* skip.png in Resources */,
 				695F616E225B557200AD8120 /* Team_Logo.png in Resources */,
+				6948A18322759F1C0098AF3F /* imagereco.png in Resources */,
 				6948A161227476780098AF3F /* artworksetting.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1075,14 +1087,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRRTGKTL7G;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourvv2;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtTour-Bridging-Header.h";
@@ -1101,14 +1113,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MRRTGKTL7G;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourvv2;
+				PRODUCT_BUNDLE_IDENTIFIER = Monash.ArtTourV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ArtTour-Bridging-Header.h";
