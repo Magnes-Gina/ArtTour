@@ -44,7 +44,18 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "reviewlandmarkdetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? reviewlandmarkdetailViewController{
+            
+            destination.landmark = saved[(self.myTableview.indexPathForSelectedRow?.row)!]
+            destination.categorys = categorys
+            
+        }
+    }
     
     @IBOutlet weak var myTableview: UITableView!
     var saved = [SavedLandmark]()

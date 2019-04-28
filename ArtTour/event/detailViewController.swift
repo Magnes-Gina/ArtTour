@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import GoogleMaps
 import CoreLocation
+import CoreData
 
 class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate{
 
@@ -18,6 +19,55 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     @IBOutlet weak var likeButton: UIButton!
     
     @IBAction func likeAction(_ sender: Any) {
+        if !saveflag{
+            let newevent = NSEntityDescription.insertNewObject(forEntityName: "Event2", into: self.managedObjectContext) as! Event2
+            newevent.about = eventdescription.text!
+            newevent.address = address.text!
+            newevent.startdate = eventDate.text!
+            newevent.eventid = Int64(Int(json!["id"].string!)!)
+            newevent.eventname = eventTitle.text!
+            if json!["logo"]["original"]["url"].string == nil{
+                newevent.imgurl = "none"
+            }else{
+                newevent.imgurl = json!["logo"]["original"]["url"].string!
+            }
+            
+            newevent.latitude = Double(json!["venue"]["latitude"].string!)!
+            newevent.longtitude = Double(json!["venue"]["longitude"].string!)!
+            newevent.location = venue.text!
+            newevent.address = address.text!
+            newevent.link = link.text!
+            do{
+                try self.managedObjectContext.save()
+                saveflag = true
+                likeButton.backgroundColor = UIColor.red
+                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
+                events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
+                print("saved to coredata")
+            }catch{
+                fatalError("Fail to save CoreData")
+            }
+        }else{
+            for item2 in events{
+                if Int(json!["id"].string!) == Int(item2.eventid){
+                    print("want to delete")
+                    print(Int(json!["id"].string!)!)
+                    print(Int(item2.eventid))
+                    do{
+                        managedObjectContext.delete(item2)
+                        try self.managedObjectContext.save()
+                        saveflag = false
+                        likeButton.backgroundColor  = UIColor.white
+                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
+                        events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
+                       print("total events: \(events.count)")
+                    }catch{
+                        fatalError("Fail to save CoreData")
+                    }
+                    break
+                }
+            }
+        }
     }
     
     @IBOutlet weak var image: UIImageView!
@@ -25,13 +75,42 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     
     @IBOutlet weak var backbutton: UIButton!
     
-    
+    var events = [Event2]()
+    var saveflag = false
     
     @IBOutlet weak var link: UITextView!
     
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    func savedata(){
+        
+    }
+    
+    func check(){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
+        do {
+            events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
+            print(events.count)
+            var boolflag = true
+            for item in events{
+                if Int(json!["id"].string!) == Int(item.eventid){
+                    saveflag = true
+                    boolflag = false
+                    likeButton.backgroundColor = UIColor.red
+                    break
+                }
+            }
+            if boolflag{
+                saveflag = false
+                likeButton.backgroundColor = UIColor.white
+            }
+        }
+        catch {
+            fatalError("Fail to load list CoreData")
+        }
     }
     
     
@@ -86,6 +165,14 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     let locationManger = CLLocationManager()
     
     var json: JSON?
+    
+    private var managedObjectContext: NSManagedObjectContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
+        super.init(coder: aDecoder)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +281,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        check()
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     

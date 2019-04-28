@@ -44,8 +44,11 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     
     private func showResult(){
         let resultAlertController = UIAlertController(title: "Detection Results", message: nil, preferredStyle: .actionSheet)
-        resultAlertController.addAction(UIAlertAction(title: "OK", style: .destructive) {_ in
+        resultAlertController.addAction(UIAlertAction(title: "OK, try again", style: .default) {_ in
             resultAlertController.dismiss(animated: true, completion: nil)
+        })
+        resultAlertController.addAction(UIAlertAction(title: "Find it on map", style: .default) {_ in
+            self.tabBarController?.selectedIndex = 1
         })
         resultAlertController.message = resultsText
         self.indicator.isHidden = true
@@ -96,19 +99,6 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
                 self.showResult()
                 return
             }
-            
-            /*let str =  landmarks.map { landmark -> String in
-                return "\(String(describing: landmark.landmark ?? ""))"
-                }.joined()
-            self.resultsText = str*/
-            
-            /*self.resultsText = landmarks.map { landmark -> String in
-               
-                return "Landmark: \(String(describing: landmark.landmark ?? "")), " +
-                    "Confidence: \(String(describing: landmark.confidence ?? 0) ), " +
-                    "EntityID: \(String(describing: landmark.entityId ?? "") ), " +
-                "Frame: \(landmark.frame)"
-                }.joined(separator: "\n")*/
             
             print(landmarks.count)
             for landmark in landmarks{

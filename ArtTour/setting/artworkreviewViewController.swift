@@ -69,7 +69,7 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
         myTableview.delegate = self
         myTableview.dataSource = self
-        getdata()
+        //getdata()
         getdata2()
         // Do any additional setup after loading the view.
     }
@@ -116,6 +116,16 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
                 fatalError("can not save to coredata")
             }
             
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "reviewartworkDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? reviewartworkdetailViewController{
+            //
         }
     }
     
