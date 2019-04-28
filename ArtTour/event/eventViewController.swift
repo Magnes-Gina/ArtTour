@@ -35,6 +35,7 @@ class eventViewController: UIViewController,Addmood {
         df.dateFormat = "MMM dd yyyy"
         
         eventtime = df.string(from: datePicker.date)
+        print(eventtime)
         timeLabel.text = eventtime
         animatedOut()
     }

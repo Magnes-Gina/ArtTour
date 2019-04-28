@@ -56,7 +56,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     var images: [String] = ["guide1.jpeg","guide2.jpeg","guide3.jpeg"]
     var frame = CGRect(x:0,y:0,width: 0,height: 0)
-    
+    let semaphore = DispatchSemaphore(value: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +73,11 @@ class testViewController: UIViewController,UIScrollViewDelegate{
         scrollView.delegate = self
         self.view.sendSubviewToBack(scrollView)
         getData()
+        semaphore.wait()
         getData2()
+        semaphore.wait()
         getData3()
+        semaphore.wait()
         getData4()
     }
     //test
@@ -100,6 +103,8 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     newlandmark.video = item.video
                     try self.managedObjectContext?.save()
                 }
+                //self.getData2()
+                self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -122,6 +127,8 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     newCategory.category_name = item.Category_name
                     try self.managedObjectContext?.save()
                 }
+                //self.getData3()
+                self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -145,6 +152,8 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     print(item.Artist_id)
                     try self.managedObjectContext?.save()
                 }
+                //self.getData4()
+                self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -176,6 +185,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     print(item.ArtWork_id)
                     try self.managedObjectContext?.save()
                 }
+                self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
