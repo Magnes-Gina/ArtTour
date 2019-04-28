@@ -100,10 +100,10 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         var strtemp = json!["start"]["local"].string!
         strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
         let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let datetemp = df.date(from: strtemp)
         let df2 = DateFormatter()
-        df2.dateFormat = "MMM dd yyyy hh:mm:ss"
+        df2.dateFormat = "MMM dd yyyy HH:mm:ss"
         let newstr = df2.string(from: datetemp!)
         eventDate.text = newstr
         var strtemp2 = json!["end"]["local"].string!

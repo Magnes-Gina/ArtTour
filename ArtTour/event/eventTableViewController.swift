@@ -233,33 +233,16 @@ class eventTableViewController: UITableViewController {
         //print(indexPath.row)
         var strtemp = temp["start"]["local"].string!
         strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
-        
-        let locale = NSLocale.current
-        let formatter: String = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: locale)!
-        if formatter.contains("a"){
-            print("sssssssssss")
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let datetemp = df.date(from: strtemp)
-            print(Date())
-            print(strtemp)
-            print(datetemp!)
-            let df2 = DateFormatter()
-            df2.dateFormat = "MMM dd yyyy h:mm:ss a"
-            let newstr = df2.string(from: datetemp!)
-            cell.time.text = newstr
-        }else{
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            let datetemp = df.date(from: strtemp)
-            print(Date())
-            print(strtemp)
-            print(datetemp!)
-            let df2 = DateFormatter()
-            df2.dateFormat = "MMM dd yyyy hh:mm:ss"
-            let newstr = df2.string(from: datetemp!)
-            cell.time.text = newstr
-        }
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let datetemp = df.date(from: strtemp)
+        print(Date())
+        print(strtemp)
+        print(datetemp!)
+        let df2 = DateFormatter()
+        df2.dateFormat = "MMM dd yyyy HH:mm:ss"
+        let newstr = df2.string(from: datetemp!)
+        cell.time.text = newstr
         
         //cell.time.text = "NONE"
         cell.title.text = temp["name"]["text"].string!
