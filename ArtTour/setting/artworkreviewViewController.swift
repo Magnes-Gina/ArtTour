@@ -125,7 +125,8 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? reviewartworkdetailViewController{
-            //
+            destination.categories = categorys
+            destination.artwork = saved[(self.myTableview.indexPathForSelectedRow?.row)!]
         }
     }
     

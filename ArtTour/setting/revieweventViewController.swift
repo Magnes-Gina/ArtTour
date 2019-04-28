@@ -54,6 +54,10 @@ class revieweventViewController: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "revieweventdetail", sender: self)
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -93,14 +97,15 @@ class revieweventViewController: UIViewController,UITableViewDelegate,UITableVie
         getdata()
         self.myTableview.reloadData()
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? revieweventdetailViewController{
+            destination.event = events[(self.myTableview.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+ 
 
 }

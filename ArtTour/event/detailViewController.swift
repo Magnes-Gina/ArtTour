@@ -24,6 +24,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
             newevent.about = eventdescription.text!
             newevent.address = address.text!
             newevent.startdate = eventDate.text!
+            newevent.enddate = endDate.text!
             newevent.eventid = Int64(Int(json!["id"].string!)!)
             newevent.eventname = eventTitle.text!
             if json!["logo"]["original"]["url"].string == nil{

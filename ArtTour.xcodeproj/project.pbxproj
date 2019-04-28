@@ -180,6 +180,7 @@
 		698D501F2276258400767F03 /* revieweventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D501C2276258400767F03 /* revieweventTableViewCell.swift */; };
 		698D502122762C6F00767F03 /* reviewlandmarkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */; };
 		698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */; };
+		698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502422763C6C00767F03 /* revieweventdetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +330,7 @@
 		698D501C2276258400767F03 /* revieweventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revieweventTableViewCell.swift; sourceTree = "<group>"; };
 		698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewlandmarkdetailViewController.swift; sourceTree = "<group>"; };
 		698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewartworkdetailViewController.swift; sourceTree = "<group>"; };
+		698D502422763C6C00767F03 /* revieweventdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revieweventdetailViewController.swift; sourceTree = "<group>"; };
 		B8B06201E7B45CB3DFEC1A56 /* Pods-ArtTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtTour/Pods-ArtTour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -372,6 +374,7 @@
 				698D501C2276258400767F03 /* revieweventTableViewCell.swift */,
 				698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */,
 				698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */,
+				698D502422763C6C00767F03 /* revieweventdetailViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */,
 				6948A16B227495240098AF3F /* reviewlandmarkViewController.swift in Sources */,
 				6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */,
+				698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */,
 				6948A18D2275C8500098AF3F /* contentViewController.swift in Sources */,
 				697B22752258F122009682BF /* detailViewController.swift in Sources */,
 				69587CA52273582F0051E4A6 /* Artist+CoreDataProperties.swift in Sources */,
