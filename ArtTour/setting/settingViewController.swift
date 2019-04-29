@@ -78,6 +78,7 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     private var managedObjectContext: NSManagedObjectContext?
     
+    
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
