@@ -43,10 +43,19 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     var artworks = [artworktemp]()
     
     private var managedObjectContext: NSManagedObjectContext?
+    private var managedObjectContext2: NSManagedObjectContext?
+    private var managedObjectContext3: NSManagedObjectContext?
+    private var managedObjectContext4: NSManagedObjectContext?
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
+        managedObjectContext2 = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedObjectContext2?.parent = managedObjectContext
+        managedObjectContext3 = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedObjectContext3?.parent = managedObjectContext
+        managedObjectContext4 = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedObjectContext4?.parent = managedObjectContext
         super.init(coder: aDecoder)!
     }
     
@@ -56,7 +65,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     var images: [String] = ["guide1.jpeg","guide2.jpeg","guide3.jpeg","guide4.jpeg"]
     var frame = CGRect(x:0,y:0,width: 0,height: 0)
-    let semaphore = DispatchSemaphore(value: 0)
+    //let semaphore = DispatchSemaphore(value: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +82,11 @@ class testViewController: UIViewController,UIScrollViewDelegate{
         scrollView.delegate = self
         self.view.sendSubviewToBack(scrollView)
         getData()
-        semaphore.wait()
+        //semaphore.wait()
         getData2()
-        semaphore.wait()
+        //semaphore.wait()
         getData3()
-        semaphore.wait()
+        //semaphore.wait()
         getData4()
     }
     //test
@@ -104,7 +113,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     try self.managedObjectContext?.save()
                 }
                 //self.getData2()
-                self.semaphore.signal()
+                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -122,13 +131,13 @@ class testViewController: UIViewController,UIScrollViewDelegate{
             do{
                 self.tempcats = try JSONDecoder().decode([tempcat].self,from: data)
                 for item in self.tempcats{
-                    let newCategory = NSEntityDescription.insertNewObject(forEntityName: "Category", into: self.managedObjectContext!) as! Category
+                    let newCategory = NSEntityDescription.insertNewObject(forEntityName: "Category", into: self.managedObjectContext2!) as! Category
                     newCategory.category_id = Int16(item.Category_id)
                     newCategory.category_name = item.Category_name
-                    try self.managedObjectContext?.save()
+                    try self.managedObjectContext2?.save()
                 }
                 //self.getData3()
-                self.semaphore.signal()
+                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -146,14 +155,14 @@ class testViewController: UIViewController,UIScrollViewDelegate{
             do{
                 self.artiststemp = try JSONDecoder().decode([artisttemp].self,from: data)
                 for item in self.artiststemp{
-                    let newArtist = NSEntityDescription.insertNewObject(forEntityName: "Artist", into: self.managedObjectContext!) as! Artist
+                    let newArtist = NSEntityDescription.insertNewObject(forEntityName: "Artist", into: self.managedObjectContext3!) as! Artist
                     newArtist.artist_id = Int16(item.Artist_id)
                     newArtist.artist_name = item.Artist_name
                     print(item.Artist_id)
-                    try self.managedObjectContext?.save()
+                    try self.managedObjectContext3?.save()
                 }
                 //self.getData4()
-                self.semaphore.signal()
+                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -171,7 +180,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
             do{
                 self.artworks = try JSONDecoder().decode([artworktemp].self,from: data)
                 for item in self.artworks{
-                    let newartwork = NSEntityDescription.insertNewObject(forEntityName: "ArtWork", into: self.managedObjectContext!) as! ArtWork
+                    let newartwork = NSEntityDescription.insertNewObject(forEntityName: "ArtWork", into: self.managedObjectContext4!) as! ArtWork
                     newartwork.artwork_id = Int16(item.ArtWork_id)
                     newartwork.artwork_name = item.ArtWork_name
                     newartwork.artwork_address = item.ArtWork_address
@@ -183,9 +192,9 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     newartwork.category_id = Int16(item.Category_id)
                     newartwork.artwork_date = Int16(item.ArtWork_date)
                     print(item.ArtWork_id)
-                    try self.managedObjectContext?.save()
+                    try self.managedObjectContext4?.save()
                 }
-                self.semaphore.signal()
+                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -194,7 +203,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //
-        var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)
     }
     /*
