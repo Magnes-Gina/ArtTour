@@ -17,7 +17,7 @@ class ReInstructionViewController: UIViewController,UIScrollViewDelegate {
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var images: [String] = ["guide1.jpeg","guide2.jpeg","guide3.jpeg","guide4.jpeg"]
+    var images: [String] = ["guide4.jpeg","guide1.jpeg","guide3.jpeg","guide2.jpeg"]
     var frame = CGRect(x:0,y:0,width: 0,height: 0)
     
     
