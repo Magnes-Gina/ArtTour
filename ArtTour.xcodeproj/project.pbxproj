@@ -148,9 +148,6 @@
 		695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */; };
 		695F616E225B557200AD8120 /* Team_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616D225B557200AD8120 /* Team_Logo.png */; };
 		695F6170225B5E6F00AD8120 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 695F616F225B5E6F00AD8120 /* skip.png */; };
-		695F6176225B6E6600AD8120 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 695F6175225B6E6600AD8120 /* guide1.jpeg */; };
-		695F6178225B712300AD8120 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 695F6177225B712300AD8120 /* guide2.jpeg */; };
-		695F617A225B729900AD8120 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 695F6179225B729900AD8120 /* guide3.jpeg */; };
 		697B2269225866B9009682BF /* eventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2268225866B9009682BF /* eventViewController.swift */; };
 		697B22732258E6FB009682BF /* mel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B22722258E6FB009682BF /* mel4.png */; };
 		697B22752258F122009682BF /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B22742258F122009682BF /* detailViewController.swift */; };
@@ -181,6 +178,11 @@
 		698D502122762C6F00767F03 /* reviewlandmarkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */; };
 		698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */; };
 		698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502422763C6C00767F03 /* revieweventdetailViewController.swift */; };
+		698D502A2276FCD100767F03 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50262276FCCF00767F03 /* guide1.jpeg */; };
+		698D502B2276FCD100767F03 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50272276FCCF00767F03 /* guide2.jpeg */; };
+		698D502C2276FCD100767F03 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50282276FCD000767F03 /* guide3.jpeg */; };
+		698D502D2276FCD100767F03 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50292276FCD000767F03 /* guide4.jpeg */; };
+		698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 698D502E2277015800767F03 /* heart-in-like-circular-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,9 +306,6 @@
 		695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapDetailViewController.swift; sourceTree = "<group>"; };
 		695F616D225B557200AD8120 /* Team_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Team_Logo.png; sourceTree = "<group>"; };
 		695F616F225B5E6F00AD8120 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
-		695F6175225B6E6600AD8120 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
-		695F6177225B712300AD8120 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
-		695F6179225B729900AD8120 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
 		697B2268225866B9009682BF /* eventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventViewController.swift; sourceTree = "<group>"; };
 		697B22722258E6FB009682BF /* mel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mel4.png; sourceTree = "<group>"; };
 		697B22742258F122009682BF /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +330,11 @@
 		698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewlandmarkdetailViewController.swift; sourceTree = "<group>"; };
 		698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewartworkdetailViewController.swift; sourceTree = "<group>"; };
 		698D502422763C6C00767F03 /* revieweventdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revieweventdetailViewController.swift; sourceTree = "<group>"; };
+		698D50262276FCCF00767F03 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
+		698D50272276FCCF00767F03 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
+		698D50282276FCD000767F03 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
+		698D50292276FCD000767F03 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
+		698D502E2277015800767F03 /* heart-in-like-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-in-like-circular-button.png"; sourceTree = "<group>"; };
 		B8B06201E7B45CB3DFEC1A56 /* Pods-ArtTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtTour/Pods-ArtTour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -474,6 +478,11 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				698D502E2277015800767F03 /* heart-in-like-circular-button.png */,
+				698D50262276FCCF00767F03 /* guide1.jpeg */,
+				698D50272276FCCF00767F03 /* guide2.jpeg */,
+				698D50282276FCD000767F03 /* guide3.jpeg */,
+				698D50292276FCD000767F03 /* guide4.jpeg */,
 				698D5004227611F300767F03 /* like.png */,
 				690F49A52275D7FB00B249D7 /* calendar (2).png */,
 				690F49A42275D7FB00B249D7 /* flow-chart.png */,
@@ -519,9 +528,6 @@
 				69587CC0227367890051E4A6 /* bridge.png */,
 				69587CC4227367BA0051E4A6 /* big-ben.png */,
 				69587CBC227367610051E4A6 /* gallery.png */,
-				695F6179225B729900AD8120 /* guide3.jpeg */,
-				695F6177225B712300AD8120 /* guide2.jpeg */,
-				695F6175225B6E6600AD8120 /* guide1.jpeg */,
 				695F616F225B5E6F00AD8120 /* skip.png */,
 				695F616D225B557200AD8120 /* Team_Logo.png */,
 				697B2295225AA466009682BF /* blood-type.png */,
@@ -723,17 +729,15 @@
 			files = (
 				697B22732258E6FB009682BF /* mel4.png in Resources */,
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
+				698D502D2276FCD100767F03 /* guide4.jpeg in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
-				695F6176225B6E6600AD8120 /* guide1.jpeg in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
 				69587D17227433320051E4A6 /* gradual.jpg in Resources */,
 				6948A17C22750C8B0098AF3F /* train.png in Resources */,
 				690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */,
-				695F6178225B712300AD8120 /* guide2.jpeg in Resources */,
-				695F617A225B729900AD8120 /* guide3.jpeg in Resources */,
 				6948A16522747E8B0098AF3F /* sharing-content.png in Resources */,
 				694B0A712252DAC100111F0A /* LaunchScreen.storyboard in Resources */,
 				694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */,
@@ -748,15 +752,18 @@
 				6948A162227476780098AF3F /* landmarksetting.png in Resources */,
 				6948A17E22750C8B0098AF3F /* car.png in Resources */,
 				694B0ABB22564CD000111F0A /* calendar.png in Resources */,
+				698D502C2276FCD100767F03 /* guide3.jpeg in Resources */,
 				69587CBD227367610051E4A6 /* gallery.png in Resources */,
 				6948A17D22750C8B0098AF3F /* bicycle.png in Resources */,
 				694B0AB322563CC200111F0A /* map-new.png in Resources */,
 				697B2283225A36CA009682BF /* loupe.png in Resources */,
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
+				698D502A2276FCD100767F03 /* guide1.jpeg in Resources */,
 				69587CEA22739DB50051E4A6 /* navigation.png in Resources */,
 				6948A17F22750C8B0098AF3F /* trekking.png in Resources */,
 				69587D112273A1310051E4A6 /* collection.png in Resources */,
+				698D502B2276FCD100767F03 /* guide2.jpeg in Resources */,
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
 				69587CC5227367BA0051E4A6 /* big-ben.png in Resources */,
 				69587D0D22739F7C0051E4A6 /* smallbell.png in Resources */,
@@ -773,6 +780,7 @@
 				694B0AAF225638E500111F0A /* church.png in Resources */,
 				69587CD12273683B0051E4A6 /* memorial.png in Resources */,
 				69587CCD227368000051E4A6 /* indigenous.png in Resources */,
+				698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
 				69587D1D227435B70051E4A6 /* satisfied.png in Resources */,

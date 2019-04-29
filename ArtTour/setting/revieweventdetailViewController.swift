@@ -72,25 +72,82 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
     
     
     @IBAction func bycarAction(_ sender: Any) {
-        let locationtemp = locationManger.location?.coordinate
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=driving")!, options: [:], completionHandler: nil)
+            break
+        case .authorizedWhenInUse:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=driving")!, options: [:], completionHandler: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
         
-        UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=driving")!, options: [:], completionHandler: nil)
     }
     
     @IBOutlet weak var bycarButton: UIButton!
     
     
     @IBAction func byWalkAction(_ sender: Any) {
-        let locationtemp = locationManger.location?.coordinate
-        UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=walking")!, options: [:], completionHandler: nil)
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=walking")!, options: [:], completionHandler: nil)
+            break
+        case .authorizedWhenInUse:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=walking")!, options: [:], completionHandler: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     @IBOutlet weak var bywalkbutton: UIButton!
     
     
     @IBAction func bybikeAction(_ sender: Any) {
-        let locationtemp = locationManger.location?.coordinate
-        UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            break
+        case .authorizedWhenInUse:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     
@@ -98,8 +155,27 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
     
     
     @IBAction func bypublicAction(_ sender: Any) {
-        let locationtemp = locationManger.location?.coordinate
-        UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=transit")!, options: [:], completionHandler: nil)
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=transit")!, options: [:], completionHandler: nil)
+            break
+        case .authorizedWhenInUse:
+            let locationtemp = locationManger.location?.coordinate
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(event!.latitude),\(event!.longtitude)&travelmode=transit")!, options: [:], completionHandler: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     @IBOutlet weak var byPublicButton: UIButton!
@@ -153,8 +229,17 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
     override func viewDidLoad() {
         super.viewDidLoad()
         addItemView.layer.cornerRadius = 10
+        addItemView.layer.shadowColor = UIColor.gray.cgColor
+        addItemView.layer.shadowOpacity = 1.0
+        addItemView.layer.shadowRadius = 7.0
+        addItemView.layer.masksToBounds = false
+        addItemView.backgroundColor = UIColor.groupTableViewBackground
         self.backbutton.layer.cornerRadius = (self.backbutton.frame.height / 2)
-        image.pin_setImage(from: URL(string: event!.imgurl!))
+        if event!.imgurl != "none"{
+            image.pin_setImage(from: URL(string: event!.imgurl!))
+        }else{
+            image.image = UIImage(named: "404-permalink.png")
+        }
         link.isEditable = false
         link.text = event!.link!
         link.dataDetectorTypes = .link
