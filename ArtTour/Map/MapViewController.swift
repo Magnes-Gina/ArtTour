@@ -679,6 +679,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     @IBAction func center(_ sender: Any) {
         centerViewOnUserLocation()
+        CBToast.showToastAction(message: "All landmarks and artworks are in the city area")
     }
     
     
