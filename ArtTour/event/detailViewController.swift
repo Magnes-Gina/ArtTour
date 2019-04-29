@@ -280,7 +280,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         let datetemp2 = df.date(from: strtemp2)
         let newstr2 = df2.string(from: datetemp2!)
         endDate.text = newstr2
-        venue.text = json!["venue"]["name"].string!
+        venue.text = json!["venue"]["name"].string ?? "not clear"
         address.text = json!["venue"]["address"]["localized_address_display"].string!
         print(Double(json!["venue"]["latitude"].string!)!)
         print(Double(json!["venue"]["latitude"].string!)!)
