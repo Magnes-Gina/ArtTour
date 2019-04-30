@@ -250,7 +250,7 @@ class eventTableViewController: UITableViewController {
         
         //cell.time.text = "NONE"
         cell.title.text = temp["name"]["text"].string!
-        cell.address.text = temp["venue"]["address"]["localized_address_display"].string!
+        cell.address.text = temp["venue"]["address"]["localized_address_display"].string ?? "Not clear!"
         return cell
     }
     
