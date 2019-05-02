@@ -45,6 +45,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
                 events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
                 print("saved to coredata")
+                CBToast.showToastAction(message: "Like successfully!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -62,6 +63,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
                         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
                         events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
                        print("total events: \(events.count)")
+                       CBToast.showToastAction(message: "Unlike successfully!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }

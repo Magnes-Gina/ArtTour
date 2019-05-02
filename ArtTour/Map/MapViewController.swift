@@ -44,7 +44,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var landmarks2 = [Landmark2]()
     var artworks = [ArtWork]()
     var artworktemps = [artworktemp]()
-    
+    var selectedm:GMSMarker?
     var geos : [CLCircularRegion] = []
     var makers: [GMSMarker] = []
     var nowlandmark = CLCircularRegion(center: CLLocationCoordinate2DMake(-37.5,110), radius: 70, identifier: "test")
@@ -392,7 +392,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         if !gallerybool && !bridgebool && !bellbool && !fountainbool && !indigenousbool && !memorialbool && !publicbuildingbool && !scilpturebool && !othersbool && !allbuskerbool && !allartworkbool && !alllandmarkbool {
             displayMessage("At least choose one filter", "Warning")
         }else{
-            
+            let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
+            self.testview.camera = camera
             allartworkbutton.isSelected = false
             alllandmarkbutton.isSelected = false
             buskerButton.isSelected = false
@@ -425,7 +426,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if gallerybool{
                     for landmark in self.landmarks{
                         if landmark.Category_id == 1{
-                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -435,7 +436,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if bridgebool{
                     for landmark in self.landmarks{
                         if landmark.Category_id == 2{
-                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -445,7 +446,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if othersbool{
                     for landmark in self.landmarks{
                         if landmark.Category_id == 9{
-                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -455,7 +456,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if bellbool{
                     for item in self.artworktemps{
                         if item.Category_id == 3{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -465,7 +466,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if fountainbool{
                     for item in self.artworktemps{
                         if item.Category_id == 4{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -475,7 +476,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if indigenousbool{
                     for item in self.artworktemps{
                         if item.Category_id == 5{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -485,7 +486,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if memorialbool{
                     for item in self.artworktemps{
                         if item.Category_id == 6{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -495,7 +496,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if publicbuildingbool{
                     for item in self.artworktemps{
                         if item.Category_id == 7{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -505,7 +506,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 if scilpturebool{
                     for item in self.artworktemps{
                         if item.Category_id == 8{
-                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+                            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                             geoLocation.notifyOnEntry = true
                             geos.append(geoLocation)
@@ -533,7 +534,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     @IBAction func allaction(_ sender: UIButton) {
-        
+        let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
+        self.testview.camera = camera
         buskerButton.isSelected = false
         bellsButton.isSelected = false
         alllandmarkbutton.isSelected = false
@@ -551,14 +553,14 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         testview.clear()
         clusterManager.clearItems()
         for landmark in self.landmarks{
-            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+            self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
             
         }
         for item in self.artworktemps{
-            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_name)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+            self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_name)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
@@ -760,9 +762,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 self.performSegue(withIdentifier: "artworkDetail", sender: self)
             }
         }
-        
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -783,7 +782,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         var index = 0
         geos = []
         for landmark in self.landmarks{
-            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "For more Info, Please click Info window",category: landmark.Category_id)
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
@@ -798,7 +797,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         var index = 0
         geos = []
         for item in self.artworktemps{
-            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "For more Info, Please click Info window",category: item.Category_id)
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "click here for more information!",category: item.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
@@ -869,14 +868,57 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         
     }
     
+    func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
+        let newCamra = GMSCameraPosition.camera(withTarget: cluster.position, zoom: self.testview.camera.zoom + 2)
+        let update = GMSCameraUpdate.setCamera(newCamra)
+        self.testview.moveCamera(update)
+        return true
+    }
+    
+    /*func clusterManager(_ clusterManager: GMUClusterManager, didTap clusterItem: GMUClusterItem) -> Bool {
+        let newCamra = GMSCameraPosition.camera(withTarget: clusterItem.position, zoom: 18.0)
+        let update = GMSCameraUpdate.setCamera(newCamra)
+        self.testview.moveCamera(update)
+        if let item = clusterItem as? POIItem{
+            
+            let marker = GMSMarker(position: item.position)
+            marker.title = item.title!
+            marker.snippet = item.snippet!
+            self.testview.selectedMarker = marker
+            self.testview.
+        }
+        //self.testview.selectedMarker = selectedm!
+        return true
+    }*/
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let item = marker.userData as? POIItem {
+            /*let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 18.0)
+            mapView.camera = camera*/
+            let newCamra = GMSCameraPosition.camera(withTarget: item.position, zoom: self.testview.camera.zoom)
+            let update = GMSCameraUpdate.setCamera(newCamra)
+            self.testview.moveCamera(update)
             marker.title = item.title
             marker.snippet = item.snippet
             mapView.selectedMarker = marker
+            //selectedm = marker
+            //print("selected succ")
+            //print("\(mapView.selectedMarker?.title)")
+            
         }else if let item = marker.userData as? GMUCluster{
-            CBToast.showToastAction(message: "Zoom Map to explore more landmark!")
+           /* if item.items.count >= 100{
+                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 13.0)
+                self.testview.camera = camera
+            }
+            if item.items.count > 50 && item.items.count < 100 {
+                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 15.0)
+                self.testview.camera = camera
+            }
+            if item.items.count < 50 && item.items.count > 1 {
+                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 17.0)
+                self.testview.camera = camera
+                //print("test one marker: \(item.items.count)")
+            }*/
         }else{
             mapView.selectedMarker = marker
             print("test123455")

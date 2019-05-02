@@ -68,7 +68,7 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
             getData()
             semaphore.wait()
             UIApplication.shared.endIgnoringInteractionEvents()
-            CBToast.showToastAction(message: "Download Data!")
+            CBToast.showToastAction(message: "Refresh Map landmarks and artwork data!")
             indicator.isHidden = true
             indicator.stopAnimating()
             /*UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=-37.886561,145.091904&destination=-37.885062,145.078586&travelmode=driving")!, options: [:], completionHandler: nil)*/

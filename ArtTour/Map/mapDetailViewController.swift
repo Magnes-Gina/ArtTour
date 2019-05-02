@@ -36,10 +36,11 @@ class mapDetailViewController: UIViewController {
             do{
                 try self.managedObjectContext.save()
                 saved = true
-                savedButton.setTitle("Cancell Save", for: .normal)
-                savedButton.backgroundColor = UIColor.lightGray
+                savedButton.setTitle("Delete from list", for: .normal)
+                savedButton.backgroundColor = UIColor.red
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
                 saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
+                CBToast.showToastAction(message: "Save successfully!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -54,7 +55,7 @@ class mapDetailViewController: UIViewController {
                         saved = false
                         savedButton.setTitle("Save to Visited", for: .normal)
                         savedButton.backgroundColor = UIColor.black
-                        
+                        CBToast.showToastAction(message: "Delete successfully!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }
@@ -85,7 +86,7 @@ class mapDetailViewController: UIViewController {
         youtube.load(withVideoId: landmark!.video)
         landmark_name.text = landmark!.Landmark_name
         getCategroy()
-        self.backButton.layer.cornerRadius = 5
+        self.backButton.layer.cornerRadius = 25
         self.savedButton.layer.cornerRadius = 5
         //check()
         // Do any additional setup after loading the view.
@@ -98,8 +99,8 @@ class mapDetailViewController: UIViewController {
             for item in saveds{
                 if landmark?.Landmark_id == Int(item.landmark_id){
                     saved = true
-                    savedButton.setTitle("Cancell Save", for: .normal)
-                    savedButton.backgroundColor = UIColor.lightGray
+                    savedButton.setTitle("Delete from list", for: .normal)
+                    savedButton.backgroundColor = UIColor.red
                     print("find saved!")
                     break
                 }

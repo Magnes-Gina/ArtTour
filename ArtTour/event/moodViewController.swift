@@ -24,7 +24,7 @@ class moodViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-    var items = ["Anything","Music","Business & Professional","Food & Drink","Comunnity & Culture","Performing & Visual Arts","Film & Entertainment","Sports","Health & Wellness","Science & Technology","Travel & Outdoor","Charity & Causes","Religion","Family & Education","Holiday","Politics","Fashion & Beauty","Home","Boat & Air","Hobbies","School Activities","Other"]
+    var items = ["Anything","Music","Food & Drink","Comunnity & Culture","Performing & Visual Arts","Film & Entertainment","Sports","Health & Wellness","Science & Technology","Travel & Outdoor","Charity & Causes","Religion","Family & Education","Holiday","Fashion & Beauty","Home","Boat & Air","Hobbies","School Activities","Other"]
     
     var delegate: Addmood?
     

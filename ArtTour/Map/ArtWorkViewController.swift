@@ -118,10 +118,11 @@ class ArtWorkViewController: UIViewController {
             do{
                 try self.managedObjectContext.save()
                 saved = true
-                savedButton.setTitle("Cancell Save", for: .normal)
-                savedButton.backgroundColor = UIColor.lightGray
+                savedButton.setTitle("Delete from list", for: .normal)
+                savedButton.backgroundColor = UIColor.red
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedArtWork")
                 saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
+                CBToast.showToastAction(message: "Save successfully!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -136,7 +137,7 @@ class ArtWorkViewController: UIViewController {
                         saved = false
                         savedButton.setTitle("Save to Visited", for: .normal)
                         savedButton.backgroundColor = UIColor.black
-                        
+                        CBToast.showToastAction(message: "Delete successfully!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }
@@ -172,8 +173,8 @@ class ArtWorkViewController: UIViewController {
             for item in saveds{
                 if artwork!.ArtWork_id == Int(item.artwork_id){
                     saved = true
-                    savedButton.setTitle("Cancell Save", for: .normal)
-                    savedButton.backgroundColor = UIColor.lightGray
+                    savedButton.setTitle("Delete from list", for: .normal)
+                    savedButton.backgroundColor = UIColor.red
                     print("find saved!")
                     break
                 }
@@ -187,7 +188,7 @@ class ArtWorkViewController: UIViewController {
         super.viewDidLoad()
         //check()
         savedButton.layer.cornerRadius = 5
-        backButton.layer.cornerRadius = 5
+        backButton.layer.cornerRadius = 25
         // Do any additional setup after loading the view.
     }
     
