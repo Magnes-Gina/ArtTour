@@ -23,7 +23,7 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     let sections = ["Saved","Instruction","Refresh"]
-    let items = [["Landmarks","ArtWorks","Events"],["InstructionPage"],["Reload"]]
+    let items = [["Landmarks","Artworks","Events"],["Help"],["Reload"]]
     let images = [["landmarksetting.png","artworksetting.png","eventsetting.png"],["instructions.png"],["reloadsetting.png"]]
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,13 +49,13 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if items[indexPath.section][indexPath.row] == "InstructionPage"{
+        if items[indexPath.section][indexPath.row] == "Help"{
             self.performSegue(withIdentifier: "reins", sender: self)
         }
         if items[indexPath.section][indexPath.row] == "Landmarks" {
             self.performSegue(withIdentifier: "reviewlandmark", sender: self)
         }
-        if items[indexPath.section][indexPath.row] == "ArtWorks" {
+        if items[indexPath.section][indexPath.row] == "Artworks" {
             self.performSegue(withIdentifier: "reviewlartwork", sender: self)
         }
         if items[indexPath.section][indexPath.row] == "Events" {

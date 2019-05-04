@@ -24,7 +24,7 @@ class reviewartworkdetailViewController: UIViewController {
     
     @IBAction func moreaction(_ sender: Any) {
         if artwork!.artwork_description == "0"{
-            displayMessage("This ArtWork Doesn't have more information", "Sorry")
+            displayMessage("This Artwork doesn't have anny more information", "Sorry")
         }else{
             print(artwork!.artwork_description!)
             UIApplication.shared.open(URL(string: "\(artwork!.artwork_description!)")!, options: [:], completionHandler: nil)

@@ -12,7 +12,7 @@ import CoreData
 class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if saved.count == 0 {
-            self.myTableview.setEmptyView(title: "You don't visit any artworks.", message: "Please save some artworks first.")
+            self.myTableview.setEmptyView(title: "You havn't saved any artworks.", message: "Please search artworks and save first!")
         }
         else {
             self.myTableview.restore()
