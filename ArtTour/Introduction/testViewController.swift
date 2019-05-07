@@ -135,6 +135,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
                     newCategory.category_id = Int16(item.Category_id)
                     newCategory.category_name = item.Category_name
                     try self.managedObjectContext2?.save()
+                    
                 }
                 //self.getData3()
                 //self.semaphore.signal()

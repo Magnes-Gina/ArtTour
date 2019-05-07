@@ -859,7 +859,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Q8-ak-0i9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Image Recignition" id="lkO-7U-TeY"/>
+                    <navigationItem key="navigationItem" title="Image Recignition" leftItemsSupplementBackButton="YES" id="lkO-7U-TeY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="button_item" destination="9Tr-oa-RM7" id="7po-yx-6Xy"/>
