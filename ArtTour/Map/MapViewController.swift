@@ -40,6 +40,7 @@ class POIItem: NSObject,GMUClusterItem{
 class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDelegate,CLLocationManagerDelegate,GMUClusterRendererDelegate {
     let semaphore = DispatchSemaphore(value: 0)
     final let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
+    var ispop = false
     var landmarks = [Landmark]()
     var landmarks2 = [Landmark2]()
     var artworks = [ArtWork]()
@@ -59,6 +60,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         super.init(coder: aDecoder)!
     }
     
+    @IBOutlet weak var backgroundView: UIView!
     
     @IBAction func collectionAction(_ sender: UIButton) {
         self.performSegue(withIdentifier: "progressSegue", sender: self)
@@ -390,6 +392,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     @IBAction func confirmaction(_ sender: UIButton) {
         if !gallerybool && !bridgebool && !bellbool && !fountainbool && !indigenousbool && !memorialbool && !publicbuildingbool && !scilpturebool && !othersbool && !allbuskerbool && !allartworkbool && !alllandmarkbool {
+            //animatedOut()
             displayMessage("At least choose one filter", "Warning")
         }else{
             let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
@@ -698,10 +701,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
-        
-        self.button2.layer.cornerRadius = (self.button2.frame.height / 2)
-        self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
-        self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 2)
+        self.backgroundView.layer.cornerRadius = 10
+        self.backgroundView.alpha = 0.5
+        self.choiceView.layer.cornerRadius = 30
+        self.button2.layer.cornerRadius = (self.button2.frame.height / 3.14)
+        self.button3.layer.cornerRadius = (self.button3.frame.height / 3.14)
+        self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 3.14)
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
@@ -723,22 +728,36 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func animatedIn(){
-        self.view.addSubview(choiceView)
-        choiceView.center = self.view.center
-        
-        choiceView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
+        //self.view.addSubview(choiceView)
+        ispop = true
+        let window = UIApplication.shared.keyWindow
+        //window?.addSubview(choiceView)
+        let height: CGFloat = 350
+        let y = (window?.frame.height)! - height - 83
+        let newframe2 = CGRect(x: 0, y:(window?.frame.height)! , width: (window?.frame.width)!, height: 350)
+        let newframe = CGRect(x: 0, y: y, width: (window?.frame.width)!, height: 350)
+        choiceView.frame = newframe2
+
         choiceView.alpha = 0
-        UIView.animate(withDuration: 0.4){
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.choiceView.alpha = 1
-            self.choiceView.transform = CGAffineTransform.identity
-        }
+            self.choiceView.frame = newframe
+            self.view.addSubview(self.choiceView)
+        }, completion: nil)
     }
     
     func animatedOut() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.choiceView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
+        ispop = false
+        let window = UIApplication.shared.keyWindow
+        //window?.addSubview(choiceView)
+        let height: CGFloat = 350
+        let y = (window?.frame.height)! - height - 85
+        let newframe2 = CGRect(x: 0, y:(window?.frame.height)! , width: (window?.frame.width)!, height: 350)
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.choiceView.alpha = 0
-        }){ (success: Bool) in
+            self.choiceView.frame = newframe2
+            
+        }){sucess in
             self.choiceView.removeFromSuperview()
         }
     }
@@ -837,7 +856,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 let temp: CLCircularRegion = region.0
                 if temp.contains(locationManger.location!.coordinate){
                     if temp.identifier != nowlandmark.identifier{
-                        
+                        if ispop {
+                            animatedOut()
+                        }
                         displayMessage("You are near the \(temp.identifier)", "Landmark Notification ")
                         notificationCreated(message: "You are near the \(temp.identifier)", title: "Location Notification")
                         nowlandmark = temp
@@ -870,8 +891,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
         let newCamra = GMSCameraPosition.camera(withTarget: cluster.position, zoom: self.testview.camera.zoom + 2)
-        let update = GMSCameraUpdate.setCamera(newCamra)
-        self.testview.moveCamera(update)
+        
+        /*let update = GMSCameraUpdate.setCamera(newCamra)
+        self.testview.moveCamera(update)*/
+        self.testview.animate(to: newCamra)
         return true
     }
     
@@ -893,32 +916,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let item = marker.userData as? POIItem {
-            /*let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 18.0)
-            mapView.camera = camera*/
             let newCamra = GMSCameraPosition.camera(withTarget: item.position, zoom: self.testview.camera.zoom)
-            let update = GMSCameraUpdate.setCamera(newCamra)
-            self.testview.moveCamera(update)
+            self.testview.animate(to: newCamra)
             marker.title = item.title
             marker.snippet = item.snippet
             mapView.selectedMarker = marker
-            //selectedm = marker
-            //print("selected succ")
-            //print("\(mapView.selectedMarker?.title)")
+           
             
         }else if let item = marker.userData as? GMUCluster{
-           /* if item.items.count >= 100{
-                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 13.0)
-                self.testview.camera = camera
-            }
-            if item.items.count > 50 && item.items.count < 100 {
-                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 15.0)
-                self.testview.camera = camera
-            }
-            if item.items.count < 50 && item.items.count > 1 {
-                let camera = GMSCameraPosition.camera(withLatitude: item.position.latitude, longitude: item.position.longitude, zoom: 17.0)
-                self.testview.camera = camera
-                //print("test one marker: \(item.items.count)")
-            }*/
+          
         }else{
             mapView.selectedMarker = marker
             print("test123455")
@@ -1048,9 +1054,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
+            if ispop {
+                animatedOut()
+            }
             displayMessage("Our location request has been dined", "Denied Alert")
             break
         case .restricted:
+            if ispop {
+                animatedOut()
+            }
             displayMessage("Our location request has been Restricted", "Restricted Alert")
             break
         @unknown default:
