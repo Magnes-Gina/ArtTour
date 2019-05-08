@@ -89,10 +89,10 @@ class mDetailViewController: UIViewController {
             }
             authors.text = str
         }else{
-            authors.text = "Not Clear"
+            authors.text = "Unkown"
         }
         if json!["dateModified"].string == nil{
-            datemodified.text = "Not Clear"
+            datemodified.text = "Unkown"
         }else{
             var strtemp = json!["dateModified"].string!
             strtemp = strtemp.replacingOccurrences(of: "T", with: " ")

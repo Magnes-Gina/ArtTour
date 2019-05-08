@@ -75,7 +75,7 @@ class CollectionProgressViewController: UIViewController {
             let saveds2 = try managedObjectContext.fetch(fetchRequest2) as! [Landmark2]
             totalsavedLandmark = saveds.count
             totallandmark = saveds2.count
-            landmarkLabel.text = "\(totalsavedLandmark)/\(totallandmark) Landmarks"
+            landmarkLabel.text = "\(totalsavedLandmark) out of \(totallandmark) Landmarks"
         }catch{
             fatalError("cant load core data")
         }
@@ -89,7 +89,7 @@ class CollectionProgressViewController: UIViewController {
             let saveds2 = try managedObjectContext.fetch(fetchRequest2) as! [ArtWork]
             totalsavedArtwork = saveds.count
             totalartwork = saveds2.count
-            artworkLabel.text = "\(totalsavedArtwork)/\(totalartwork) ArtWorks"
+            artworkLabel.text = "\(totalsavedArtwork) out of \(totalartwork) ArtWorks"
         }catch{
             fatalError("cant load core data")
         }

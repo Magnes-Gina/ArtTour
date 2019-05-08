@@ -59,6 +59,9 @@
 		694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */ = {isa = PBXBuildFile; fileRef = 694B0ABC225658DF00111F0A /* shrine-remembrance.png */; };
 		694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC022584F3E00111F0A /* EventTableViewCell.swift */; };
 		694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC22258532300111F0A /* eventTableViewController.swift */; };
+		6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957016D22830DBD00849ED7 /* museumresulttableViewController.swift */; };
+		6957017022832E9800849ED7 /* descriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957016F22832E9800849ED7 /* descriptionViewController.swift */; };
+		69570172228334E400849ED7 /* photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 69570171228334E300849ED7 /* photos.png */; };
 		69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */; };
 		69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */; };
 		69587C82227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */; };
@@ -263,6 +266,9 @@
 		694B0ABC225658DF00111F0A /* shrine-remembrance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shrine-remembrance.png"; sourceTree = "<group>"; };
 		694B0AC022584F3E00111F0A /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		694B0AC22258532300111F0A /* eventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewController.swift; sourceTree = "<group>"; };
+		6957016D22830DBD00849ED7 /* museumresulttableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumresulttableViewController.swift; sourceTree = "<group>"; };
+		6957016F22832E9800849ED7 /* descriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = descriptionViewController.swift; sourceTree = "<group>"; };
+		69570171228334E300849ED7 /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
 		69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedLandmark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -479,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				698D502E2277015800767F03 /* heart-in-like-circular-button.png */,
+				69570171228334E300849ED7 /* photos.png */,
 				698D50262276FCCF00767F03 /* guide1.jpeg */,
 				698D50272276FCCF00767F03 /* guide2.jpeg */,
 				698D50282276FCD000767F03 /* guide3.jpeg */,
@@ -594,6 +601,8 @@
 				697B228A225A5511009682BF /* museumTableViewCell.swift */,
 				697B2284225A52DC009682BF /* mDetailViewController.swift */,
 				6948A18C2275C8500098AF3F /* contentViewController.swift */,
+				6957016D22830DBD00849ED7 /* museumresulttableViewController.swift */,
+				6957016F22832E9800849ED7 /* descriptionViewController.swift */,
 			);
 			path = museum;
 			sourceTree = "<group>";
@@ -772,6 +781,7 @@
 				69587CC1227367890051E4A6 /* bridge.png in Resources */,
 				69587D192274333F0051E4A6 /* cross-mark-on-a-black-circle-background.png in Resources */,
 				697B22772258F9B3009682BF /* previous.png in Resources */,
+				69570172228334E400849ED7 /* photos.png in Resources */,
 				697B227D22590EBF009682BF /* link.png in Resources */,
 				69587CFE22739F7C0051E4A6 /* smallmemorial.png in Resources */,
 				6948A160227476780098AF3F /* eventsetting.png in Resources */,
@@ -926,6 +936,7 @@
 				6948A1752274D1590098AF3F /* moodTableViewCell.swift in Sources */,
 				698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */,
 				69587C85227331FE0051E4A6 /* SavedLandmark+CoreDataProperties.swift in Sources */,
+				6957017022832E9800849ED7 /* descriptionViewController.swift in Sources */,
 				69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */,
 				697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */,
 				695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */,
@@ -956,6 +967,7 @@
 				69587C8A227332460051E4A6 /* Category+CoreDataClass.swift in Sources */,
 				6948A16D2274A7250098AF3F /* reviewartworkTableViewCell.swift in Sources */,
 				6948A1712274A79F0098AF3F /* artworkreviewViewController.swift in Sources */,
+				6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */,
 				69587D1B227433580051E4A6 /* CollectionProgressViewController.swift in Sources */,
 				694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */,
 				698D501222761F5600767F03 /* Event2+CoreDataClass.swift in Sources */,

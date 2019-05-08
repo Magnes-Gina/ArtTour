@@ -68,6 +68,14 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     
+    @IBOutlet weak var refreshbutton: UIButton!
+    
+    @IBAction func refreshAction(_ sender: Any) {
+    
+    }
+    
+    
+    
     @IBOutlet var choiceView: UIView!
     @IBAction func downButton(_ sender: Any) {
         buskerButton.isSelected = false
@@ -702,11 +710,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
         self.backgroundView.layer.cornerRadius = 10
-        self.backgroundView.alpha = 0.5
+        self.backgroundView.alpha = 1
         self.choiceView.layer.cornerRadius = 30
         self.button2.layer.cornerRadius = (self.button2.frame.height / 3.14)
         self.button3.layer.cornerRadius = (self.button3.frame.height / 3.14)
         self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 3.14)
+        self.refreshbutton.layer.cornerRadius = (self.refreshbutton.frame.height / 3.14)
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100

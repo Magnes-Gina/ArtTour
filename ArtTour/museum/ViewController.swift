@@ -37,8 +37,10 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBAction func itemSearch(_ sender: Any) {
-        islandmark = false
-        popmenu()
+        self.picker.sourceType = .savedPhotosAlbum
+        self.picker.allowsEditing = false
+        self.picker.delegate = self
+        self.present(self.picker, animated: true, completion: nil)
     }
     
     
@@ -115,8 +117,10 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func landmarkDetect(_ sender: Any) {
-        islandmark = true
-        popmenu()
+        self.picker.sourceType = .camera
+        self.picker.allowsEditing = false
+        self.picker.delegate = self
+        self.present(self.picker, animated: true, completion: nil)
         
     }
     
@@ -199,12 +203,13 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? museumTableViewController{
+        if let destination = segue.destination as? museumresulttableViewController{
             destination.jsonarray = self.jsonarray
             destination.pagecount = self.count
             destination.count = self.jsonarray.count
             destination.resultText = self.resultsText
             destination.originalurl = self.oringinalurl2
+            destination.tempphoto = tempImage
         }
     
     }
@@ -223,15 +228,8 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         tempImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         //imageview.image = tempImage
         picker.dismiss(animated: true, completion: nil)
-        if islandmark {
-            detectCloudLandmark(image: tempImage)
-            
-        }else{
-            //
-            detectCloudLabels(image:tempImage)
-            
-            //detectCloudTexts(image:tempImage)
-        }
+        detectCloudLandmark(image: tempImage)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
