@@ -98,6 +98,14 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         //UIApplication.shared.endIgnoringInteractionEvents()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectionIndexPath = self.myTableView.indexPathForSelectedRow{
+            self.myTableView.deselectRow(at: selectionIndexPath, animated: true)
+            
+        }
+    }
+    
     func getData(){
         guard let downloadURL = url else { return }
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
