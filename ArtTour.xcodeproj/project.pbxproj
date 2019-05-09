@@ -58,10 +58,15 @@
 		694B0ABB22564CD000111F0A /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 694B0ABA22564CD000111F0A /* calendar.png */; };
 		694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */ = {isa = PBXBuildFile; fileRef = 694B0ABC225658DF00111F0A /* shrine-remembrance.png */; };
 		694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC022584F3E00111F0A /* EventTableViewCell.swift */; };
-		694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B0AC22258532300111F0A /* eventTableViewController.swift */; };
 		6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957016D22830DBD00849ED7 /* museumresulttableViewController.swift */; };
 		6957017022832E9800849ED7 /* descriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957016F22832E9800849ED7 /* descriptionViewController.swift */; };
 		69570172228334E400849ED7 /* photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 69570171228334E300849ED7 /* photos.png */; };
+		695701772284408600849ED7 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701732284408500849ED7 /* error.png */; };
+		695701782284408600849ED7 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701742284408500849ED7 /* placeholder.png */; };
+		695701792284408600849ED7 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701752284408600849ED7 /* share.png */; };
+		6957017A2284408600849ED7 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701762284408600849ED7 /* calendar.png */; };
+		6957017C22844F2500849ED7 /* cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957017B22844F2500849ED7 /* cal.png */; };
+		6957017E228462DA00849ED7 /* eventnewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957017D228462DA00849ED7 /* eventnewTableViewController.swift */; };
 		69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */; };
 		69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */; };
 		69587C82227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */; };
@@ -265,10 +270,15 @@
 		694B0ABA22564CD000111F0A /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		694B0ABC225658DF00111F0A /* shrine-remembrance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shrine-remembrance.png"; sourceTree = "<group>"; };
 		694B0AC022584F3E00111F0A /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		694B0AC22258532300111F0A /* eventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTableViewController.swift; sourceTree = "<group>"; };
 		6957016D22830DBD00849ED7 /* museumresulttableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumresulttableViewController.swift; sourceTree = "<group>"; };
 		6957016F22832E9800849ED7 /* descriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = descriptionViewController.swift; sourceTree = "<group>"; };
 		69570171228334E300849ED7 /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
+		695701732284408500849ED7 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		695701742284408500849ED7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		695701752284408600849ED7 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		695701762284408600849ED7 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = ../../../../Downloads/calendar.png; sourceTree = "<group>"; };
+		6957017B22844F2500849ED7 /* cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cal.png; sourceTree = "<group>"; };
+		6957017D228462DA00849ED7 /* eventnewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventnewTableViewController.swift; sourceTree = "<group>"; };
 		69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedLandmark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -484,6 +494,11 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				695701762284408600849ED7 /* calendar.png */,
+				6957017B22844F2500849ED7 /* cal.png */,
+				695701732284408500849ED7 /* error.png */,
+				695701742284408500849ED7 /* placeholder.png */,
+				695701752284408600849ED7 /* share.png */,
 				698D502E2277015800767F03 /* heart-in-like-circular-button.png */,
 				69570171228334E300849ED7 /* photos.png */,
 				698D50262276FCCF00767F03 /* guide1.jpeg */,
@@ -583,12 +598,12 @@
 			isa = PBXGroup;
 			children = (
 				694B0AC022584F3E00111F0A /* EventTableViewCell.swift */,
-				694B0AC22258532300111F0A /* eventTableViewController.swift */,
 				697B2268225866B9009682BF /* eventViewController.swift */,
 				697B22742258F122009682BF /* detailViewController.swift */,
 				6948A1722274D1460098AF3F /* moodViewController.swift */,
 				6948A1742274D1590098AF3F /* moodTableViewCell.swift */,
 				6948A1762275025F0098AF3F /* readViewController.swift */,
+				6957017D228462DA00849ED7 /* eventnewTableViewController.swift */,
 			);
 			path = event;
 			sourceTree = "<group>";
@@ -745,6 +760,7 @@
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
 				69587D17227433320051E4A6 /* gradual.jpg in Resources */,
+				6957017A2284408600849ED7 /* calendar.png in Resources */,
 				6948A17C22750C8B0098AF3F /* train.png in Resources */,
 				690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */,
 				6948A16522747E8B0098AF3F /* sharing-content.png in Resources */,
@@ -761,6 +777,7 @@
 				6948A162227476780098AF3F /* landmarksetting.png in Resources */,
 				6948A17E22750C8B0098AF3F /* car.png in Resources */,
 				694B0ABB22564CD000111F0A /* calendar.png in Resources */,
+				695701792284408600849ED7 /* share.png in Resources */,
 				698D502C2276FCD100767F03 /* guide3.jpeg in Resources */,
 				69587CBD227367610051E4A6 /* gallery.png in Resources */,
 				6948A17D22750C8B0098AF3F /* bicycle.png in Resources */,
@@ -778,6 +795,7 @@
 				69587D0D22739F7C0051E4A6 /* smallbell.png in Resources */,
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
 				690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */,
+				695701772284408600849ED7 /* error.png in Resources */,
 				69587CC1227367890051E4A6 /* bridge.png in Resources */,
 				69587D192274333F0051E4A6 /* cross-mark-on-a-black-circle-background.png in Resources */,
 				697B22772258F9B3009682BF /* previous.png in Resources */,
@@ -788,8 +806,10 @@
 				69587CD52273686C0051E4A6 /* publicbuilding.png in Resources */,
 				694B0AB122563B6800111F0A /* dancing.png in Resources */,
 				694B0AAF225638E500111F0A /* church.png in Resources */,
+				695701782284408600849ED7 /* placeholder.png in Resources */,
 				69587CD12273683B0051E4A6 /* memorial.png in Resources */,
 				69587CCD227368000051E4A6 /* indigenous.png in Resources */,
+				6957017C22844F2500849ED7 /* cal.png in Resources */,
 				698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
@@ -943,12 +963,12 @@
 				694B0A662252DAC000111F0A /* ViewController.swift in Sources */,
 				697B2290225A986B009682BF /* testViewController.swift in Sources */,
 				69587CAF22735A4B0051E4A6 /* ArtWork+CoreDataProperties.swift in Sources */,
+				6957017E228462DA00849ED7 /* eventnewTableViewController.swift in Sources */,
 				694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */,
 				69587CB222735A4B0051E4A6 /* SavedArtWork+CoreDataClass.swift in Sources */,
 				69587CB522735A4B0051E4A6 /* SavedArtWork+CoreDataProperties.swift in Sources */,
 				69587C8D227332460051E4A6 /* Category+CoreDataProperties.swift in Sources */,
 				6948A1772275025F0098AF3F /* readViewController.swift in Sources */,
-				694B0AC32258532300111F0A /* eventTableViewController.swift in Sources */,
 				6948A16B227495240098AF3F /* reviewlandmarkViewController.swift in Sources */,
 				6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */,
 				698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */,

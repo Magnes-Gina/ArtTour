@@ -148,7 +148,7 @@ class eventViewController: UIViewController,Addmood {
             controller.delegate = self
         }
         if segue.identifier == "eventresult"{
-            let destination: eventTableViewController = segue.destination as! eventTableViewController
+            let destination: eventnewTableViewController = segue.destination as! eventnewTableViewController
             print(eventtime)
             if eventtime != "Anytime"{
                 let df = DateFormatter()

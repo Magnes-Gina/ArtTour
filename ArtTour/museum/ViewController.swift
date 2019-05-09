@@ -56,9 +56,6 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         self.indicator.isHidden = true
         self.indicator.stopAnimating()
         present(resultAlertController,animated: true,completion: nil)
-        print(resultsText)
-        print(resultsText)
-       
     }
     
     
@@ -236,42 +233,6 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         //
         picker.dismiss(animated: true, completion: nil)
     }
-    
-    
-    func popmenu()
-    {
-        let alertController = UIAlertController(title: nil,message:"Different Chocies for Image",preferredStyle: .actionSheet)
-        
-        //function for open image library, which get the idea from tutorial file
-        let photoAction = UIAlertAction(title: "Photo by Image library", style: .default){
-            (action) in
-            
-            self.picker.sourceType = .savedPhotosAlbum
-            self.picker.allowsEditing = false
-            self.picker.delegate = self
-            self.present(self.picker, animated: true, completion: nil)
-        }
-        alertController.addAction(photoAction)
-        
-        //function for open camera, which get the idea from tutorial file
-        let cameraAction = UIAlertAction(title: "Photo by Camera", style: .default){
-            (action) in
-            
-            self.picker.sourceType = .camera
-            self.picker.allowsEditing = false
-            self.picker.delegate = self
-            self.present(self.picker, animated: true, completion: nil)
-    
-        }
-        alertController.addAction(cameraAction)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default){
-            (action) in
-        }
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
-    }
-    
     
 }
 

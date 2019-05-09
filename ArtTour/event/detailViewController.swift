@@ -59,7 +59,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
                         managedObjectContext.delete(item2)
                         try self.managedObjectContext.save()
                         saveflag = false
-                        likeButton.backgroundColor  = UIColor.white
+                        likeButton.backgroundColor  = UIColor.lightGray
                         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
                         events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
                        print("total events: \(events.count)")
@@ -108,7 +108,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
             }
             if boolflag{
                 saveflag = false
-                likeButton.backgroundColor = UIColor.white
+                likeButton.backgroundColor = UIColor.lightGray
             }
         }
         catch {
@@ -120,12 +120,28 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     @IBAction func bycarAction(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=driving")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=driving")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .authorizedWhenInUse:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=driving")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=driving")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .notDetermined:
             locationManger.requestAlwaysAuthorization()
@@ -148,12 +164,28 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     @IBAction func byWalkAction(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=walking")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=walking")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .authorizedWhenInUse:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=walking")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=walking")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .notDetermined:
             locationManger.requestAlwaysAuthorization()
@@ -175,12 +207,28 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     @IBAction func bybikeAction(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .authorizedWhenInUse:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .notDetermined:
             locationManger.requestAlwaysAuthorization()
@@ -204,12 +252,28 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     @IBAction func bypublicAction(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=transit")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=transit")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .authorizedWhenInUse:
-            let locationtemp = locationManger.location?.coordinate
-            UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)&travelmode=transit")!, options: [:], completionHandler: nil)
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)&travelmode=transit")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
             break
         case .notDetermined:
             locationManger.requestAlwaysAuthorization()
@@ -266,6 +330,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         link.isEditable = false
         link.text = json!["url"].string!
         link.dataDetectorTypes = .link
+        link.isScrollEnabled = false
         eventdescription.text = json!["description"]["text"].string!
         eventTitle.text = json!["name"]["text"].string!
         var strtemp = json!["start"]["local"].string!
@@ -358,9 +423,16 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
     }
     
     @objc func opengoogle(sender: UITapGestureRecognizer){
-        //UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=-37.886561,145.091904&destination=-37.885062,145.078586&travelmode=driving")!, options: [:], completionHandler: nil)
+        let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+        resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+            resultAlertController.dismiss(animated: true, completion: nil)
+        })
+        resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/search/?api=1&query=\(self.json!["venue"]["latitude"].string!),\(self.json!["venue"]["longitude"].string!)")!, options: [:], completionHandler: nil)
+        })
+        resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+        present(resultAlertController,animated: true,completion: nil)
         
-        UIApplication.shared.open(URL(string: "http://www.google.com/maps/search/?api=1&query=\(json!["venue"]["latitude"].string!),\(json!["venue"]["longitude"].string!)")!, options: [:], completionHandler: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
