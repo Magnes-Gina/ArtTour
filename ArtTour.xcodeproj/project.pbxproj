@@ -64,9 +64,10 @@
 		695701772284408600849ED7 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701732284408500849ED7 /* error.png */; };
 		695701782284408600849ED7 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701742284408500849ED7 /* placeholder.png */; };
 		695701792284408600849ED7 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701752284408600849ED7 /* share.png */; };
-		6957017A2284408600849ED7 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701762284408600849ED7 /* calendar.png */; };
 		6957017C22844F2500849ED7 /* cal.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957017B22844F2500849ED7 /* cal.png */; };
 		6957017E228462DA00849ED7 /* eventnewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957017D228462DA00849ED7 /* eventnewTableViewController.swift */; };
+		695701802284803700849ED7 /* sortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6957017F2284803700849ED7 /* sortViewController.swift */; };
+		695701822284871A00849ED7 /* sortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695701812284871A00849ED7 /* sortTableViewCell.swift */; };
 		69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */; };
 		69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */; };
 		69587C82227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */; };
@@ -276,9 +277,10 @@
 		695701732284408500849ED7 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		695701742284408500849ED7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		695701752284408600849ED7 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		695701762284408600849ED7 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = ../../../../Downloads/calendar.png; sourceTree = "<group>"; };
 		6957017B22844F2500849ED7 /* cal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cal.png; sourceTree = "<group>"; };
 		6957017D228462DA00849ED7 /* eventnewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventnewTableViewController.swift; sourceTree = "<group>"; };
+		6957017F2284803700849ED7 /* sortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortViewController.swift; sourceTree = "<group>"; };
+		695701812284871A00849ED7 /* sortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortTableViewCell.swift; sourceTree = "<group>"; };
 		69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedLandmark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -494,7 +496,6 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
-				695701762284408600849ED7 /* calendar.png */,
 				6957017B22844F2500849ED7 /* cal.png */,
 				695701732284408500849ED7 /* error.png */,
 				695701742284408500849ED7 /* placeholder.png */,
@@ -604,6 +605,8 @@
 				6948A1742274D1590098AF3F /* moodTableViewCell.swift */,
 				6948A1762275025F0098AF3F /* readViewController.swift */,
 				6957017D228462DA00849ED7 /* eventnewTableViewController.swift */,
+				6957017F2284803700849ED7 /* sortViewController.swift */,
+				695701812284871A00849ED7 /* sortTableViewCell.swift */,
 			);
 			path = event;
 			sourceTree = "<group>";
@@ -760,7 +763,6 @@
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
 				69587D17227433320051E4A6 /* gradual.jpg in Resources */,
-				6957017A2284408600849ED7 /* calendar.png in Resources */,
 				6948A17C22750C8B0098AF3F /* train.png in Resources */,
 				690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */,
 				6948A16522747E8B0098AF3F /* sharing-content.png in Resources */,
@@ -960,6 +962,7 @@
 				69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */,
 				697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */,
 				695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */,
+				695701802284803700849ED7 /* sortViewController.swift in Sources */,
 				694B0A662252DAC000111F0A /* ViewController.swift in Sources */,
 				697B2290225A986B009682BF /* testViewController.swift in Sources */,
 				69587CAF22735A4B0051E4A6 /* ArtWork+CoreDataProperties.swift in Sources */,
@@ -986,6 +989,7 @@
 				698D502122762C6F00767F03 /* reviewlandmarkdetailViewController.swift in Sources */,
 				69587C8A227332460051E4A6 /* Category+CoreDataClass.swift in Sources */,
 				6948A16D2274A7250098AF3F /* reviewartworkTableViewCell.swift in Sources */,
+				695701822284871A00849ED7 /* sortTableViewCell.swift in Sources */,
 				6948A1712274A79F0098AF3F /* artworkreviewViewController.swift in Sources */,
 				6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */,
 				69587D1B227433580051E4A6 /* CollectionProgressViewController.swift in Sources */,

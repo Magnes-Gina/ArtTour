@@ -11,7 +11,7 @@ import PINRemoteImage
 
 
 
-class eventViewController: UIViewController,Addmood {
+class eventViewController: UIViewController,Addmood{
 
     //@IBOutlet weak var imagetest: UIImageView!
     
@@ -69,6 +69,7 @@ class eventViewController: UIViewController,Addmood {
     func addmood(newmood: String){
         self.mood = newmood
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

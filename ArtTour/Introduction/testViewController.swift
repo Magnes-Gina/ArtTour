@@ -31,7 +31,7 @@ struct artworktemp: Decodable{
     let Category_id: Int
 }
 
-class testViewController: UIViewController,UIScrollViewDelegate{
+class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManagerDelegate{
 
     let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
     let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/category")
@@ -66,6 +66,7 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     var images: [String] = ["guide4.jpeg","guide1.jpeg","guide3.jpeg","guide2.jpeg"]
     var frame = CGRect(x:0,y:0,width: 0,height: 0)
     //let semaphore = DispatchSemaphore(value: 0)
+    let locationManger = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,10 @@ class testViewController: UIViewController,UIScrollViewDelegate{
             imgView.image = UIImage(named: images[index])
             self.scrollView.addSubview(imgView)
         }
+        locationManger.requestAlwaysAuthorization()
+        //locationManger.startMonitoringSignificantLocationChanges()
+        locationManger.distanceFilter = 100
+        checkLocationServices()
         // Do any additional setup after loading the view.
         scrollView.contentSize = CGSize(width:(scrollView.frame.size.width * CGFloat(images.count)),height: scrollView.frame.size.height)
         scrollView.delegate = self
@@ -91,6 +96,43 @@ class testViewController: UIViewController,UIScrollViewDelegate{
     }
     //test
     
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        }else{
+            //show alert that user dont have location service
+        }
+    }
+    
+    func setupLocationManager() {
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .authorizedWhenInUse:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
+    }
     
     func getData(){
         guard let downloadURL = url else { return }
@@ -205,6 +247,14 @@ class testViewController: UIViewController,UIScrollViewDelegate{
         //
         let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(pageNumber)
+    }
+    
+    func displayMessage(_ message: String,_ title: String) {
+        let alertController = UIAlertController(title: title, message: message,
+                                                preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style:
+            UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

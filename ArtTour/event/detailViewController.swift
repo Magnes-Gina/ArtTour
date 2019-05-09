@@ -331,6 +331,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         link.text = json!["url"].string!
         link.dataDetectorTypes = .link
         link.isScrollEnabled = false
+        link.textColor = UIColor.blue
         eventdescription.text = json!["description"]["text"].string!
         eventTitle.text = json!["name"]["text"].string!
         var strtemp = json!["start"]["local"].string!

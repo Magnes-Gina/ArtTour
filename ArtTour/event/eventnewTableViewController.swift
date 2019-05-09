@@ -8,15 +8,17 @@
 
 import UIKit
 import SwiftyJSON
-
-class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
-
+import CoreLocation
+class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,Addsort,CLLocationManagerDelegate {
+    
     @IBOutlet weak var searchBarEvent: UISearchBar!
     
     @IBOutlet weak var myTableView: UITableView!
+    let locationManger = CLLocationManager()
     var jsonarray: [JSON] = []
     var sortarray: [JSON] = []
     var json: JSON?
+    var sortby = "Default"
     var count = 0
     var sortcount = 0
     var limit = 50
@@ -62,12 +64,156 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.layer.borderColor = UIColor.white.cgColor
-//        self.navigationController?.navigationBar.layer.borderWidth = 1
+        locationManger.requestAlwaysAuthorization()
+        //locationManger.startMonitoringSignificantLocationChanges()
+        locationManger.distanceFilter = 100
+        checkLocationServices()
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectionIndexPath = self.myTableView.indexPathForSelectedRow{
+            self.myTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        }else{
+            //show alert that user dont have location service
+        }
+    }
+    
+    func setupLocationManager() {
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .authorizedWhenInUse:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
+    }
+    
+    func addsort(newmood: String){
+        self.sortby = newmood
+        print(sortby)
+        switch sortby {
+        case "Date":
+            sortarray = sortarray.sorted{ (item,item2) -> Bool in
+                var strtemp = item["start"]["local"].string!
+                var strtemp2 = item2["start"]["local"].string!
+                strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
+                strtemp2 = strtemp2.replacingOccurrences(of: "T", with: " ")
+                let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let datetemp = df.date(from: strtemp)
+                let datetemp2 = df.date(from: strtemp2)
+                return datetemp! < datetemp2!
+            }
+            self.myTableView.reloadData()
+            break
+        case "Date(Reverse)":
+            sortarray = sortarray.sorted{ (item,item2) -> Bool in
+                var strtemp = item["start"]["local"].string!
+                var strtemp2 = item2["start"]["local"].string!
+                strtemp = strtemp.replacingOccurrences(of: "T", with: " ")
+                strtemp2 = strtemp2.replacingOccurrences(of: "T", with: " ")
+                let df = DateFormatter()
+                df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let datetemp = df.date(from: strtemp)
+                let datetemp2 = df.date(from: strtemp2)
+                return datetemp! > datetemp2!
+            }
+            self.myTableView.reloadData()
+            break
+        case "Distance":
+            sortarray = sortarray.sorted{ (item,item2) -> Bool in
+                switch CLLocationManager.authorizationStatus() {
+                case .notDetermined:
+                    locationManger.requestAlwaysAuthorization()
+                    return true
+                    
+                case .denied:
+                    displayMessage("Our location request has been dined", "Denied Alert")
+                    return true
+                case .restricted:
+                    displayMessage("Our location request has been Restricted", "Restricted Alert")
+                    return true
+                default:
+                    let cordinate = CLLocation(latitude: Double(item["venue"]["latitude"].string!) as! CLLocationDegrees, longitude: Double(item["venue"]["longitude"].string!) as! CLLocationDegrees)
+                    let cordinate2 = CLLocation(latitude: Double(item2["venue"]["latitude"].string!) as! CLLocationDegrees, longitude: Double(item2["venue"]["longitude"].string!) as! CLLocationDegrees)
+                    let locationtemp = self.locationManger.location?.coordinate
+                    let mycordinate = CLLocation(latitude: locationtemp!.latitude, longitude: locationtemp!.longitude)
+                    return cordinate.distance(from: mycordinate) < cordinate2.distance(from: mycordinate)
+                }
+                
+            }
+            self.myTableView.reloadData()
+            break
+        case "Distance(Reverse)":
+            sortarray = sortarray.sorted{ (item,item2) -> Bool in
+                switch CLLocationManager.authorizationStatus() {
+                case .notDetermined:
+                    locationManger.requestAlwaysAuthorization()
+                    return true
+                    
+                case .denied:
+                    displayMessage("Our location request has been dined", "Denied Alert")
+                    return true
+                case .restricted:
+                    displayMessage("Our location request has been Restricted", "Restricted Alert")
+                    return true
+                default:
+                    let cordinate = CLLocation(latitude: Double(item["venue"]["latitude"].string!) as! CLLocationDegrees, longitude: Double(item["venue"]["longitude"].string!) as! CLLocationDegrees)
+                    let cordinate2 = CLLocation(latitude: Double(item2["venue"]["latitude"].string!) as! CLLocationDegrees, longitude: Double(item2["venue"]["longitude"].string!) as! CLLocationDegrees)
+                    let locationtemp = self.locationManger.location?.coordinate
+                    let mycordinate = CLLocation(latitude: locationtemp!.latitude, longitude: locationtemp!.longitude)
+                    return cordinate.distance(from: mycordinate) > cordinate2.distance(from: mycordinate)
+                }
+                
+            }
+            self.myTableView.reloadData()
+            break
+        default:
+            if searchBarEvent.text == ""{
+                sortarray = jsonarray
+                sortcount = sortarray.count
+            }else{
+                sortarray = jsonarray.filter{ (item) -> Bool in
+                    return item["name"]["text"].string!.lowercased().contains(searchBarEvent.text!.lowercased())
+                }
+                sortcount = sortarray.count
+            }
+            self.myTableView.reloadData()
+            break
+        }
     }
     
     @objc func printmessage(){
-        print("what fuck")
+        self.performSegue(withIdentifier: "sortse", sender: self)
     }
     
     @objc func dissmisskeboard(){
@@ -142,7 +288,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventIdentifier", for: indexPath) as! EventTableViewCell
         let temp = sortarray[indexPath.row]
         if temp["logo"]["url"].string == nil{
-            cell.eventImage.image = UIImage(named: "singer.png")
+            cell.eventImage.image = UIImage(named: "404-permalink.png")
         }else{
             cell.eventImage.pin_setImage(from: URL(string: temp["logo"]["url"].string!))
         }
@@ -153,15 +299,12 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let datetemp = df.date(from: strtemp)
-        print(Date())
-        print(strtemp)
-        print(datetemp!)
         let df2 = DateFormatter()
         df2.dateFormat = "MMM dd yyyy HH:mm:ss"
         let newstr = df2.string(from: datetemp!)
         cell.time.text = newstr
         cell.title.text = temp["name"]["text"].string!
-        cell.address.text = temp["venue"]["address"]["localized_address_display"].string ?? "Not clear!"
+        cell.address.text = temp["venue"]["address"]["localized_address_display"].string ?? "Unkown"
         return cell
     }
     
@@ -220,6 +363,19 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             let temp = sortarray[(self.myTableView.indexPathForSelectedRow?.row)!]
             destination.json = temp
         }
+        if let destination = segue.destination as? sortViewController{
+            destination.sortby = sortby
+            destination.delegate = self
+            //
+        }
+    }
+    
+    func displayMessage(_ message: String,_ title: String) {
+        let alertController = UIAlertController(title: title, message: message,
+                                                preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style:
+            UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 
 

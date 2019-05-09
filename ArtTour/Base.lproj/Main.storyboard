@@ -730,11 +730,11 @@
             </objects>
             <point key="canvasLocation" x="4984.8000000000002" y="1760.8374384236454"/>
         </scene>
-        <!--Landmark Detrctor-->
+        <!--Landmark Detector-->
         <scene sceneID="ebf-fN-UQy">
             <objects>
                 <navigationController id="67b-GQ-UH7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Landmark Detrctor" image="loupe.png" id="6Oi-g0-bvW"/>
+                    <tabBarItem key="tabBarItem" title="Landmark Detector" image="loupe.png" id="6Oi-g0-bvW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nk3-ZG-W0R">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1657,6 +1657,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxi-8y-STf">
                                                 <rect key="frame" x="82" y="661.66666666666663" width="273" height="80"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="wXi-s2-cqC"/>
                                                 </constraints>
@@ -3372,10 +3373,10 @@
             </objects>
             <point key="canvasLocation" x="793" y="3704"/>
         </scene>
-        <!--View Controller-->
+        <!--Sort View Controller-->
         <scene sceneID="Npv-vf-jnK">
             <objects>
-                <viewController id="ZJM-C5-PAY" sceneMemberID="viewController">
+                <viewController id="ZJM-C5-PAY" customClass="sortViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLh-1n-mMg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3383,9 +3384,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv7-p6-19V">
                                 <rect key="frame" x="0.0" y="88" width="375" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort By" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udF-3d-JMY">
-                                        <rect key="frame" x="22" y="34" width="89" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udF-3d-JMY">
+                                        <rect key="frame" x="22.000000000000007" y="34" width="88.666666666666686" height="31.333333333333329"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3394,20 +3394,23 @@
                                 <color key="backgroundColor" red="0.97636479139999999" green="0.97653168440000004" blue="0.9763541818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="JQN-78-7ad"/>
+                                    <constraint firstItem="udF-3d-JMY" firstAttribute="leading" secondItem="gv7-p6-19V" secondAttribute="leading" constant="22" id="VPr-ui-zlp"/>
+                                    <constraint firstItem="udF-3d-JMY" firstAttribute="top" secondItem="gv7-p6-19V" secondAttribute="top" constant="34" id="gjU-jP-6D0"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="udF-3d-JMY" secondAttribute="trailing" constant="20" symbolic="YES" id="trU-Tq-fXM"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SCl-xi-GSL">
                                 <rect key="frame" x="0.0" y="158" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sortcell" rowHeight="70" id="YBw-wV-Y7M">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sortcell" rowHeight="70" id="YBw-wV-Y7M" customClass="sortTableViewCell" customModule="ArtTour" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YBw-wV-Y7M" id="YbY-Wn-05N">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rG-42-QOP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rG-42-QOP" userLabel="label">
                                                     <rect key="frame" x="23" y="21.333333333333329" width="345" height="27.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <nil key="textColor"/>
@@ -3421,7 +3424,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="moodLabel" destination="9rG-42-QOP" id="ccR-zm-clI"/>
+                                            <outlet property="sortLabel" destination="9rG-42-QOP" id="4dx-24-ZuF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3440,7 +3443,7 @@
                         <viewLayoutGuide key="safeArea" id="GE5-9v-wQJ"/>
                     </view>
                     <connections>
-                        <outlet property="myTableview" destination="SCl-xi-GSL" id="eT0-od-6he"/>
+                        <outlet property="myTableView" destination="SCl-xi-GSL" id="UEK-u8-5fo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAh-Tb-V6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
