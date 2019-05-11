@@ -33,7 +33,7 @@ class sortViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "sortcell") as! sortTableViewCell
         cell.sortLabel!.text = str[indexPath.row]
         if str[indexPath.row] == sortby{
-            cell.sortLabel!.textColor = UIColor.red
+            cell.sortLabel!.textColor = UIColor.blue
         }
         return cell
     }

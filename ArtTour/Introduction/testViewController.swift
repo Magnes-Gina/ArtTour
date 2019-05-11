@@ -233,7 +233,7 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     newartwork.artist_id = Int16(item.Artist_id)
                     newartwork.category_id = Int16(item.Category_id)
                     newartwork.artwork_date = Int16(item.ArtWork_date)
-                    print(item.ArtWork_id)
+                    print(newartwork.artwork_id)
                     try self.managedObjectContext4?.save()
                 }
                 //self.semaphore.signal()

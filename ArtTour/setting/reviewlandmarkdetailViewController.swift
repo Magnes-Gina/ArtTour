@@ -22,17 +22,31 @@ class reviewlandmarkdetailViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBAction func deletefromlist(_ sender: Any) {
-        managedObjectContext.delete(landmark!)
-        do{
-            try managedObjectContext.save()
-            self.navigationController?.popViewController(animated: true)
-        }catch{
-            fatalError("can not delete")
+        if source! == 0{
+            managedObjectContext.delete(landmark2!)
+            do{
+                try managedObjectContext.save()
+                self.navigationController?.popViewController(animated: true)
+            }catch{
+                fatalError("can not delete")
+            }
+        }else{
+            managedObjectContext.delete(landmark3!)
+            do{
+                try managedObjectContext.save()
+                self.navigationController?.popViewController(animated: true)
+            }catch{
+                fatalError("can not delete")
+            }
         }
+        
     }
     
-    var landmark:SavedLandmark?
+    var landmark:Landmark?
+    var landmark2:SavedLandmark?
+    var landmark3: LikeLandmark?
     var categorys: [Category]?
+    var source: Int?;
     private var managedObjectContext: NSManagedObjectContext
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,14 +57,16 @@ class reviewlandmarkdetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        namelabel.text = landmark?.landmark_name
+        namelabel.text = landmark?.Landmark_name
         for item in categorys!{
-            if item.category_id == landmark?.category_id {
+            if Int(item.category_id) == landmark?.Category_id {
                 categoryLabel.text = item.category_name!
                 break
             }
         }
-        youtubeView.load(withVideoId: landmark!.video!)
+        let splits = landmark!.video.components(separatedBy: ";")
+        
+        youtubeView.load(withVideoId: splits[0])
         self.deleteButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
@@ -66,7 +82,7 @@ class reviewlandmarkdetailViewController: UIViewController {
             let saved = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
             var boolflag = true
             for item in saved{
-                if Int(landmark!.landmark_id) == Int(item.landmark_id){
+                if Int(landmark!.Landmark_id) == Int(item.landmark_id){
                     boolflag = false
                     break
                 }

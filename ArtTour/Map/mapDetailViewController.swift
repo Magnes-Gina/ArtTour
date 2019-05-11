@@ -83,7 +83,8 @@ class mapDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        youtube.load(withVideoId: landmark!.video)
+        let splits = landmark!.video.components(separatedBy: ";")
+        youtube.load(withVideoId: splits[0])
         landmark_name.text = landmark!.Landmark_name
         getCategroy()
         self.backButton.layer.cornerRadius = 25

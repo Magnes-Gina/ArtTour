@@ -23,11 +23,11 @@ class reviewartworkdetailViewController: UIViewController {
     
     
     @IBAction func moreaction(_ sender: Any) {
-        if artwork!.artwork_description == "0"{
+        if artwork!.ArtWork_description == "0"{
             displayMessage("This Artwork doesn't have anny more information", "Sorry")
         }else{
-            print(artwork!.artwork_description!)
-            UIApplication.shared.open(URL(string: "\(artwork!.artwork_description!)")!, options: [:], completionHandler: nil)
+            print(artwork!.ArtWork_description)
+            UIApplication.shared.open(URL(string: "\(artwork!.ArtWork_description)")!, options: [:], completionHandler: nil)
         }
     }
     
@@ -41,13 +41,24 @@ class reviewartworkdetailViewController: UIViewController {
     
     
     @IBAction func deleteaction(_ sender: Any) {
-        managedObjectContext.delete(artwork!)
-        do{
-            try managedObjectContext.save()
-            self.navigationController?.popViewController(animated: true)
-        }catch{
-            fatalError("can not delete")
+        if source! == 0{
+            managedObjectContext.delete(artwork2!)
+            do{
+                try managedObjectContext.save()
+                self.navigationController?.popViewController(animated: true)
+            }catch{
+                fatalError("can not delete")
+            }
+        }else{
+            managedObjectContext.delete(artwork3!)
+            do{
+                try managedObjectContext.save()
+                self.navigationController?.popViewController(animated: true)
+            }catch{
+                fatalError("can not delete")
+            }
         }
+        
     }
     
     func check(){
@@ -56,7 +67,7 @@ class reviewartworkdetailViewController: UIViewController {
             let saved = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
             var boolflag = true
             for item in saved{
-                if Int(artwork!.artwork_id) == Int(item.artwork_id){
+                if Int(artwork!.ArtWork_id) == Int(item.artwork_id){
                     boolflag = false
                     break
                 }
@@ -73,7 +84,10 @@ class reviewartworkdetailViewController: UIViewController {
     
     var artists: [Artist]?
     var categories: [Category]?
-    var artwork: SavedArtWork?
+    var artwork: artworktemp?
+    var artwork2: SavedArtWork?
+    var artwork3: LikeArtWork?
+    var source: Int?
     
     private var managedObjectContext: NSManagedObjectContext
     
@@ -91,39 +105,39 @@ class reviewartworkdetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.deleteButton.layer.cornerRadius = 5
-        if Int(artwork!.category_id) == 8{
+        if Int(artwork!.Category_id) == 8{
             profileimg.image = UIImage(named: "smallsculpture.png")
         }
-        if Int(artwork!.category_id) == 7{
+        if Int(artwork!.Category_id) == 7{
             profileimg.image = UIImage(named: "smallpublicbuilding.png")
         }
-        if Int(artwork!.category_id) == 6{
+        if Int(artwork!.Category_id) == 6{
             profileimg.image =  UIImage(named: "smallmemorial.png")
         }
-        if Int(artwork!.category_id) == 5{
+        if Int(artwork!.Category_id) == 5{
             profileimg.image =  UIImage(named: "smallindigenous.png")
         }
-        if Int(artwork!.category_id) == 4{
+        if Int(artwork!.Category_id) == 4{
             profileimg.image = UIImage(named: "smallfountain.png")
         }
-        if Int(artwork!.category_id) == 3{
+        if Int(artwork!.Category_id) == 3{
             profileimg.image = UIImage(named: "smallbell.png")
         }
         getArtist()
         for item in categories!{
-            if item.category_id == artwork!.category_id{
+            if item.category_id == artwork!.Category_id{
                 categorylabel.text = item.category_name!
                 break
             }
         }
-        if Int(artwork!.artwork_date) == 0{
+        if Int(artwork!.ArtWork_date) == 0{
             datelabel.text = "Unknown"
         }else{
-            datelabel.text = "\(Int(artwork!.artwork_date))"
+            datelabel.text = "\(Int(artwork!.ArtWork_date))"
         }
-        structurelabel.text = artwork!.artwork_structure
-        addresslabel.text = artwork!.artwork_address!
-        namelabel.text = artwork!.artwork_name
+        structurelabel.text = artwork!.ArtWork_structure
+        addresslabel.text = artwork!.ArtWork_address
+        namelabel.text = artwork!.ArtWork_name
         // Do any additional setup after loading the view.
     }
     
@@ -132,7 +146,7 @@ class reviewartworkdetailViewController: UIViewController {
         do{
             artists = try managedObjectContext.fetch(fetchRequest2) as! [Artist]
             for item in artists!{
-                if Int(artwork!.artist_id) == Int(item.artist_id){
+                if Int(artwork!.Artist_id) == Int(item.artist_id){
                     artistLabel.text = item.artist_name
                     break
                 }

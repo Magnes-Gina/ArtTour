@@ -22,9 +22,9 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var artworks = [artworktemp]()
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    let sections = ["Saved","Instruction","Refresh"]
-    let items = [["Landmarks","Artworks","Events"],["Help"],["Reload"]]
-    let images = [["landmarksetting.png","artworksetting.png","eventsetting.png"],["instructions.png"],["reloadsetting.png"]]
+    let sections = ["Landmarks and Artworks","Events","Instruction","Refresh"]
+    let items = [["Visited","Favourite"],["Likes"],["Help"],["Reload"]]
+    let images = [["hide.png","favourites.png"],["eventsetting.png"],["instructions.png"],["reloadsetting.png"]]
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return  sections.count
@@ -48,17 +48,25 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 66
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if items[indexPath.section][indexPath.row] == "Help"{
             self.performSegue(withIdentifier: "reins", sender: self)
         }
-        if items[indexPath.section][indexPath.row] == "Landmarks" {
-            self.performSegue(withIdentifier: "reviewlandmark", sender: self)
-        }
-        if items[indexPath.section][indexPath.row] == "Artworks" {
+        if items[indexPath.section][indexPath.row] == "Visited" {
             self.performSegue(withIdentifier: "reviewlartwork", sender: self)
         }
-        if items[indexPath.section][indexPath.row] == "Events" {
+        if items[indexPath.section][indexPath.row] == "Favourite" {
+            self.performSegue(withIdentifier: "reviewlandmark", sender: self)
+        }
+        if items[indexPath.section][indexPath.row] == "Likes" {
             self.performSegue(withIdentifier: "reviewevent", sender: self)
         }
         if items[indexPath.section][indexPath.row] == "Reload" {
@@ -94,8 +102,8 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         // Do any additional setup after loading the view.
         self.view.bringSubviewToFront(self.indicator)
         indicator.isHidden = true
-        //UIApplication.shared.beginIgnoringInteractionEvents()
-        //UIApplication.shared.endIgnoringInteractionEvents()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

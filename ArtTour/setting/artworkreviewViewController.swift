@@ -11,43 +11,53 @@ import CoreData
 
 class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if saved.count == 0 {
+        if saved.count == 0 && saved2.count == 0{
             self.myTableview.setEmptyView(title: "You havn't saved any artworks.", message: "Please search artworks and save first!")
         }
         else {
             self.myTableview.restore()
         }
-        return saved.count
+        if section == 0{
+            return saved.count
+        }else{
+            return saved2.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //reviewartworkcell
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewartworkcell", for: indexPath) as! reviewartworkTableViewCell
-        cell.nameLabel.text = saved[indexPath.row].artwork_name
-        for item in categorys{
-            if saved[indexPath.row].category_id == item.category_id{
-                cell.categoryLabel.text = item.category_name
-                break
+        if indexPath.section == 0{
+            cell.nameLabel.text = saved[indexPath.row].artwork_name
+            for item in categorys{
+                if saved[indexPath.row].category_id == item.category_id{
+                    cell.categoryLabel.text = item.category_name
+                    break
+                }
             }
-        }
-        if Int(saved[indexPath.row].category_id) == 8{
-            cell.imagecell.image = UIImage(named: "smallsculpture.png")
-        }
-        
-        if Int(saved[indexPath.row].category_id) == 7{
-            cell.imagecell.image  = UIImage(named: "smallpublicbuilding.png")
-        }
-        if Int(saved[indexPath.row].category_id) == 6{
-            cell.imagecell.image  = UIImage(named: "smallmemorial.png")
-        }
-        if Int(saved[indexPath.row].category_id) == 5{
-            cell.imagecell.image  = UIImage(named: "smallindigenous.png")
-        }
-        if Int(saved[indexPath.row].category_id) == 4{
-            cell.imagecell.image  = UIImage(named: "smallfountain.png")
-        }
-        if Int(saved[indexPath.row].category_id) == 3{
-            cell.imagecell.image  = UIImage(named: "smallbell.png")
+            if Int(saved[indexPath.row].category_id) == 8{
+                cell.imagecell.image = UIImage(named: "smallsculpture.png")
+            }
+            if Int(saved[indexPath.row].category_id) == 6{
+                cell.imagecell.image  = UIImage(named: "smallmemorial.png")
+            }
+            if Int(saved[indexPath.row].category_id) == 9{
+                cell.imagecell.image  = UIImage(named: "smallfountain.png")
+            }
+        }else{
+            cell.nameLabel.text = saved2[indexPath.row].landmark_name
+            for item in categorys{
+                if saved2[indexPath.row].category_id == item.category_id{
+                    cell.categoryLabel.text = item.category_name
+                    break
+                }
+            }
+            if Int(saved2[indexPath.row].category_id) == 1{
+                cell.imagecell.image = UIImage(named: "smallgallery.png")
+            }
+            if Int(saved2[indexPath.row].category_id) == 7{
+                cell.imagecell.image  = UIImage(named: "smallpublicbuilding.png")
+            }
         }
         return cell
     }
@@ -56,6 +66,7 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
     
     @IBOutlet weak var myTableview: UITableView!
     var saved = [SavedArtWork]()
+    var saved2 = [SavedLandmark]()
     var categorys = [Category]()
     private var managedObjectContext: NSManagedObjectContext
     
@@ -71,12 +82,14 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
         myTableview.dataSource = self
         //getdata()
         getdata2()
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getdata()
+        getdata3()
         self.myTableview.reloadData()
     }
     
@@ -86,6 +99,17 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
         do {
             saved = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
             print(saved.count)
+        }catch {
+            fatalError("Fail to load list CoreData")
+        }
+    }
+    
+    func getdata3(){
+        saved2 = [SavedLandmark]()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
+        do {
+            saved2 = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
+        
         }catch {
             fatalError("Fail to load list CoreData")
         }
@@ -102,15 +126,21 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            managedObjectContext.delete(saved[(indexPath.row)])
+            if indexPath.section == 0{
+                managedObjectContext.delete(saved[(indexPath.row)])
+            }else{
+                managedObjectContext.delete(saved2[(indexPath.row)])
+            }
+            
             do{
                 try managedObjectContext.save()
                 getdata()
+                getdata3()
                 self.myTableview.deleteRows(at: [indexPath], with: .automatic)
             }catch{
                 fatalError("can not save to coredata")
@@ -120,13 +150,27 @@ class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "reviewartworkDetail", sender: self)
+        if indexPath.section == 0{
+            self.performSegue(withIdentifier: "reviewartworkDetail", sender: self)
+        }else{
+            self.performSegue(withIdentifier: "visitlandmark", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? reviewartworkdetailViewController{
             destination.categories = categorys
-            destination.artwork = saved[(self.myTableview.indexPathForSelectedRow?.row)!]
+            destination.source = 0
+            let temp1 = artworktemp(ArtWork_id: Int(saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_id), ArtWork_name: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_name!, ArtWork_address: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_address!, ArtWork_structure: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_structure!, ArtWork_description: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_description!, ArtWork_date: Int(saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_date), ArtWork_latitude: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_latitude , ArtWork_longtitude: saved[(self.myTableview.indexPathForSelectedRow?.row)!].artwork_longtitude, Artist_id: Int(saved[(self.myTableview.indexPathForSelectedRow?.row)!].artist_id), Category_id: Int(saved[(self.myTableview.indexPathForSelectedRow?.row)!].category_id))
+            destination.artwork2 = saved[(self.myTableview.indexPathForSelectedRow?.row)!]
+            destination.artwork = temp1
+        }
+        if let destination = segue.destination as? reviewlandmarkdetailViewController{
+            destination.categorys = categorys
+            destination.source = 0
+            let temp1 = Landmark(Landmark_id: Int(saved2[(self.myTableview.indexPathForSelectedRow?.row)!].landmark_id), Landmark_name: saved2[(self.myTableview.indexPathForSelectedRow?.row)!].landmark_name!, Landmark_latitude: saved2[(self.myTableview.indexPathForSelectedRow?.row)!].landmark_latitude, Landmark_longtitude: saved2[(self.myTableview.indexPathForSelectedRow?.row)!].landmark_longtitude, Category_id: Int(saved2[(self.myTableview.indexPathForSelectedRow?.row)!].category_id), video: saved2[(self.myTableview.indexPathForSelectedRow?.row)!].video!)
+            destination.landmark2 = saved2[(self.myTableview.indexPathForSelectedRow?.row)!]
+            destination.landmark = temp1
         }
     }
     

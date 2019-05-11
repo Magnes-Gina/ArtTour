@@ -13,7 +13,7 @@ class revieweventViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if events.count == 0 {
-            self.myTableview.setEmptyView(title: "You havn't saved any events.", message: "Please search events and save it first!")
+            self.myTableview.setEmptyView(title: "Find something to do!", message: "Nothing else planned...yet")
         }
         else {
             self.myTableview.restore()

@@ -68,7 +68,10 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
         checkLocationServices()
+        self.view.bringSubviewToFront(searchBarEvent)
+        let textFieldInsideSearchBar = searchBarEvent.value(forKey: "searchField") as? UITextField
         
+        textFieldInsideSearchBar?.backgroundColor = UIColor.groupTableViewBackground
     }
     
     
@@ -77,6 +80,12 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         if let selectionIndexPath = self.myTableView.indexPathForSelectedRow{
             self.myTableView.deselectRow(at: selectionIndexPath, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "System", size: 20)
+        header.textLabel?.textColor = UIColor.black
     }
     
     func checkLocationServices() {

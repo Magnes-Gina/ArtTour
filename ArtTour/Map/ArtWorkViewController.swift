@@ -30,20 +30,11 @@ class ArtWorkViewController: UIViewController {
         if artwork!.Category_id == 8{
             profile.image = UIImage(named: "smallsculpture.png")
         }
-        if artwork!.Category_id == 7{
-            profile.image = UIImage(named: "smallpublicbuilding.png")
-        }
         if artwork!.Category_id == 6{
             profile.image =  UIImage(named: "smallmemorial.png")
         }
-        if artwork!.Category_id == 5{
-            profile.image =  UIImage(named: "smallindigenous.png")
-        }
-        if artwork!.Category_id == 4{
+        if artwork!.Category_id == 9{
             profile.image = UIImage(named: "smallfountain.png")
-        }
-        if artwork!.Category_id == 3{
-            profile.image = UIImage(named: "smallbell.png")
         }
         namelabel.text = artwork!.ArtWork_name
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Category")
@@ -105,6 +96,7 @@ class ArtWorkViewController: UIViewController {
             //save
             let newartwork = NSEntityDescription.insertNewObject(forEntityName: "SavedArtWork", into: self.managedObjectContext) as! SavedArtWork
             newartwork.artwork_id = Int16(artwork!.ArtWork_id)
+            print("find saved!\(artwork!.ArtWork_id)")
             newartwork.artwork_name = artwork?.ArtWork_name
             newartwork.artwork_address = artwork?.ArtWork_address
             newartwork.artwork_structure = artwork?.ArtWork_structure
@@ -175,7 +167,7 @@ class ArtWorkViewController: UIViewController {
                     saved = true
                     savedButton.setTitle("Delete from list", for: .normal)
                     savedButton.backgroundColor = UIColor.red
-                    print("find saved!")
+                    print("find saved!\(artwork!.ArtWork_id) and \(Int(item.artwork_id))")
                     break
                 }
             }
