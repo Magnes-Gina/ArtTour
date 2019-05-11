@@ -47,8 +47,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var artworktemps = [artworktemp]()
     
     var likelandmarks = [Landmark]()
-    var likelandmarks2 = [LikeLandmark]()
-    var likeartworks = [LikeArtWork]()
+    var likelandmarks2 = [SavedLandmark]()
+    var likeartworks = [SavedArtWork]()
     var likeartworktemps = [artworktemp]()
     var selectedm:GMSMarker?
     var geos : [CLCircularRegion] = []
@@ -295,6 +295,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                         scilpturebool = false
                     }
                 }else{
+                    getData3()
+                    getData4()
                     allbuskerbool = false
                     if visited.isSelected{
                         visitebool = true
@@ -947,9 +949,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func getData3(){
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeLandmark")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
         do {
-            likelandmarks2 = try managedObjectContext.fetch(fetchRequest) as! [LikeLandmark]
+            likelandmarks = []
+            likelandmarks2 = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
             for item in likelandmarks2{
                 let temp = Landmark(Landmark_id: Int(item.landmark_id), Landmark_name: item.landmark_name!, Landmark_latitude: item.landmark_latitude, Landmark_longtitude: item.landmark_longtitude, Category_id: Int(item.category_id), video: item.video!)
                 likelandmarks.append(temp)
@@ -961,9 +964,10 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func getData4(){
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeArtWork")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedArtWork")
         do {
-            likeartworks = try managedObjectContext.fetch(fetchRequest) as! [LikeArtWork]
+            likeartworktemps = []
+            likeartworks = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
             for item in likeartworks{
                 let temp = artworktemp(ArtWork_id: Int(item.artist_id), ArtWork_name: item.artwork_name!, ArtWork_address: item.artwork_address!, ArtWork_structure: item.artwork_structure!, ArtWork_description: item.artwork_description!, ArtWork_date: Int(item.artwork_date), ArtWork_latitude: item.artwork_latitude, ArtWork_longtitude: item.artwork_longtitude, Artist_id: Int(item.artist_id), Category_id: Int(item.category_id))
                 likeartworktemps.append(temp)
@@ -981,7 +985,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     func centerViewOnUserLocation() {
         if let location = locationManger.location?.coordinate {
             let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 13.0)
-            self.testview.camera = camera
+            self.testview.animate(to: camera)
         }
     }
     
@@ -1006,12 +1010,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
             testview.isMyLocationEnabled = true
-            centerViewOnUserLocation()
+            let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
+            self.testview.animate(to: camera)
             locationManger.startUpdatingLocation()
             break
         case .authorizedWhenInUse:
             testview.isMyLocationEnabled = true
-            centerViewOnUserLocation()
+            let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
+            
+            self.testview.animate(to: camera)
             locationManger.startUpdatingLocation()
             break
         case .notDetermined:

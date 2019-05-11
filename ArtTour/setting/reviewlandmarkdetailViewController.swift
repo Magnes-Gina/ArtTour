@@ -73,13 +73,39 @@ class reviewlandmarkdetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        check()
+        if source == 0{
+            check()
+        }else{
+            check2()
+        }
+        
     }
     
     func check(){
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
         do {
             let saved = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
+            var boolflag = true
+            for item in saved{
+                if Int(landmark!.Landmark_id) == Int(item.landmark_id){
+                    boolflag = false
+                    break
+                }
+            }
+            if boolflag{
+                self.navigationController?.popViewController(animated: true)
+                CBToast.showToastAction(message: "This landmark is deleted ")
+            }
+        }
+        catch {
+            fatalError("Fail to load list CoreData")
+        }
+    }
+    
+    func check2(){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeLandmark")
+        do {
+            let saved = try managedObjectContext.fetch(fetchRequest) as! [LikeLandmark]
             var boolflag = true
             for item in saved{
                 if Int(landmark!.Landmark_id) == Int(item.landmark_id){

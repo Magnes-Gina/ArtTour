@@ -96,7 +96,7 @@ class museumresulttableViewController: UIViewController,UITableViewDelegate,UITa
                 if self.json2!["query"]["pages"]["-1"] == nil{
                     //print(self.json2!["query"]["pages"][0])
                     let jsontemp = self.json2!["query"]["pages"]
-                    for (key,subjson):(String,JSON) in jsontemp{
+                    for (_,subjson):(String,JSON) in jsontemp{
                         //print(subjson["extract"].string!)
                         DispatchQueue.main.async{
                             self.des = subjson["extract"].string!

@@ -35,10 +35,10 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
                     break
                 }
             }
-            if Int(saved2[indexPath.row].category_id) == 1{
+            if Int(saved[indexPath.row].category_id) == 1{
                 cell.cellimage.image = UIImage(named: "smallgallery.png")
             }
-            if Int(saved2[indexPath.row].category_id) == 7{
+            if Int(saved[indexPath.row].category_id) == 7{
                 cell.cellimage.image  = UIImage(named: "smallpublicbuilding.png")
             }
         }else{
@@ -49,13 +49,13 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
                     break
                 }
             }
-            if Int(saved[indexPath.row].category_id) == 8{
+            if Int(saved2[indexPath.row].category_id) == 8{
                 cell.cellimage.image = UIImage(named: "smallsculpture.png")
             }
-            if Int(saved[indexPath.row].category_id) == 6{
+            if Int(saved2[indexPath.row].category_id) == 6{
                 cell.cellimage.image  = UIImage(named: "smallmemorial.png")
             }
-            if Int(saved[indexPath.row].category_id) == 9{
+            if Int(saved2[indexPath.row].category_id) == 9{
                 cell.cellimage.image  = UIImage(named: "smallfountain.png")
             }
         }

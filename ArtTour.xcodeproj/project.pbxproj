@@ -76,6 +76,18 @@
 		695701982286B72F00849ED7 /* hide.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701942286B72F00849ED7 /* hide.png */; };
 		695701992286B72F00849ED7 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701952286B72F00849ED7 /* star.png */; };
 		6957019A2286B72F00849ED7 /* visits.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701962286B72F00849ED7 /* visits.png */; };
+		695701A122873D8200849ED7 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957019B22873D8000849ED7 /* list.png */; };
+		695701A222873D8200849ED7 /* star (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 6957019C22873D8000849ED7 /* star (1).png */; };
+		695701A322873D8200849ED7 /* emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957019D22873D8000849ED7 /* emergency.png */; };
+		695701A422873D8200849ED7 /* youtube-logotype.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957019E22873D8100849ED7 /* youtube-logotype.png */; };
+		695701A522873D8200849ED7 /* author.png in Resources */ = {isa = PBXBuildFile; fileRef = 6957019F22873D8200849ED7 /* author.png */; };
+		695701A622873D8200849ED7 /* view.png in Resources */ = {isa = PBXBuildFile; fileRef = 695701A022873D8200849ED7 /* view.png */; };
+		695701AC2287632C00849ED7 /* bacc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 695701A72287632C00849ED7 /* bacc.jpg */; };
+		695701AD2287632C00849ED7 /* sc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 695701A82287632C00849ED7 /* sc.jpg */; };
+		695701AE2287632C00849ED7 /* fccc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 695701A92287632C00849ED7 /* fccc.jpg */; };
+		695701AF2287632C00849ED7 /* wb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 695701AA2287632C00849ED7 /* wb.jpg */; };
+		695701B02287632C00849ED7 /* tmal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 695701AB2287632C00849ED7 /* tmal.jpg */; };
+		695701B222876EFD00849ED7 /* wikimoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695701B122876EFD00849ED7 /* wikimoreViewController.swift */; };
 		69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */; };
 		69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */; };
 		69587C82227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */; };
@@ -297,6 +309,18 @@
 		695701942286B72F00849ED7 /* hide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hide.png; sourceTree = "<group>"; };
 		695701952286B72F00849ED7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		695701962286B72F00849ED7 /* visits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visits.png; sourceTree = "<group>"; };
+		6957019B22873D8000849ED7 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		6957019C22873D8000849ED7 /* star (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star (1).png"; sourceTree = "<group>"; };
+		6957019D22873D8000849ED7 /* emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emergency.png; sourceTree = "<group>"; };
+		6957019E22873D8100849ED7 /* youtube-logotype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youtube-logotype.png"; sourceTree = "<group>"; };
+		6957019F22873D8200849ED7 /* author.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = author.png; sourceTree = "<group>"; };
+		695701A022873D8200849ED7 /* view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view.png; sourceTree = "<group>"; };
+		695701A72287632C00849ED7 /* bacc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bacc.jpg; sourceTree = "<group>"; };
+		695701A82287632C00849ED7 /* sc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sc.jpg; sourceTree = "<group>"; };
+		695701A92287632C00849ED7 /* fccc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fccc.jpg; sourceTree = "<group>"; };
+		695701AA2287632C00849ED7 /* wb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wb.jpg; sourceTree = "<group>"; };
+		695701AB2287632C00849ED7 /* tmal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tmal.jpg; sourceTree = "<group>"; };
+		695701B122876EFD00849ED7 /* wikimoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wikimoreViewController.swift; sourceTree = "<group>"; };
 		69587C782272F3A20051E4A6 /* Landmark2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		69587C792272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Landmark2+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		69587C80227331FE0051E4A6 /* SavedLandmark+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedLandmark+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -516,6 +540,17 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				695701A72287632C00849ED7 /* bacc.jpg */,
+				695701A92287632C00849ED7 /* fccc.jpg */,
+				695701A82287632C00849ED7 /* sc.jpg */,
+				695701AB2287632C00849ED7 /* tmal.jpg */,
+				695701AA2287632C00849ED7 /* wb.jpg */,
+				6957019F22873D8200849ED7 /* author.png */,
+				6957019D22873D8000849ED7 /* emergency.png */,
+				6957019B22873D8000849ED7 /* list.png */,
+				6957019C22873D8000849ED7 /* star (1).png */,
+				695701A022873D8200849ED7 /* view.png */,
+				6957019E22873D8100849ED7 /* youtube-logotype.png */,
 				695701932286B72F00849ED7 /* favourites.png */,
 				695701942286B72F00849ED7 /* hide.png */,
 				695701952286B72F00849ED7 /* star.png */,
@@ -615,6 +650,7 @@
 				695CCD672264E14700A9E4C9 /* mapDetailViewController.swift */,
 				69587CB822735EF60051E4A6 /* ArtWorkViewController.swift */,
 				69587D1A227433580051E4A6 /* CollectionProgressViewController.swift */,
+				695701B122876EFD00849ED7 /* wikimoreViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -782,14 +818,17 @@
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
 				695701982286B72F00849ED7 /* hide.png in Resources */,
 				698D502D2276FCD100767F03 /* guide4.jpeg in Resources */,
+				695701A422873D8200849ED7 /* youtube-logotype.png in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
+				695701B02287632C00849ED7 /* tmal.jpg in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
 				69587D17227433320051E4A6 /* gradual.jpg in Resources */,
 				6948A17C22750C8B0098AF3F /* train.png in Resources */,
 				690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */,
+				695701AD2287632C00849ED7 /* sc.jpg in Resources */,
 				6948A16522747E8B0098AF3F /* sharing-content.png in Resources */,
 				694B0A712252DAC100111F0A /* LaunchScreen.storyboard in Resources */,
 				694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */,
@@ -802,6 +841,8 @@
 				694B0AB722564C3C00111F0A /* singer.png in Resources */,
 				69587CED22739DB50051E4A6 /* filtering.png in Resources */,
 				6948A162227476780098AF3F /* landmarksetting.png in Resources */,
+				695701AE2287632C00849ED7 /* fccc.jpg in Resources */,
+				695701A222873D8200849ED7 /* star (1).png in Resources */,
 				6948A17E22750C8B0098AF3F /* car.png in Resources */,
 				694B0ABB22564CD000111F0A /* calendar.png in Resources */,
 				695701792284408600849ED7 /* share.png in Resources */,
@@ -813,8 +854,10 @@
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
 				698D502A2276FCD100767F03 /* guide1.jpeg in Resources */,
+				695701A122873D8200849ED7 /* list.png in Resources */,
 				69587CEA22739DB50051E4A6 /* navigation.png in Resources */,
 				6948A17F22750C8B0098AF3F /* trekking.png in Resources */,
+				695701A522873D8200849ED7 /* author.png in Resources */,
 				69587D112273A1310051E4A6 /* collection.png in Resources */,
 				698D502B2276FCD100767F03 /* guide2.jpeg in Resources */,
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
@@ -823,8 +866,10 @@
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
 				690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */,
 				695701772284408600849ED7 /* error.png in Resources */,
+				695701A322873D8200849ED7 /* emergency.png in Resources */,
 				69587CC1227367890051E4A6 /* bridge.png in Resources */,
 				69587D192274333F0051E4A6 /* cross-mark-on-a-black-circle-background.png in Resources */,
+				695701AF2287632C00849ED7 /* wb.jpg in Resources */,
 				697B22772258F9B3009682BF /* previous.png in Resources */,
 				69570172228334E400849ED7 /* photos.png in Resources */,
 				697B227D22590EBF009682BF /* link.png in Resources */,
@@ -843,11 +888,13 @@
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
 				69587D1D227435B70051E4A6 /* satisfied.png in Resources */,
 				694B0A692252DAC000111F0A /* Main.storyboard in Resources */,
+				695701A622873D8200849ED7 /* view.png in Resources */,
 				698D5005227611F300767F03 /* like.png in Resources */,
 				6948A1852275A32D0098AF3F /* camera.png in Resources */,
 				697B227A22590C3C009682BF /* calendar (1).png in Resources */,
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
+				695701AC2287632C00849ED7 /* bacc.jpg in Resources */,
 				69587CD9227368A30051E4A6 /* sculpture.png in Resources */,
 				69587CE5227373490051E4A6 /* landmarkicon.png in Resources */,
 				6948A163227476780098AF3F /* instructions.png in Resources */,
@@ -987,6 +1034,7 @@
 				698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */,
 				69587C85227331FE0051E4A6 /* SavedLandmark+CoreDataProperties.swift in Sources */,
 				6957017022832E9800849ED7 /* descriptionViewController.swift in Sources */,
+				695701B222876EFD00849ED7 /* wikimoreViewController.swift in Sources */,
 				69587C7D2272F3A20051E4A6 /* Landmark2+CoreDataProperties.swift in Sources */,
 				697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */,
 				695CCD682264E14700A9E4C9 /* mapDetailViewController.swift in Sources */,
