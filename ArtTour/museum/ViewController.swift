@@ -114,10 +114,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func landmarkDetect(_ sender: Any) {
-        self.picker.sourceType = .camera
-        self.picker.allowsEditing = false
-        self.picker.delegate = self
-        self.present(self.picker, animated: true, completion: nil)
+        popmenu()
         
     }
     
@@ -179,20 +176,22 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
         self.indicator.isHidden = true
         self.indicator.stopAnimating()
         self.button_landmark.layer.cornerRadius = 5
-        self.button_item.layer.cornerRadius = 5
+        //self.button_item.layer.cornerRadius = 5
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //
         super.viewWillAppear(animated)
-        //self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         //
         super.viewWillDisappear(animated)
-        //self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -232,6 +231,40 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         //
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func popmenu()
+    {
+        let alertController = UIAlertController(title: nil,message:"Different Chocies for Image",preferredStyle: .actionSheet)
+        
+        //function for open image library, which get the idea from tutorial file
+        let photoAction = UIAlertAction(title: "Photo by Image library", style: .default){
+            (action) in
+            
+            self.picker.sourceType = .savedPhotosAlbum
+            self.picker.allowsEditing = false
+            self.picker.delegate = self
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        alertController.addAction(photoAction)
+        
+        //function for open camera, which get the idea from tutorial file
+        let cameraAction = UIAlertAction(title: "Photo by Camera", style: .default){
+            (action) in
+            
+            self.picker.sourceType = .camera
+            self.picker.allowsEditing = false
+            self.picker.delegate = self
+            self.present(self.picker, animated: true, completion: nil)
+            
+        }
+        alertController.addAction(cameraAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default){
+            (action) in
+        }
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
 }

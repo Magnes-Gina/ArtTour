@@ -22,9 +22,9 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var artworks = [artworktemp]()
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    let sections = ["Landmarks and Artworks","Events","Instruction","Refresh"]
-    let items = [["Visited","Favourite"],["Likes"],["Help"],["Reload"]]
-    let images = [["hide.png","favourites.png"],["eventsetting.png"],["instructions.png"],["reloadsetting.png"]]
+    let sections = ["Landmarks and Artworks","Events","Instruction"]
+    let items = [["Visited","Favourite"],["Likes"],["Help"]]
+    let images = [["hide.png","favourites.png"],["eventsetting.png"],["instructions.png"]]
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return  sections.count

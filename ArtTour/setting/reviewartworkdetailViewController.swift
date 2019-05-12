@@ -62,24 +62,46 @@ class reviewartworkdetailViewController: UIViewController {
     }
     
     func check(){
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedArtWork")
-        do {
-            let saved = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
-            var boolflag = true
-            for item in saved{
-                if Int(artwork!.ArtWork_id) == Int(item.artwork_id){
-                    boolflag = false
-                    break
+        if source == 0{
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedArtWork")
+            do {
+                let saved = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
+                var boolflag = true
+                for item in saved{
+                    if Int(artwork!.ArtWork_id) == Int(item.artwork_id){
+                        boolflag = false
+                        break
+                    }
+                }
+                if boolflag{
+                    self.navigationController?.popViewController(animated: true)
+                    CBToast.showToastAction(message: "This artwork is deleted ")
                 }
             }
-            if boolflag{
-                self.navigationController?.popViewController(animated: true)
-                CBToast.showToastAction(message: "This artwork is deleted ")
+            catch {
+                fatalError("Fail to load list CoreData")
+            }
+        }else{
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeArtWork")
+            do {
+                let saved = try managedObjectContext.fetch(fetchRequest) as! [LikeArtWork]
+                var boolflag = true
+                for item in saved{
+                    if Int(artwork!.ArtWork_id) == Int(item.artwork_id){
+                        boolflag = false
+                        break
+                    }
+                }
+                if boolflag{
+                    self.navigationController?.popViewController(animated: true)
+                    CBToast.showToastAction(message: "This artwork is deleted ")
+                }
+            }
+            catch {
+                fatalError("Fail to load list CoreData")
             }
         }
-        catch {
-            fatalError("Fail to load list CoreData")
-        }
+        
     }
     
     var artists: [Artist]?

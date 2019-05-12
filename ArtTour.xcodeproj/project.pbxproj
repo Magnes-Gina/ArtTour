@@ -212,6 +212,10 @@
 		698D502C2276FCD100767F03 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50282276FCD000767F03 /* guide3.jpeg */; };
 		698D502D2276FCD100767F03 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50292276FCD000767F03 /* guide4.jpeg */; };
 		698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 698D502E2277015800767F03 /* heart-in-like-circular-button.png */; };
+		69F7BAB62288051B00C2D18C /* detector page.png in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BAB52288051A00C2D18C /* detector page.png */; };
+		69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */; };
+		69F7BABA22883EE800C2D18C /* reviewikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */; };
+		69F7BABC2288508400C2D18C /* type.png in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BABB2288508300C2D18C /* type.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -393,6 +397,10 @@
 		698D50282276FCD000767F03 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
 		698D50292276FCD000767F03 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		698D502E2277015800767F03 /* heart-in-like-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-in-like-circular-button.png"; sourceTree = "<group>"; };
+		69F7BAB52288051A00C2D18C /* detector page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detector page.png"; sourceTree = "<group>"; };
+		69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = landmarkdetector.jpg; sourceTree = "<group>"; };
+		69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewikiViewController.swift; sourceTree = "<group>"; };
+		69F7BABB2288508300C2D18C /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type.png; sourceTree = "<group>"; };
 		B8B06201E7B45CB3DFEC1A56 /* Pods-ArtTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtTour/Pods-ArtTour.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -437,6 +445,7 @@
 				698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */,
 				698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */,
 				698D502422763C6C00767F03 /* revieweventdetailViewController.swift */,
+				69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -540,8 +549,11 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */,
+				69F7BAB52288051A00C2D18C /* detector page.png */,
 				695701A72287632C00849ED7 /* bacc.jpg */,
 				695701A92287632C00849ED7 /* fccc.jpg */,
+				69F7BABB2288508300C2D18C /* type.png */,
 				695701A82287632C00849ED7 /* sc.jpg */,
 				695701AB2287632C00849ED7 /* tmal.jpg */,
 				695701AA2287632C00849ED7 /* wb.jpg */,
@@ -822,6 +834,7 @@
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
+				69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
 				695701B02287632C00849ED7 /* tmal.jpg in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
@@ -851,6 +864,7 @@
 				6948A17D22750C8B0098AF3F /* bicycle.png in Resources */,
 				694B0AB322563CC200111F0A /* map-new.png in Resources */,
 				697B2283225A36CA009682BF /* loupe.png in Resources */,
+				69F7BABC2288508400C2D18C /* type.png in Resources */,
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
 				698D502A2276FCD100767F03 /* guide1.jpeg in Resources */,
@@ -862,6 +876,7 @@
 				698D502B2276FCD100767F03 /* guide2.jpeg in Resources */,
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
 				69587CC5227367BA0051E4A6 /* big-ben.png in Resources */,
+				69F7BAB62288051B00C2D18C /* detector page.png in Resources */,
 				69587D0D22739F7C0051E4A6 /* smallbell.png in Resources */,
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
 				690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */,
@@ -1053,6 +1068,7 @@
 				6948A16B227495240098AF3F /* reviewlandmarkViewController.swift in Sources */,
 				6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */,
 				698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */,
+				69F7BABA22883EE800C2D18C /* reviewikiViewController.swift in Sources */,
 				6948A18D2275C8500098AF3F /* contentViewController.swift in Sources */,
 				697B22752258F122009682BF /* detailViewController.swift in Sources */,
 				69587CA52273582F0051E4A6 /* Artist+CoreDataProperties.swift in Sources */,
