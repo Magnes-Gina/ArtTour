@@ -10,6 +10,10 @@
 		1FEA35F9D9ED67920BFEE176 /* libPods-ArtTour.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 561EBD67EB872A36FD2368C3 /* libPods-ArtTour.a */; };
 		690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 690F49A42275D7FB00B249D7 /* flow-chart.png */; };
 		690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 690F49A52275D7FB00B249D7 /* calendar (2).png */; };
+		6925C0CF228899ED00B05E81 /* systemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0CE228899ED00B05E81 /* systemViewController.swift */; };
+		6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */; };
+		6925C0D322889B3A00B05E81 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D222889B3A00B05E81 /* gear.png */; };
+		6925C0D52288A39300B05E81 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D42288A39300B05E81 /* profile2.png */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -187,7 +191,6 @@
 		697B2281225A08BC009682BF /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2280225A08BC009682BF /* UIUtilities.swift */; };
 		697B2283225A36CA009682BF /* loupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2282225A36CA009682BF /* loupe.png */; };
 		697B2285225A52DC009682BF /* mDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2284225A52DC009682BF /* mDetailViewController.swift */; };
-		697B2289225A54EA009682BF /* museumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B2288225A54EA009682BF /* museumTableViewController.swift */; };
 		697B228B225A5511009682BF /* museumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B228A225A5511009682BF /* museumTableViewCell.swift */; };
 		697B2290225A986B009682BF /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697B228F225A986B009682BF /* testViewController.swift */; };
 		697B2292225A9FE0009682BF /* 404-permalink.png in Resources */ = {isa = PBXBuildFile; fileRef = 697B2291225A9FE0009682BF /* 404-permalink.png */; };
@@ -240,6 +243,10 @@
 		561EBD67EB872A36FD2368C3 /* libPods-ArtTour.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArtTour.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		690F49A42275D7FB00B249D7 /* flow-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flow-chart.png"; sourceTree = "<group>"; };
 		690F49A52275D7FB00B249D7 /* calendar (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar (2).png"; sourceTree = "<group>"; };
+		6925C0CE228899ED00B05E81 /* systemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = systemViewController.swift; sourceTree = "<group>"; };
+		6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = licenceTableViewCell.swift; sourceTree = "<group>"; };
+		6925C0D222889B3A00B05E81 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		6925C0D42288A39300B05E81 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -378,7 +385,6 @@
 		697B2280225A08BC009682BF /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		697B2282225A36CA009682BF /* loupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loupe.png; sourceTree = "<group>"; };
 		697B2284225A52DC009682BF /* mDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mDetailViewController.swift; sourceTree = "<group>"; };
-		697B2288225A54EA009682BF /* museumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumTableViewController.swift; sourceTree = "<group>"; };
 		697B228A225A5511009682BF /* museumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museumTableViewCell.swift; sourceTree = "<group>"; };
 		697B228F225A986B009682BF /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		697B2291225A9FE0009682BF /* 404-permalink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "404-permalink.png"; sourceTree = "<group>"; };
@@ -433,6 +439,7 @@
 		6948A15322746D850098AF3F /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */,
 				6948A15422746DA70098AF3F /* settingViewController.swift */,
 				6948A156227470370098AF3F /* settingTableViewCell.swift */,
 				6948A1662274826F0098AF3F /* ReInstructionViewController.swift */,
@@ -446,6 +453,7 @@
 				698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */,
 				698D502422763C6C00767F03 /* revieweventdetailViewController.swift */,
 				69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */,
+				6925C0CE228899ED00B05E81 /* systemViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -549,6 +557,8 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0D42288A39300B05E81 /* profile2.png */,
+				6925C0D222889B3A00B05E81 /* gear.png */,
 				69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */,
 				69F7BAB52288051A00C2D18C /* detector page.png */,
 				695701A72287632C00849ED7 /* bacc.jpg */,
@@ -687,7 +697,6 @@
 			isa = PBXGroup;
 			children = (
 				694B0A652252DAC000111F0A /* ViewController.swift */,
-				697B2288225A54EA009682BF /* museumTableViewController.swift */,
 				697B228A225A5511009682BF /* museumTableViewCell.swift */,
 				697B2284225A52DC009682BF /* mDetailViewController.swift */,
 				6948A18C2275C8500098AF3F /* contentViewController.swift */,
@@ -874,8 +883,10 @@
 				695701A522873D8200849ED7 /* author.png in Resources */,
 				69587D112273A1310051E4A6 /* collection.png in Resources */,
 				698D502B2276FCD100767F03 /* guide2.jpeg in Resources */,
+				6925C0D52288A39300B05E81 /* profile2.png in Resources */,
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
 				69587CC5227367BA0051E4A6 /* big-ben.png in Resources */,
+				6925C0D322889B3A00B05E81 /* gear.png in Resources */,
 				69F7BAB62288051B00C2D18C /* detector page.png in Resources */,
 				69587D0D22739F7C0051E4A6 /* smallbell.png in Resources */,
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
@@ -1044,6 +1055,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */,
 				698D501D2276258400767F03 /* revieweventTableViewCell.swift in Sources */,
 				6948A1752274D1590098AF3F /* moodTableViewCell.swift in Sources */,
 				698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */,
@@ -1063,6 +1075,7 @@
 				694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */,
 				69587CB222735A4B0051E4A6 /* SavedArtWork+CoreDataClass.swift in Sources */,
 				69587CB522735A4B0051E4A6 /* SavedArtWork+CoreDataProperties.swift in Sources */,
+				6925C0CF228899ED00B05E81 /* systemViewController.swift in Sources */,
 				69587C8D227332460051E4A6 /* Category+CoreDataProperties.swift in Sources */,
 				6948A1772275025F0098AF3F /* readViewController.swift in Sources */,
 				6948A16B227495240098AF3F /* reviewlandmarkViewController.swift in Sources */,
@@ -1078,7 +1091,6 @@
 				69587CA22273582F0051E4A6 /* Artist+CoreDataClass.swift in Sources */,
 				6948A15522746DA70098AF3F /* settingViewController.swift in Sources */,
 				69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */,
-				697B2289225A54EA009682BF /* museumTableViewController.swift in Sources */,
 				697B2269225866B9009682BF /* eventViewController.swift in Sources */,
 				698D502122762C6F00767F03 /* reviewlandmarkdetailViewController.swift in Sources */,
 				69587C8A227332460051E4A6 /* Category+CoreDataClass.swift in Sources */,

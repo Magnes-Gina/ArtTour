@@ -22,9 +22,9 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var artworks = [artworktemp]()
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    let sections = ["Landmarks and Artworks","Events","Instruction"]
-    let items = [["Visited","Favourite"],["Likes"],["Help"]]
-    let images = [["hide.png","favourites.png"],["eventsetting.png"],["instructions.png"]]
+    let sections = ["Landmarks and Artworks","Events","Instruction","Setting"]
+    let items = [["Visited","Favourite"],["Likes"],["Help"],["Setting"]]
+    let images = [["hide.png","favourites.png"],["eventsetting.png"],["instructions.png"],["gear.png"]]
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return  sections.count
@@ -69,18 +69,8 @@ class settingViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if items[indexPath.section][indexPath.row] == "Likes" {
             self.performSegue(withIdentifier: "reviewevent", sender: self)
         }
-        if items[indexPath.section][indexPath.row] == "Reload" {
-            indicator.isHidden = false
-            indicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            getData()
-            semaphore.wait()
-            UIApplication.shared.endIgnoringInteractionEvents()
-            CBToast.showToastAction(message: "Refresh Map landmarks and artwork data!")
-            indicator.isHidden = true
-            indicator.stopAnimating()
-            /*UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=-37.886561,145.091904&destination=-37.885062,145.078586&travelmode=driving")!, options: [:], completionHandler: nil)*/
-            
+        if items[indexPath.section][indexPath.row] == "Setting" {
+            self.performSegue(withIdentifier: "setting", sender: self)
         }
     }
 

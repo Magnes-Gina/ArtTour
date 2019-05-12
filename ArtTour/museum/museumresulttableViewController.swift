@@ -133,7 +133,7 @@ class museumresulttableViewController: UIViewController,UITableViewDelegate,UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: "museumidentifier", for: indexPath) as! museumTableViewCell
         let temp = jsonarray![indexPath.row]
         if temp["media"][0]["thumbnail"]["uri"].string == nil {
-            cell.imageview.image = UIImage(named: "singer.png")
+            cell.imageview.image = UIImage(named: "404-permalink.png")
             
         }else{
             cell.imageview.pin_setImage(from: URL(string: temp["media"][0]["thumbnail"]["uri"].string!))

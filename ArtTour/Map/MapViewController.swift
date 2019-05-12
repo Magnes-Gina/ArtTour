@@ -45,7 +45,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     var landmarks2 = [Landmark2]()
     var artworks = [ArtWork]()
     var artworktemps = [artworktemp]()
-    
+    var activealert: UIAlertController?
     var likelandmarks = [Landmark]()
     var likelandmarks2 = [SavedLandmark]()
     var likeartworks = [SavedArtWork]()
@@ -67,6 +67,49 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     @IBOutlet weak var backgroundView2: UIView!
     
+    @IBOutlet var instructionView: UIView!
+    
+    @IBOutlet weak var gotButton: UIButton!
+    
+    @IBAction func gotit(_ sender: Any) {
+        animatedOut2()
+        
+        self.button2.isEnabled = true
+        self.button3.isEnabled = true
+        self.collectionButton.isEnabled = true
+        self.testview.settings.scrollGestures = true
+        self.testview.settings.zoomGestures = true
+        self.testview.settings.tiltGestures = true
+        self.testview.settings.rotateGestures = true
+    }
+    
+    func insreuctionin(){
+        self.view.addSubview(instructionView)
+        self.button2.isEnabled = false
+        self.button3.isEnabled = false
+        self.collectionButton.isEnabled = false
+        self.testview.settings.scrollGestures = false
+        self.testview.settings.zoomGestures = false
+        self.testview.settings.tiltGestures = false
+        self.testview.settings.rotateGestures = false
+        instructionView.center = self.view.center
+        instructionView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        instructionView.alpha = 0
+        UIView.animate(withDuration: 0.5){
+            self.instructionView.alpha = 1
+            self.instructionView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    
+    func animatedOut2(){
+        UIView.animate(withDuration: 0.4, animations: {
+            self.instructionView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.instructionView.alpha = 0
+        }) {(sucess: Bool) in
+            self.instructionView.removeFromSuperview()
+        }
+    }
     
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -389,7 +432,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                             othersbool = true
                             for item in self.artworktemps{
                                 if item.Category_id == 9{
-                                    if !likeartworktemps.contains(where: {$0.ArtWork_id == item.ArtWork_id}){
+                                    if !likeartworktemps.contains(where: {$0.ArtWork_name == item.ArtWork_name}){
                                         self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                                         let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                                         geoLocation.notifyOnEntry = true
@@ -404,7 +447,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                             memorialbool = true
                             for item in self.artworktemps{
                                 if item.Category_id == 6{
-                                    if !likeartworktemps.contains(where: {$0.ArtWork_id == item.ArtWork_id}){
+                                    if !likeartworktemps.contains(where: {$0.ArtWork_name == item.ArtWork_name}){
                                         self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                                         let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                                         geoLocation.notifyOnEntry = true
@@ -434,7 +477,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                             scilpturebool = true
                             for item in self.artworktemps{
                                 if item.Category_id == 8{
-                                    if !likeartworktemps.contains(where: {$0.ArtWork_id == item.ArtWork_id}){
+                                    if !likeartworktemps.contains(where: {$0.ArtWork_name == item.ArtWork_name}){
                                         self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
                                         let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
                                         geoLocation.notifyOnEntry = true
@@ -482,6 +525,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         publicbuildingbool = true
         scilpturebool = true
         allbuskerbool = false
+        visitebool = false
+        notvisitbool = false
         checkaround()
         animatedOut()
     }
@@ -608,6 +653,17 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         backgroundView2.layer.shadowRadius = 5.0
         backgroundView2.layer.masksToBounds = false
         self.choiceView.layer.cornerRadius = 30
+        
+        
+        self.instructionView.layer.cornerRadius = 10
+        
+        self.instructionView.layer.shadowColor = UIColor.lightGray.cgColor
+        self.instructionView.layer.shadowOpacity = 0.8
+        self.instructionView.layer.shadowRadius = 5.0
+        self.gotButton.layer.cornerRadius = 10
+        insreuctionin()
+        
+        
         self.applaybutton.layer.cornerRadius = 10
         self.selectAllButton.layer.cornerRadius = 10
         self.visited.layer.cornerRadius = 10
@@ -636,7 +692,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         getData4()
         addingmaker()
         choiceView.layer.cornerRadius = 5
-        checkaround()
+        //checkaround()
     }
     
     func animatedIn(){
@@ -768,6 +824,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         evaluateClosetRegions()
+        print(locationManger.location)
         checkaround()
     }
     
@@ -787,6 +844,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             resultLabel.text = "\(geos.count) results found!"
             var count = 0
             for geo in geos{
+                print(locationManger.location)
                 let distance = locationManger.location!.distance(from: CLLocation(latitude: geo.center.latitude, longitude: geo.center.longitude))
                 if distance <= 1000{
                     count = count + 1
@@ -813,14 +871,18 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                 let temp: CLCircularRegion = region.0
                 if temp.contains(locationManger.location!.coordinate){
                     if temp.identifier != nowlandmark.identifier{
-                        if ispop {
-                            animatedOut()
+                        if !UserDefaults.standard.bool(forKey: "notify"){
+                            if ispop {
+                                animatedOut()
+                            }
+                            displayMessage("You are near the \(temp.identifier)", "Landmark Notification ")
+                            notificationCreated(message: "You are near the \(temp.identifier)", title: "Location Notification")
+                            nowlandmark = temp
                         }
-                        displayMessage("You are near the \(temp.identifier)", "Landmark Notification ")
-                        notificationCreated(message: "You are near the \(temp.identifier)", title: "Location Notification")
-                        nowlandmark = temp
+                        
                     }
                 }else{
+                    print(UserDefaults.standard.bool(forKey: "notify"))
                     print("Not in any region!")
                 }
                 break
@@ -917,7 +979,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func setupLocationManager() {
         locationManger.delegate = self
-        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        locationManger.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManger.allowsBackgroundLocationUpdates = true
+        locationManger.pausesLocationUpdatesAutomatically = false
     }
     
     func getData(){
@@ -991,6 +1055,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
+            print(5555555555555)
             setupLocationManager()
             checkLocationAuthorization()
         }else{
@@ -999,11 +1064,15 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     func displayMessage(_ message: String,_ title: String) {
+        if activealert != nil{
+            activealert?.dismiss(animated: false, completion: nil)
+        }
         let alertController = UIAlertController(title: title, message: message,
                                                 preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style:
             UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
+        activealert = alertController
     }
     
     func checkLocationAuthorization() {

@@ -15,7 +15,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     
     var saveds = [SavedArtWork]()
     var likes = [LikeArtWork]()
-    
+    let locationManger = CLLocationManager()
     @IBOutlet weak var backButton: UIButton!
     
     
@@ -75,17 +75,173 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     @IBOutlet weak var publictransport: UIButton!
     
     @IBAction func publictransit(_ sender: Any) {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=transit")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .authorizedWhenInUse:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=transit")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     
     @IBAction func bikeaction(_ sender: Any) {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .authorizedWhenInUse:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=bicycling")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     @IBAction func walkaction(_ sender: Any) {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=walking")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .authorizedWhenInUse:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=walking")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     
     @IBAction func caraction(_ sender: Any) {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=driving")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .authorizedWhenInUse:
+            let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+            
+            resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+                let locationtemp = self.locationManger.location?.coordinate
+                UIApplication.shared.open(URL(string: "http://www.google.com/maps/dir/?api=1&origin=\(locationtemp!.latitude),\(locationtemp!.longitude)&destination=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)&travelmode=driving")!, options: [:], completionHandler: nil)
+            })
+            resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+                resultAlertController.dismiss(animated: true, completion: nil)
+            })
+            resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+            present(resultAlertController,animated: true,completion: nil)
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     @IBOutlet weak var walk: UIButton!
@@ -287,7 +443,62 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             self.profile.pin_setImage(from: URL(string: split[1]))
         }
         self.view.bringSubviewToFront(backButton)
+        locationManger.distanceFilter = 100
+        checkLocationServices()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
+        self.myMapView.addGestureRecognizer(gesture)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func opengoogle(){
+        let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)
+        
+        resultAlertController.addAction(UIAlertAction(title: "Yes", style: .default) {_ in
+            UIApplication.shared.open(URL(string: "http://www.google.com/maps/search/?api=1&query=\(self.artwork!.ArtWork_latitude),\(self.artwork!.ArtWork_longtitude)")!, options: [:], completionHandler: nil)
+        })
+        resultAlertController.addAction(UIAlertAction(title: "No", style: .default) {_ in
+            resultAlertController.dismiss(animated: true, completion: nil)
+        })
+        resultAlertController.message = "Do you want to leave this APP and go to Google Map?"
+        present(resultAlertController,animated: true,completion: nil)
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        }else{
+            //show alert that user dont have location service
+        }
+    }
+    
+    func setupLocationManager() {
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .authorizedWhenInUse:
+            
+            locationManger.startUpdatingLocation()
+            break
+        case .notDetermined:
+            locationManger.requestAlwaysAuthorization()
+            break
+        case .denied:
+            displayMessage("Our location request has been dined", "Denied Alert")
+            break
+        case .restricted:
+            displayMessage("Our location request has been Restricted", "Restricted Alert")
+            break
+        @unknown default:
+            break
+        }
     }
     
     func displayMessage(_ message: String,_ title: String) {
