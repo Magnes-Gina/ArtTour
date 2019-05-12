@@ -690,7 +690,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         getData2()
         getData3()
         getData4()
-        addingmaker()
+        addingmaker3()
         choiceView.layer.cornerRadius = 5
         //checkaround()
     }
@@ -799,6 +799,28 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         for landmark in self.landmarks{
             self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
             let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+            geoLocation.notifyOnEntry = true
+            geos.append(geoLocation)
+            
+            index += 1
+        }
+        self.clusterManager.cluster()
+    }
+    
+    func addingmaker3(){
+        var index = 0
+        geos = []
+        for landmark in self.landmarks{
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+            geoLocation.notifyOnEntry = true
+            geos.append(geoLocation)
+            
+            index += 1
+        }
+        for item in self.artworktemps{
+            self.generatePOIItems(accessibilityLabel: "Item\(index)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "click here for more information!",category: item.Category_id)
+            let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
             geoLocation.notifyOnEntry = true
             geos.append(geoLocation)
             
