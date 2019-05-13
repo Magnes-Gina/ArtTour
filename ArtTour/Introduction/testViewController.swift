@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
+
 struct tempcat: Decodable {
     let Category_id: Int
     let Category_name: String
@@ -33,10 +35,10 @@ struct artworktemp: Decodable{
 
 class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManagerDelegate{
 
-    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration1/landmark")
-    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/category")
-    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artist")
-    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artwork")
+    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/landmark")
+    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/category")
+    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artist")
+    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artwork")
     var landmarks = [Landmark]()
     var tempcats = [tempcat]()
     var artiststemp = [artisttemp]()
@@ -135,8 +137,11 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     }
     
     func getData(){
-        guard let downloadURL = url else { return }
-        URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
+        var downloadURL = URLRequest(url: url!)
+        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
+        
+        //guard let downloadURL = url else { return }
+        URLSession.shared.dataTask(with: downloadURL) { (data: Data?, urlResponse:URLResponse?, error:Error?) in
             //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
@@ -163,7 +168,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     }
     
     func getData2(){
-        guard let downloadURL = url2 else { return }
+        var downloadURL = URLRequest(url: url2!)
+        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
             //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
@@ -187,7 +193,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     }
     
     func getData3(){
-        guard let downloadURL = url3 else { return }
+        var downloadURL = URLRequest(url: url3!)
+        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
             //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
@@ -212,7 +219,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     }
     
     func getData4(){
-        guard let downloadURL = url4 else { return }
+        var downloadURL = URLRequest(url: url4!)
+        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
             //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {

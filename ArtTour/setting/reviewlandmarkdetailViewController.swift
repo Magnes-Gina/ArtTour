@@ -332,6 +332,9 @@ class reviewlandmarkdetailViewController: UIViewController,GMSMapViewDelegate,CL
         if let destination  = segue.destination as? reviewikiViewController{
             destination.str = self.descriptionLabel.text
         }
+        if let destination = segue.destination as? artworkimagereviewViewController{
+            destination.img = self.profileImage.image
+        }
     }
     
     var landmark:Landmark?
@@ -387,7 +390,14 @@ class reviewlandmarkdetailViewController: UIViewController,GMSMapViewDelegate,CL
         checkLocationServices()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
         self.myMapView.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.imgreview))
+        self.profileImage.isUserInteractionEnabled = true
+        self.profileImage.addGestureRecognizer(gesture2)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func imgreview(){
+        self.performSegue(withIdentifier: "review1", sender: self)
     }
     
     @objc func opengoogle(){

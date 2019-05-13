@@ -25,6 +25,9 @@
 		6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F322899B1200B05E81 /* guide2.jpeg */; };
 		6925C0F822899B1400B05E81 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F422899B1200B05E81 /* guide3.jpeg */; };
 		6925C0F922899B1400B05E81 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F522899B1300B05E81 /* guide4.jpeg */; };
+		6925C0FB2289D7A700B05E81 /* artworkimagereviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */; };
+		6925C0FD2289DBA200B05E81 /* review2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FC2289DBA200B05E81 /* review2ViewController.swift */; };
+		6925C0FF2289DF4300B05E81 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0FE2289DF4300B05E81 /* loading.jpg */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -264,6 +267,9 @@
 		6925C0F322899B1200B05E81 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
 		6925C0F422899B1200B05E81 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
 		6925C0F522899B1300B05E81 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
+		6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimagereviewViewController.swift; sourceTree = "<group>"; };
+		6925C0FC2289DBA200B05E81 /* review2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = review2ViewController.swift; sourceTree = "<group>"; };
+		6925C0FE2289DF4300B05E81 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -466,6 +472,8 @@
 				698D502422763C6C00767F03 /* revieweventdetailViewController.swift */,
 				69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */,
 				6925C0CE228899ED00B05E81 /* systemViewController.swift */,
+				6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */,
+				6925C0FC2289DBA200B05E81 /* review2ViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -569,6 +577,7 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0FE2289DF4300B05E81 /* loading.jpg */,
 				6925C0E522898A7D00B05E81 /* bluearrow.png */,
 				6925C0E022897EBA00B05E81 /* detector page.jpeg */,
 				6925C0D42288A39300B05E81 /* profile2.png */,
@@ -895,6 +904,7 @@
 				6948A17D22750C8B0098AF3F /* bicycle.png in Resources */,
 				694B0AB322563CC200111F0A /* map-new.png in Resources */,
 				697B2283225A36CA009682BF /* loupe.png in Resources */,
+				6925C0FF2289DF4300B05E81 /* loading.jpg in Resources */,
 				69F7BABC2288508400C2D18C /* type.png in Resources */,
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
@@ -1113,6 +1123,7 @@
 				69587CAC22735A4B0051E4A6 /* ArtWork+CoreDataClass.swift in Sources */,
 				69587CA22273582F0051E4A6 /* Artist+CoreDataClass.swift in Sources */,
 				6925C0ED2289961B00B05E81 /* EFImageViewZoom.swift in Sources */,
+				6925C0FB2289D7A700B05E81 /* artworkimagereviewViewController.swift in Sources */,
 				6948A15522746DA70098AF3F /* settingViewController.swift in Sources */,
 				69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */,
 				697B2269225866B9009682BF /* eventViewController.swift in Sources */,
@@ -1126,6 +1137,7 @@
 				694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */,
 				698D501222761F5600767F03 /* Event2+CoreDataClass.swift in Sources */,
 				698D50192276257000767F03 /* revieweventViewController.swift in Sources */,
+				6925C0FD2289DBA200B05E81 /* review2ViewController.swift in Sources */,
 				697B2281225A08BC009682BF /* UIUtilities.swift in Sources */,
 				697B2285225A52DC009682BF /* mDetailViewController.swift in Sources */,
 				6948A1732274D1460098AF3F /* moodViewController.swift in Sources */,

@@ -365,7 +365,13 @@ class reviewartworkdetailViewController: UIViewController,GMSMapViewDelegate,CLL
         checkLocationServices()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
         self.myMapView.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.review))
+        self.profileimg.isUserInteractionEnabled = true
+        self.profileimg.addGestureRecognizer(gesture2)
         // Do any additional setup after loading the view.
+    }
+    @objc func review(){
+        self.performSegue(withIdentifier: "review2", sender: self)
     }
     
     @objc func opengoogle(){
@@ -434,14 +440,16 @@ class reviewartworkdetailViewController: UIViewController,GMSMapViewDelegate,CLL
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? review2ViewController{
+            destination.img = self.profileimg.image!
+        }
+        
     }
-    */
+ 
 
 }
