@@ -11,7 +11,8 @@ import UIKit
 class systemViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
     
-    let licences = ["License CC BY 4.0","License CC BY-SA 3.0"]
+    let licences = ["City of Melbourne, Australia","Museums Victoria","Eventbrite Terms of Service","License CC BY 4.0","License CC BY-SA 3.0"]
+    let links = ["https://www.melbourne.vic.gov.au/about-council/Pages/about-council.aspx","https://creativecommons.org/licenses/by/4.0/","https://www.eventbrite.com/support/articles/en_US/Troubleshooting/eventbrite-terms-of-service?lg=en_US","https://creativecommons.org/licenses/by-sa/3.0/","https://museumsvictoria.com.au/about-us/"]
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -21,7 +22,7 @@ class systemViewController: UIViewController,UITableViewDelegate,UITableViewData
         if myswitch.isOn{
             print("open")
             UserDefaults.standard.set(false, forKey: "notify")
-            displayMessage("You will recieve any notification when you close to landmarks and Artwroks","Alert")
+            displayMessage("You will recieve an notification when you close to landmarks and Artwroks","Alert")
         }else{
             print("close")
             UserDefaults.standard.set(true, forKey: "notify")
@@ -58,8 +59,13 @@ class systemViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectionIndexPath = self.myTableView.indexPathForSelectedRow{
+            self.myTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
     }
 
     func displayMessage(_ message: String,_ title: String) {
@@ -72,6 +78,13 @@ class systemViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Open source licenses"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UIApplication.shared.open(URL(string:links[indexPath.row])!)
+        if let selectionIndexPath = self.myTableView.indexPathForSelectedRow{
+            self.myTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
     }
     
     /*

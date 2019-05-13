@@ -14,6 +14,8 @@
 		6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */; };
 		6925C0D322889B3A00B05E81 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D222889B3A00B05E81 /* gear.png */; };
 		6925C0D52288A39300B05E81 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D42288A39300B05E81 /* profile2.png */; };
+		6925C0DB228977E300B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0DA228977E300B05E81 /* filter.png */; };
+		6925C0DD2289785800B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0DC2289785700B05E81 /* path.png */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -247,6 +249,8 @@
 		6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = licenceTableViewCell.swift; sourceTree = "<group>"; };
 		6925C0D222889B3A00B05E81 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		6925C0D42288A39300B05E81 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
+		6925C0DA228977E300B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		6925C0DC2289785700B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -557,6 +561,8 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0DC2289785700B05E81 /* path.png */,
+				6925C0DA228977E300B05E81 /* filter.png */,
 				6925C0D42288A39300B05E81 /* profile2.png */,
 				6925C0D222889B3A00B05E81 /* gear.png */,
 				69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */,
@@ -921,7 +927,9 @@
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
 				695701AC2287632C00849ED7 /* bacc.jpg in Resources */,
+				6925C0DD2289785800B05E81 /* path.png in Resources */,
 				69587CD9227368A30051E4A6 /* sculpture.png in Resources */,
+				6925C0DB228977E300B05E81 /* filter.png in Resources */,
 				69587CE5227373490051E4A6 /* landmarkicon.png in Resources */,
 				6948A163227476780098AF3F /* instructions.png in Resources */,
 				697B2297225AA466009682BF /* blood-type.png in Resources */,

@@ -40,7 +40,7 @@
                                             <constraint firstAttribute="height" constant="32" id="RSo-Tq-pfb"/>
                                             <constraint firstAttribute="width" constant="32" id="Vcz-VA-F9Z"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="filtering.png"/>
+                                        <state key="normal" title="Button" image="filter.png"/>
                                         <connections>
                                             <action selector="refresh:" destination="aEs-Tf-2iK" eventType="touchUpInside" id="Fh6-5a-uh2"/>
                                         </connections>
@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="height" constant="32" id="Ja6-qq-ipw"/>
                                             <constraint firstAttribute="width" constant="32" id="i23-pc-7LQ"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="collection.png"/>
+                                        <state key="normal" title="Button" image="path.png"/>
                                         <connections>
                                             <action selector="collectionAction:" destination="aEs-Tf-2iK" eventType="touchUpInside" id="gYj-pH-1eV"/>
                                         </connections>
@@ -1245,12 +1245,6 @@
                                     <constraint firstAttribute="width" constant="40" id="TcJ-fS-Efd"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landmarkdetector.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yKO-9O-Kw5">
-                                <rect key="frame" x="78" y="40" width="240" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="lWB-Kz-XW7"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1259,12 +1253,9 @@
                             <constraint firstItem="Xr2-pQ-Ln9" firstAttribute="centerX" secondItem="9Q8-ak-0i9" secondAttribute="centerX" id="W4N-3F-uY2"/>
                             <constraint firstItem="B4h-KF-ElH" firstAttribute="leading" secondItem="XGF-7P-9UH" secondAttribute="leading" constant="5" id="bHq-pW-8gH"/>
                             <constraint firstItem="9Q8-ak-0i9" firstAttribute="trailing" secondItem="7OI-nc-8mJ" secondAttribute="trailing" constant="20" id="bIq-fl-oPm"/>
-                            <constraint firstItem="yKO-9O-Kw5" firstAttribute="leading" secondItem="9Q8-ak-0i9" secondAttribute="leading" constant="78" id="kUK-vM-j6Z"/>
                             <constraint firstItem="Xr2-pQ-Ln9" firstAttribute="top" secondItem="B4h-KF-ElH" secondAttribute="bottom" constant="5" id="lIf-uP-wWW"/>
                             <constraint firstItem="7OI-nc-8mJ" firstAttribute="top" secondItem="Xr2-pQ-Ln9" secondAttribute="bottom" constant="20" id="mW1-dO-af0"/>
-                            <constraint firstItem="9Q8-ak-0i9" firstAttribute="trailing" secondItem="yKO-9O-Kw5" secondAttribute="trailing" constant="57" id="uLZ-fp-Uxa"/>
                             <constraint firstAttribute="trailing" secondItem="B4h-KF-ElH" secondAttribute="trailing" constant="5" id="vEA-Q3-nEe"/>
-                            <constraint firstItem="yKO-9O-Kw5" firstAttribute="top" secondItem="XGF-7P-9UH" secondAttribute="top" constant="40" id="vEf-Wx-4gJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Q8-ak-0i9"/>
                     </view>
@@ -1838,7 +1829,7 @@
             </objects>
             <point key="canvasLocation" x="179" y="919"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Profile-->
         <scene sceneID="LFk-Qr-RuH">
             <objects>
                 <viewController id="BA6-rv-DdB" customClass="settingViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
@@ -1913,14 +1904,8 @@
                                             <constraint firstAttribute="height" constant="100" id="pit-Dm-m5F"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lh-gS-PP9">
-                                        <rect key="frame" x="128" y="10" width="239" height="23"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your saved events, landmarks and artworks here. Get help to explore art and culture in Melboure. " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAF-Jw-eMC">
-                                        <rect key="frame" x="128" y="41" width="239" height="69"/>
+                                        <rect key="frame" x="128" y="26" width="239" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="69" id="uaN-9r-PUD"/>
                                         </constraints>
@@ -1936,14 +1921,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bUf-we-4av" firstAttribute="top" secondItem="qvs-nd-Sf1" secondAttribute="top" constant="10" id="2Wn-Li-K4g"/>
-                                    <constraint firstItem="3Lh-gS-PP9" firstAttribute="top" secondItem="qvs-nd-Sf1" secondAttribute="top" constant="10" id="44A-m6-YKq"/>
                                     <constraint firstAttribute="height" constant="130" id="Arn-yZ-Njw"/>
                                     <constraint firstItem="bUf-we-4av" firstAttribute="leading" secondItem="qvs-nd-Sf1" secondAttribute="leading" constant="20" id="M6j-V4-4OG"/>
-                                    <constraint firstAttribute="trailing" secondItem="3Lh-gS-PP9" secondAttribute="trailing" constant="8" id="Pva-Lg-Jjd"/>
-                                    <constraint firstItem="3Lh-gS-PP9" firstAttribute="leading" secondItem="bUf-we-4av" secondAttribute="trailing" constant="8" id="STq-gk-uku"/>
                                     <constraint firstItem="rAF-Jw-eMC" firstAttribute="leading" secondItem="bUf-we-4av" secondAttribute="trailing" constant="8" id="YhT-Pd-Iya"/>
-                                    <constraint firstItem="rAF-Jw-eMC" firstAttribute="top" secondItem="3Lh-gS-PP9" secondAttribute="bottom" constant="8" id="ouX-yc-SMc"/>
                                     <constraint firstAttribute="trailing" secondItem="rAF-Jw-eMC" secondAttribute="trailing" constant="8" id="w5L-w3-9KT"/>
+                                    <constraint firstItem="rAF-Jw-eMC" firstAttribute="top" secondItem="qvs-nd-Sf1" secondAttribute="top" constant="26" id="x5B-dq-55a"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1961,7 +1943,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Hd-7t-aJ0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="G8k-R6-V2L"/>
+                    <navigationItem key="navigationItem" title="Profile" id="G8k-R6-V2L"/>
                     <connections>
                         <outlet property="indicator" destination="9sE-Qk-2Ax" id="zae-iY-MFR"/>
                         <outlet property="myTableView" destination="I64-iW-I3I" id="u8k-17-4U1"/>
@@ -2746,7 +2728,7 @@
         <scene sceneID="FhZ-yA-PE1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5AO-Md-YEN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="settings.png" selectedImage="profile2.png" id="ySz-PM-e4j"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile2.png" selectedImage="profile2.png" id="ySz-PM-e4j"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dBw-Rv-A3W">
@@ -2985,7 +2967,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="528"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="znN-yU-ebK">
-                                <rect key="frame" x="142.66666666666666" y="615" width="90" height="37"/>
+                                <rect key="frame" x="142.66666666666666" y="621" width="90" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="hpi-Kr-8kb"/>
                                 </constraints>
@@ -2995,12 +2977,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="trailing" secondItem="zUV-fe-WQJ" secondAttribute="trailing" id="BUs-3Z-m9m"/>
                             <constraint firstItem="znN-yU-ebK" firstAttribute="centerX" secondItem="sfv-fp-2SU" secondAttribute="centerX" id="CXZ-fD-ODj"/>
-                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="leading" secondItem="zUV-fe-WQJ" secondAttribute="leading" id="L8P-BY-Dmp"/>
-                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="top" secondItem="zUV-fe-WQJ" secondAttribute="top" id="YcZ-Fx-oGC"/>
-                            <constraint firstItem="zUV-fe-WQJ" firstAttribute="bottom" secondItem="znN-yU-ebK" secondAttribute="bottom" constant="77" id="i37-xL-fZh"/>
-                            <constraint firstAttribute="bottom" secondItem="Z7g-1o-vhh" secondAttribute="bottom" constant="196" id="vgo-ip-jY7"/>
+                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="leading" secondItem="zUV-fe-WQJ" secondAttribute="leading" id="DTh-8S-KMc"/>
+                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="top" secondItem="zUV-fe-WQJ" secondAttribute="top" id="LEK-Fw-7wm"/>
+                            <constraint firstItem="znN-yU-ebK" firstAttribute="top" secondItem="Z7g-1o-vhh" secondAttribute="bottom" constant="5" id="bMm-BM-8Qs"/>
+                            <constraint firstItem="Z7g-1o-vhh" firstAttribute="trailing" secondItem="zUV-fe-WQJ" secondAttribute="trailing" id="iN1-cD-xp4"/>
+                            <constraint firstItem="zUV-fe-WQJ" firstAttribute="bottom" secondItem="znN-yU-ebK" secondAttribute="bottom" constant="71" id="qax-Oi-r4l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zUV-fe-WQJ"/>
                     </view>
@@ -4320,23 +4302,23 @@
         <image name="error.png" width="384" height="384"/>
         <image name="eventsetting.png" width="46.428211212158203" height="46.428211212158203"/>
         <image name="favourites.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="filter.png" width="784.08001708984375" height="784.08001708984375"/>
         <image name="filtering.png" width="512" height="512"/>
         <image name="gallery.png" width="512" height="512"/>
         <image name="gradual.jpg" width="156" height="103.91999816894531"/>
         <image name="heart-in-like-circular-button.png" width="384" height="384"/>
         <image name="hide.png" width="478.75323486328125" height="478.75323486328125"/>
-        <image name="landmarkdetector.jpg" width="856" height="140"/>
         <image name="loupe.png" width="24" height="24"/>
         <image name="map-new.png" width="22.5" height="22.5"/>
         <image name="memorial.png" width="498.16217041015625" height="498.16217041015625"/>
         <image name="navigation.png" width="39.724136352539062" height="39.724136352539062"/>
+        <image name="path.png" width="800" height="800"/>
         <image name="placeholder.png" width="384" height="384"/>
         <image name="profile2.png" width="22.5" height="22.5"/>
         <image name="publicbuilding.png" width="512" height="512"/>
         <image name="right-arrow-angle.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="satisfied.png" width="384" height="384"/>
         <image name="sculpture.png" width="512" height="512"/>
-        <image name="settings.png" width="24" height="24"/>
         <image name="shakespeare.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="share.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="sharing-content.png" width="409.60000610351562" height="409.60000610351562"/>
