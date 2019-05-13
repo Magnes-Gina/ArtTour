@@ -14,13 +14,17 @@
 		6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */; };
 		6925C0D322889B3A00B05E81 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D222889B3A00B05E81 /* gear.png */; };
 		6925C0D52288A39300B05E81 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D42288A39300B05E81 /* profile2.png */; };
-		6925C0DF22897CFB00B05E81 /* EFImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */; };
 		6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E022897EBA00B05E81 /* detector page.jpeg */; };
 		6925C0E322897FB200B05E81 /* artworkimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0E222897FB200B05E81 /* artworkimageViewController.swift */; };
-		6925C0E722898A7D00B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E422898A7D00B05E81 /* filter.png */; };
 		6925C0E822898A7D00B05E81 /* bluearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E522898A7D00B05E81 /* bluearrow.png */; };
-		6925C0E922898A7D00B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E622898A7D00B05E81 /* path.png */; };
 		6925C0EB22898F7F00B05E81 /* landmarkreimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */; };
+		6925C0ED2289961B00B05E81 /* EFImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */; };
+		6925C0F02289967800B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0EE2289967600B05E81 /* filter.png */; };
+		6925C0F12289967800B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0EF2289967700B05E81 /* path.png */; };
+		6925C0F622899B1400B05E81 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F222899B1100B05E81 /* guide1.jpeg */; };
+		6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F322899B1200B05E81 /* guide2.jpeg */; };
+		6925C0F822899B1400B05E81 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F422899B1200B05E81 /* guide3.jpeg */; };
+		6925C0F922899B1400B05E81 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F522899B1300B05E81 /* guide4.jpeg */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -217,10 +221,6 @@
 		698D502122762C6F00767F03 /* reviewlandmarkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */; };
 		698D50232276308A00767F03 /* reviewartworkdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */; };
 		698D502522763C6C00767F03 /* revieweventdetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D502422763C6C00767F03 /* revieweventdetailViewController.swift */; };
-		698D502A2276FCD100767F03 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50262276FCCF00767F03 /* guide1.jpeg */; };
-		698D502B2276FCD100767F03 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50272276FCCF00767F03 /* guide2.jpeg */; };
-		698D502C2276FCD100767F03 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50282276FCD000767F03 /* guide3.jpeg */; };
-		698D502D2276FCD100767F03 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50292276FCD000767F03 /* guide4.jpeg */; };
 		698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 698D502E2277015800767F03 /* heart-in-like-circular-button.png */; };
 		69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */; };
 		69F7BABA22883EE800C2D18C /* reviewikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */; };
@@ -253,13 +253,17 @@
 		6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = licenceTableViewCell.swift; sourceTree = "<group>"; };
 		6925C0D222889B3A00B05E81 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		6925C0D42288A39300B05E81 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
-		6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFImageViewZoom.swift; sourceTree = "<group>"; };
 		6925C0E022897EBA00B05E81 /* detector page.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "detector page.jpeg"; sourceTree = "<group>"; };
 		6925C0E222897FB200B05E81 /* artworkimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimageViewController.swift; sourceTree = "<group>"; };
-		6925C0E422898A7D00B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		6925C0E522898A7D00B05E81 /* bluearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluearrow.png; sourceTree = "<group>"; };
-		6925C0E622898A7D00B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 		6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landmarkreimageViewController.swift; sourceTree = "<group>"; };
+		6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFImageViewZoom.swift; sourceTree = "<group>"; };
+		6925C0EE2289967600B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		6925C0EF2289967700B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
+		6925C0F222899B1100B05E81 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
+		6925C0F322899B1200B05E81 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
+		6925C0F422899B1200B05E81 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
+		6925C0F522899B1300B05E81 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -411,10 +415,6 @@
 		698D502022762C6F00767F03 /* reviewlandmarkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewlandmarkdetailViewController.swift; sourceTree = "<group>"; };
 		698D50222276308A00767F03 /* reviewartworkdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewartworkdetailViewController.swift; sourceTree = "<group>"; };
 		698D502422763C6C00767F03 /* revieweventdetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revieweventdetailViewController.swift; sourceTree = "<group>"; };
-		698D50262276FCCF00767F03 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
-		698D50272276FCCF00767F03 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
-		698D50282276FCD000767F03 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
-		698D50292276FCD000767F03 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		698D502E2277015800767F03 /* heart-in-like-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-in-like-circular-button.png"; sourceTree = "<group>"; };
 		69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = landmarkdetector.jpg; sourceTree = "<group>"; };
 		69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewikiViewController.swift; sourceTree = "<group>"; };
@@ -570,8 +570,6 @@
 			isa = PBXGroup;
 			children = (
 				6925C0E522898A7D00B05E81 /* bluearrow.png */,
-				6925C0E422898A7D00B05E81 /* filter.png */,
-				6925C0E622898A7D00B05E81 /* path.png */,
 				6925C0E022897EBA00B05E81 /* detector page.jpeg */,
 				6925C0D42288A39300B05E81 /* profile2.png */,
 				6925C0D222889B3A00B05E81 /* gear.png */,
@@ -598,13 +596,13 @@
 				695701752284408600849ED7 /* share.png */,
 				698D502E2277015800767F03 /* heart-in-like-circular-button.png */,
 				69570171228334E300849ED7 /* photos.png */,
-				698D50262276FCCF00767F03 /* guide1.jpeg */,
-				698D50272276FCCF00767F03 /* guide2.jpeg */,
-				698D50282276FCD000767F03 /* guide3.jpeg */,
-				698D50292276FCD000767F03 /* guide4.jpeg */,
 				698D5004227611F300767F03 /* like.png */,
 				690F49A52275D7FB00B249D7 /* calendar (2).png */,
 				690F49A42275D7FB00B249D7 /* flow-chart.png */,
+				6925C0F222899B1100B05E81 /* guide1.jpeg */,
+				6925C0F322899B1200B05E81 /* guide2.jpeg */,
+				6925C0F422899B1200B05E81 /* guide3.jpeg */,
+				6925C0F522899B1300B05E81 /* guide4.jpeg */,
 				6948A18A2275B36D0098AF3F /* artevent.jpeg */,
 				6948A1882275ACBD0098AF3F /* thumbs-up.png */,
 				6948A1842275A32D0098AF3F /* camera.png */,
@@ -674,9 +672,11 @@
 		697B2287225A53D8009682BF /* plugin */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */,
 				694B0AB4225649E200111F0A /* CBToast.swift */,
+				6925C0EE2289967600B05E81 /* filter.png */,
+				6925C0EF2289967700B05E81 /* path.png */,
 				697B2280225A08BC009682BF /* UIUtilities.swift */,
-				6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */,
 			);
 			path = plugin;
 			sourceTree = "<group>";
@@ -857,11 +857,10 @@
 				6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */,
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
 				695701982286B72F00849ED7 /* hide.png in Resources */,
-				698D502D2276FCD100767F03 /* guide4.jpeg in Resources */,
 				695701A422873D8200849ED7 /* youtube-logotype.png in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
-				6925C0E922898A7D00B05E81 /* path.png in Resources */,
+				6925C0F12289967800B05E81 /* path.png in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
@@ -881,15 +880,17 @@
 				69587CFB22739F7C0051E4A6 /* smallgallery.png in Resources */,
 				697B227B22590C3C009682BF /* map (1).png in Resources */,
 				694B0A6E2252DAC100111F0A /* Assets.xcassets in Resources */,
+				6925C0F622899B1400B05E81 /* guide1.jpeg in Resources */,
 				694B0AB722564C3C00111F0A /* singer.png in Resources */,
 				69587CED22739DB50051E4A6 /* filtering.png in Resources */,
+				6925C0F822899B1400B05E81 /* guide3.jpeg in Resources */,
 				6948A162227476780098AF3F /* landmarksetting.png in Resources */,
 				695701AE2287632C00849ED7 /* fccc.jpg in Resources */,
+				6925C0F922899B1400B05E81 /* guide4.jpeg in Resources */,
 				695701A222873D8200849ED7 /* star (1).png in Resources */,
 				6948A17E22750C8B0098AF3F /* car.png in Resources */,
 				694B0ABB22564CD000111F0A /* calendar.png in Resources */,
 				695701792284408600849ED7 /* share.png in Resources */,
-				698D502C2276FCD100767F03 /* guide3.jpeg in Resources */,
 				69587CBD227367610051E4A6 /* gallery.png in Resources */,
 				6948A17D22750C8B0098AF3F /* bicycle.png in Resources */,
 				694B0AB322563CC200111F0A /* map-new.png in Resources */,
@@ -897,13 +898,12 @@
 				69F7BABC2288508400C2D18C /* type.png in Resources */,
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
-				698D502A2276FCD100767F03 /* guide1.jpeg in Resources */,
+				6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */,
 				695701A122873D8200849ED7 /* list.png in Resources */,
 				69587CEA22739DB50051E4A6 /* navigation.png in Resources */,
 				6948A17F22750C8B0098AF3F /* trekking.png in Resources */,
 				695701A522873D8200849ED7 /* author.png in Resources */,
 				69587D112273A1310051E4A6 /* collection.png in Resources */,
-				698D502B2276FCD100767F03 /* guide2.jpeg in Resources */,
 				6925C0D52288A39300B05E81 /* profile2.png in Resources */,
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
 				69587CC5227367BA0051E4A6 /* big-ben.png in Resources */,
@@ -939,10 +939,10 @@
 				6948A1852275A32D0098AF3F /* camera.png in Resources */,
 				697B227A22590C3C009682BF /* calendar (1).png in Resources */,
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
+				6925C0F02289967800B05E81 /* filter.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
 				695701AC2287632C00849ED7 /* bacc.jpg in Resources */,
 				69587CD9227368A30051E4A6 /* sculpture.png in Resources */,
-				6925C0E722898A7D00B05E81 /* filter.png in Resources */,
 				69587CE5227373490051E4A6 /* landmarkicon.png in Resources */,
 				6948A163227476780098AF3F /* instructions.png in Resources */,
 				697B2297225AA466009682BF /* blood-type.png in Resources */,
@@ -1112,6 +1112,7 @@
 				694B0AB5225649E300111F0A /* CBToast.swift in Sources */,
 				69587CAC22735A4B0051E4A6 /* ArtWork+CoreDataClass.swift in Sources */,
 				69587CA22273582F0051E4A6 /* Artist+CoreDataClass.swift in Sources */,
+				6925C0ED2289961B00B05E81 /* EFImageViewZoom.swift in Sources */,
 				6948A15522746DA70098AF3F /* settingViewController.swift in Sources */,
 				69587C7A2272F3A20051E4A6 /* Landmark2+CoreDataClass.swift in Sources */,
 				697B2269225866B9009682BF /* eventViewController.swift in Sources */,
@@ -1122,7 +1123,6 @@
 				6948A1712274A79F0098AF3F /* artworkreviewViewController.swift in Sources */,
 				6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */,
 				69587D1B227433580051E4A6 /* CollectionProgressViewController.swift in Sources */,
-				6925C0DF22897CFB00B05E81 /* EFImageViewZoom.swift in Sources */,
 				694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */,
 				698D501222761F5600767F03 /* Event2+CoreDataClass.swift in Sources */,
 				698D50192276257000767F03 /* revieweventViewController.swift in Sources */,
