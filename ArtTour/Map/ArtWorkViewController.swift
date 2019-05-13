@@ -447,7 +447,15 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
         checkLocationServices()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
         self.myMapView.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.imgreview))
+        self.profile.isUserInteractionEnabled = true
+        self.profile.addGestureRecognizer(gesture2)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func imgreview(){
+        print("succeesfull click")
+        self.performSegue(withIdentifier: "imgreview", sender: self)
     }
     
     @objc func opengoogle(){
@@ -510,14 +518,15 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if  let destination = segue.destination as? artworkimageViewController{
+            destination.img = self.profile.image!
+        }
     }
-    */
+ 
 
 }

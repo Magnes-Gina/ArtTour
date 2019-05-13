@@ -14,8 +14,13 @@
 		6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */; };
 		6925C0D322889B3A00B05E81 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D222889B3A00B05E81 /* gear.png */; };
 		6925C0D52288A39300B05E81 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D42288A39300B05E81 /* profile2.png */; };
-		6925C0DB228977E300B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0DA228977E300B05E81 /* filter.png */; };
-		6925C0DD2289785800B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0DC2289785700B05E81 /* path.png */; };
+		6925C0DF22897CFB00B05E81 /* EFImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */; };
+		6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E022897EBA00B05E81 /* detector page.jpeg */; };
+		6925C0E322897FB200B05E81 /* artworkimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0E222897FB200B05E81 /* artworkimageViewController.swift */; };
+		6925C0E722898A7D00B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E422898A7D00B05E81 /* filter.png */; };
+		6925C0E822898A7D00B05E81 /* bluearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E522898A7D00B05E81 /* bluearrow.png */; };
+		6925C0E922898A7D00B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E622898A7D00B05E81 /* path.png */; };
+		6925C0EB22898F7F00B05E81 /* landmarkreimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -217,7 +222,6 @@
 		698D502C2276FCD100767F03 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50282276FCD000767F03 /* guide3.jpeg */; };
 		698D502D2276FCD100767F03 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 698D50292276FCD000767F03 /* guide4.jpeg */; };
 		698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 698D502E2277015800767F03 /* heart-in-like-circular-button.png */; };
-		69F7BAB62288051B00C2D18C /* detector page.png in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BAB52288051A00C2D18C /* detector page.png */; };
 		69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */; };
 		69F7BABA22883EE800C2D18C /* reviewikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */; };
 		69F7BABC2288508400C2D18C /* type.png in Resources */ = {isa = PBXBuildFile; fileRef = 69F7BABB2288508300C2D18C /* type.png */; };
@@ -249,8 +253,13 @@
 		6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = licenceTableViewCell.swift; sourceTree = "<group>"; };
 		6925C0D222889B3A00B05E81 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		6925C0D42288A39300B05E81 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
-		6925C0DA228977E300B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
-		6925C0DC2289785700B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
+		6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EFImageViewZoom.swift; sourceTree = "<group>"; };
+		6925C0E022897EBA00B05E81 /* detector page.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "detector page.jpeg"; sourceTree = "<group>"; };
+		6925C0E222897FB200B05E81 /* artworkimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimageViewController.swift; sourceTree = "<group>"; };
+		6925C0E422898A7D00B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		6925C0E522898A7D00B05E81 /* bluearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluearrow.png; sourceTree = "<group>"; };
+		6925C0E622898A7D00B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
+		6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landmarkreimageViewController.swift; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -407,7 +416,6 @@
 		698D50282276FCD000767F03 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
 		698D50292276FCD000767F03 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		698D502E2277015800767F03 /* heart-in-like-circular-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-in-like-circular-button.png"; sourceTree = "<group>"; };
-		69F7BAB52288051A00C2D18C /* detector page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detector page.png"; sourceTree = "<group>"; };
 		69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = landmarkdetector.jpg; sourceTree = "<group>"; };
 		69F7BAB922883EE800C2D18C /* reviewikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewikiViewController.swift; sourceTree = "<group>"; };
 		69F7BABB2288508300C2D18C /* type.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type.png; sourceTree = "<group>"; };
@@ -561,12 +569,13 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
-				6925C0DC2289785700B05E81 /* path.png */,
-				6925C0DA228977E300B05E81 /* filter.png */,
+				6925C0E522898A7D00B05E81 /* bluearrow.png */,
+				6925C0E422898A7D00B05E81 /* filter.png */,
+				6925C0E622898A7D00B05E81 /* path.png */,
+				6925C0E022897EBA00B05E81 /* detector page.jpeg */,
 				6925C0D42288A39300B05E81 /* profile2.png */,
 				6925C0D222889B3A00B05E81 /* gear.png */,
 				69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */,
-				69F7BAB52288051A00C2D18C /* detector page.png */,
 				695701A72287632C00849ED7 /* bacc.jpg */,
 				695701A92287632C00849ED7 /* fccc.jpg */,
 				69F7BABB2288508300C2D18C /* type.png */,
@@ -667,6 +676,7 @@
 			children = (
 				694B0AB4225649E200111F0A /* CBToast.swift */,
 				697B2280225A08BC009682BF /* UIUtilities.swift */,
+				6925C0DE22897CFB00B05E81 /* EFImageViewZoom.swift */,
 			);
 			path = plugin;
 			sourceTree = "<group>";
@@ -679,6 +689,8 @@
 				69587CB822735EF60051E4A6 /* ArtWorkViewController.swift */,
 				69587D1A227433580051E4A6 /* CollectionProgressViewController.swift */,
 				695701B122876EFD00849ED7 /* wikimoreViewController.swift */,
+				6925C0E222897FB200B05E81 /* artworkimageViewController.swift */,
+				6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -842,12 +854,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				697B22732258E6FB009682BF /* mel4.png in Resources */,
+				6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */,
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
 				695701982286B72F00849ED7 /* hide.png in Resources */,
 				698D502D2276FCD100767F03 /* guide4.jpeg in Resources */,
 				695701A422873D8200849ED7 /* youtube-logotype.png in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
+				6925C0E922898A7D00B05E81 /* path.png in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
@@ -857,6 +871,7 @@
 				6948A17C22750C8B0098AF3F /* train.png in Resources */,
 				690F49A62275D7FC00B249D7 /* flow-chart.png in Resources */,
 				695701AD2287632C00849ED7 /* sc.jpg in Resources */,
+				6925C0E822898A7D00B05E81 /* bluearrow.png in Resources */,
 				6948A16522747E8B0098AF3F /* sharing-content.png in Resources */,
 				694B0A712252DAC100111F0A /* LaunchScreen.storyboard in Resources */,
 				694B0ABD225658DF00111F0A /* shrine-remembrance.png in Resources */,
@@ -893,7 +908,6 @@
 				69587D0122739F7C0051E4A6 /* smallfountain.png in Resources */,
 				69587CC5227367BA0051E4A6 /* big-ben.png in Resources */,
 				6925C0D322889B3A00B05E81 /* gear.png in Resources */,
-				69F7BAB62288051B00C2D18C /* detector page.png in Resources */,
 				69587D0D22739F7C0051E4A6 /* smallbell.png in Resources */,
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
 				690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */,
@@ -927,9 +941,8 @@
 				697B2298225AA466009682BF /* shakespeare.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
 				695701AC2287632C00849ED7 /* bacc.jpg in Resources */,
-				6925C0DD2289785800B05E81 /* path.png in Resources */,
 				69587CD9227368A30051E4A6 /* sculpture.png in Resources */,
-				6925C0DB228977E300B05E81 /* filter.png in Resources */,
+				6925C0E722898A7D00B05E81 /* filter.png in Resources */,
 				69587CE5227373490051E4A6 /* landmarkicon.png in Resources */,
 				6948A163227476780098AF3F /* instructions.png in Resources */,
 				697B2297225AA466009682BF /* blood-type.png in Resources */,
@@ -1082,6 +1095,7 @@
 				6957018F2286B41B00849ED7 /* LikeArtWork+CoreDataClass.swift in Sources */,
 				694B0A642252DAC000111F0A /* AppDelegate.swift in Sources */,
 				69587CB222735A4B0051E4A6 /* SavedArtWork+CoreDataClass.swift in Sources */,
+				6925C0EB22898F7F00B05E81 /* landmarkreimageViewController.swift in Sources */,
 				69587CB522735A4B0051E4A6 /* SavedArtWork+CoreDataProperties.swift in Sources */,
 				6925C0CF228899ED00B05E81 /* systemViewController.swift in Sources */,
 				69587C8D227332460051E4A6 /* Category+CoreDataProperties.swift in Sources */,
@@ -1093,6 +1107,7 @@
 				6948A18D2275C8500098AF3F /* contentViewController.swift in Sources */,
 				697B22752258F122009682BF /* detailViewController.swift in Sources */,
 				69587CA52273582F0051E4A6 /* Artist+CoreDataProperties.swift in Sources */,
+				6925C0E322897FB200B05E81 /* artworkimageViewController.swift in Sources */,
 				698D501522761F5600767F03 /* Event2+CoreDataProperties.swift in Sources */,
 				694B0AB5225649E300111F0A /* CBToast.swift in Sources */,
 				69587CAC22735A4B0051E4A6 /* ArtWork+CoreDataClass.swift in Sources */,
@@ -1107,6 +1122,7 @@
 				6948A1712274A79F0098AF3F /* artworkreviewViewController.swift in Sources */,
 				6957016E22830DBD00849ED7 /* museumresulttableViewController.swift in Sources */,
 				69587D1B227433580051E4A6 /* CollectionProgressViewController.swift in Sources */,
+				6925C0DF22897CFB00B05E81 /* EFImageViewZoom.swift in Sources */,
 				694B0AC122584F3E00111F0A /* EventTableViewCell.swift in Sources */,
 				698D501222761F5600767F03 /* Event2+CoreDataClass.swift in Sources */,
 				698D50192276257000767F03 /* revieweventViewController.swift in Sources */,

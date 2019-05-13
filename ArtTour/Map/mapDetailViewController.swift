@@ -192,6 +192,9 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
         if let destination = segue.destination as? wikimoreViewController{
             destination.str = self.descriptionLabel.text!
         }
+        if let destination  = segue.destination as? landmarkreimageViewController{
+            destination.img = self.profileImage.image!
+        }
     }
     
     
@@ -435,8 +438,16 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
         checkLocationServices()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
         self.myMapView.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.imgreview))
+        self.profileImage.isUserInteractionEnabled = true
+        self.profileImage.addGestureRecognizer(gesture2)
         //self.visualeffect.effect = nil
     }
+    @objc func imgreview(){
+        self.performSegue(withIdentifier: "landmarkimgzoom", sender: self)
+    }
+    
+    
     
     @objc func opengoogle(){
         let resultAlertController = UIAlertController(title: "Warning", message: nil, preferredStyle: .alert)

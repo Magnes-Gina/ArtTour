@@ -672,9 +672,9 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         self.notVisitedButton.layer.cornerRadius = 10
         self.notVisitedButton.layer.borderWidth = 1
         self.notVisitedButton.layer.borderColor = UIColor.black.cgColor
-        self.button2.layer.cornerRadius = (self.button2.frame.height / 3.14)
-        self.button3.layer.cornerRadius = (self.button3.frame.height / 3.14)
-        self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 3.14)
+        self.button2.layer.cornerRadius = (self.button2.frame.height / 2)
+        self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
+        self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 2)
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
