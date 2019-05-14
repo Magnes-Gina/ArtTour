@@ -22,7 +22,7 @@ class systemViewController: UIViewController,UITableViewDelegate,UITableViewData
         if myswitch.isOn{
             print("open")
             UserDefaults.standard.set(false, forKey: "notify")
-            displayMessage("You will recieve an notification when you close to landmarks and Artwroks","Alert")
+            displayMessage("You will recieve a notification when you close to landmarks and Artwroks","Alert")
         }else{
             print("close")
             UserDefaults.standard.set(true, forKey: "notify")

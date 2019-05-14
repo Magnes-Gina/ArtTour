@@ -65,6 +65,25 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         super.init(coder: aDecoder)!
     }
     
+    @IBOutlet weak var segmentcontrol: UISegmentedControl!
+    
+    @IBAction func segmentaction(_ sender: Any) {
+        switch segmentcontrol.selectedSegmentIndex {
+        case 0:
+            container1.isHidden = false
+            container2.isHidden = true
+        case 1:
+            container1.isHidden = true
+            container2.isHidden = false
+        default:
+            break
+        }
+    }
+    
+    @IBOutlet weak var container1: UIView!
+    
+    @IBOutlet weak var container2: UIView!
+    
     @IBOutlet weak var backgroundView2: UIView!
     
     @IBOutlet var instructionView: UIView!
@@ -639,6 +658,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
+        container1.isHidden = false
+        container2.isHidden = true
         self.backgroundView.layer.cornerRadius = 10
         self.backgroundView.alpha = 1
         backgroundView.layer.shadowColor = UIColor.gray.cgColor
@@ -692,6 +713,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         getData4()
         addingmaker3()
         choiceView.layer.cornerRadius = 5
+        self.container1.layer.cornerRadius = 10
+        self.container2.layer.cornerRadius = 10
         //checkaround()
     }
     
@@ -732,6 +755,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.choiceView.alpha = 1
             self.choiceView.frame = newframe
+            self.choiceView.layer.cornerRadius = 15
             self.view.addSubview(self.choiceView)
         }, completion: nil)
     }
@@ -863,7 +887,11 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             }
             resultaroundLabel.text = "\(count) results around you within 1KM"
         }else{
-            resultLabel.text = "\(geos.count) results found!"
+            if geos.count == 0 || geos.count == 1{
+                resultLabel.text = "\(geos.count) result found!"
+            }else{
+                resultLabel.text = "\(geos.count) results found!"
+            }
             var count = 0
             for geo in geos{
                 print(locationManger.location)
@@ -872,7 +900,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                     count = count + 1
                 }
             }
-            resultaroundLabel.text = "\(count) results around you within 1KM"
+            if count == 0 || count == 1{
+               resultaroundLabel.text = "\(count) result around you within 1KM"
+            }else{
+                resultaroundLabel.text = "\(count) results around you within 1KM"
+            }
+            
         }
     }
     

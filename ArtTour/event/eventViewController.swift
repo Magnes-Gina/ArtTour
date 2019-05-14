@@ -88,6 +88,14 @@ class eventViewController: UIViewController,Addmood{
         datePicker.datePickerMode = .date
         datePicker.minimumDate = Date()
         datePicker.maximumDate = Date().addingTimeInterval(604800)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let ges = UITapGestureRecognizer(target: self, action: #selector(self.down))
+        self.view.addGestureRecognizer(ges)
+    }
+    
+    @objc func down(){
+        animatedOut()
     }
     
     @objc func openmood(sender: UITapGestureRecognizer){

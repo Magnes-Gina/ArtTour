@@ -13,7 +13,7 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if saved.count == 0 && saved2.count == 0 {
-            self.myTableview.setEmptyView(title: "You havn't liked any landmarks or Artworks.", message: "You can find them on art Map")
+            self.myTableview.setEmptyView(title: "Favourite list is empty!", message: "Find some attractions you want to visit")
         }
         else {
             self.myTableview.restore()

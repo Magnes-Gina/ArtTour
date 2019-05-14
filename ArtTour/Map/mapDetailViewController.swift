@@ -52,6 +52,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
     }
     var img : String = ""{
         didSet{
+            print(img)
             switch img {
             case "Bunjilaka Aboriginal Cultural Centre":
                 self.profileImage.image = UIImage(named: "bacc.jpg")
@@ -596,7 +597,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
                     
                 }else{
                     DispatchQueue.main.async{
-                        self.img = self.landmark!.Landmark_name
+                        self.img = "404"
                     }
                 }
             }catch let error as NSError{

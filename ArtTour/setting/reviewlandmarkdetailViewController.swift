@@ -544,7 +544,7 @@ class reviewlandmarkdetailViewController: UIViewController,GMSMapViewDelegate,CL
                     
                 }else{
                     DispatchQueue.main.async{
-                        self.img = self.landmark!.Landmark_name
+                        self.img = "404"
                     }
                 }
             }catch let error as NSError{

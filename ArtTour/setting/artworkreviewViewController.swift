@@ -12,7 +12,7 @@ import CoreData
 class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if saved.count == 0 && saved2.count == 0{
-            self.myTableview.setEmptyView(title: "You havn't visitd any Landmarks or artworks.", message: "Please find them on our Art Map")
+            self.myTableview.setEmptyView(title: "Visited list is empty!", message: "Find some attractions and saved it to visited list")
         }
         else {
             self.myTableview.restore()

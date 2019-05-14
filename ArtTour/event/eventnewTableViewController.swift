@@ -62,8 +62,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
 //        self.searchBarEvent.layer.borderColor = UIColor.white.cgColor
         self.searchBarEvent.backgroundImage = UIImage()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
