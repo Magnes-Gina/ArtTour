@@ -42,7 +42,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
                 favouriteButton.isSelected = true
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeArtWork")
                 likes = try managedObjectContext.fetch(fetchRequest) as! [LikeArtWork]
-                CBToast.showToastAction(message: "Like successfully!")
+                CBToast.showToastAction(message: "Saved to favourite!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -56,7 +56,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
                         try self.managedObjectContext.save()
                         liked = false
                         favouriteButton.isSelected = false
-                        CBToast.showToastAction(message: "Delete successfully!")
+                        CBToast.showToastAction(message: "Remove from favourite!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }
@@ -335,7 +335,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
                 savedButton.isSelected = true
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedArtWork")
                 saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedArtWork]
-                CBToast.showToastAction(message: "Save successfully!")
+                CBToast.showToastAction(message: "Savd to visited")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -349,7 +349,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
                         try self.managedObjectContext.save()
                         saved = false
                         savedButton.isSelected = false
-                        CBToast.showToastAction(message: "Delete successfully!")
+                        CBToast.showToastAction(message: "Remove from visited")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }

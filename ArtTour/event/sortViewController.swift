@@ -15,7 +15,7 @@ class sortViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     var delegate: Addsort?
     var sortby = "Default"
-    let str = ["Default","Date","Date(Reverse)","Distance","Distance(Reverse)"]
+    let str = ["Default","Start Date: oldest first","Start Date: newest first","Distance: nearest first","Distance: farthest first"]
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

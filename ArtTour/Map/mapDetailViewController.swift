@@ -102,7 +102,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
                 sender.isSelected = true
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SavedLandmark")
                 saveds = try managedObjectContext.fetch(fetchRequest) as! [SavedLandmark]
-                CBToast.showToastAction(message: "Save successfully!")
+                CBToast.showToastAction(message: "Saved to visted!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -116,7 +116,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
                         try self.managedObjectContext.save()
                         saved = false
                         savedButton.isSelected = false
-                        CBToast.showToastAction(message: "Delete successfully!")
+                        CBToast.showToastAction(message: "Remove form visted!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }
@@ -160,7 +160,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
                 sender.isSelected = true
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LikeLandmark")
                 likes = try managedObjectContext.fetch(fetchRequest) as! [LikeLandmark]
-                CBToast.showToastAction(message: "Like successfully!")
+                CBToast.showToastAction(message: "Saved to favourite!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -174,7 +174,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
                         try self.managedObjectContext.save()
                         like = false
                         favouriteButton.isSelected = false
-                        CBToast.showToastAction(message: "Delete successfully!")
+                        CBToast.showToastAction(message: "Remove form favourite!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }

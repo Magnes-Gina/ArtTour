@@ -129,7 +129,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         self.sortby = newmood
         print(sortby)
         switch sortby {
-        case "Date":
+        case "Start Date: oldest first":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 var strtemp = item["start"]["local"].string!
                 var strtemp2 = item2["start"]["local"].string!
@@ -143,7 +143,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Date(Reverse)":
+        case "Start Date: newest first":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 var strtemp = item["start"]["local"].string!
                 var strtemp2 = item2["start"]["local"].string!
@@ -157,7 +157,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Distance":
+        case "Distance: nearest first":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 switch CLLocationManager.authorizationStatus() {
                 case .notDetermined:
@@ -181,7 +181,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Distance(Reverse)":
+        case "Distance: farthest first":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 switch CLLocationManager.authorizationStatus() {
                 case .notDetermined:
@@ -341,7 +341,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
     func getData(requestUrl: String){
         guard let downloadURL = URL(string: requestUrl) else { return }
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
-            CBToast.showToastAction(message: "Download Data!")
+            //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
                 print("wrong2")

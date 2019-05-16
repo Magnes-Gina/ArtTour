@@ -28,6 +28,10 @@
 		6925C0FB2289D7A700B05E81 /* artworkimagereviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */; };
 		6925C0FD2289DBA200B05E81 /* review2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FC2289DBA200B05E81 /* review2ViewController.swift */; };
 		6925C0FF2289DF4300B05E81 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0FE2289DF4300B05E81 /* loading.jpg */; };
+		6925C102228D44F300B05E81 /* visited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C100228D44F300B05E81 /* visited.png */; };
+		6925C103228D44F300B05E81 /* svisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C101228D44F300B05E81 /* svisited.png */; };
+		6925C106228D451900B05E81 /* snvisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C104228D451800B05E81 /* snvisited.png */; };
+		6925C107228D451900B05E81 /* nvisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C105228D451900B05E81 /* nvisited.png */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -270,6 +274,10 @@
 		6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimagereviewViewController.swift; sourceTree = "<group>"; };
 		6925C0FC2289DBA200B05E81 /* review2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = review2ViewController.swift; sourceTree = "<group>"; };
 		6925C0FE2289DF4300B05E81 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
+		6925C100228D44F300B05E81 /* visited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visited.png; sourceTree = "<group>"; };
+		6925C101228D44F300B05E81 /* svisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svisited.png; sourceTree = "<group>"; };
+		6925C104228D451800B05E81 /* snvisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snvisited.png; sourceTree = "<group>"; };
+		6925C105228D451900B05E81 /* nvisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nvisited.png; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -577,6 +585,10 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C105228D451900B05E81 /* nvisited.png */,
+				6925C104228D451800B05E81 /* snvisited.png */,
+				6925C101228D44F300B05E81 /* svisited.png */,
+				6925C100228D44F300B05E81 /* visited.png */,
 				6925C0FE2289DF4300B05E81 /* loading.jpg */,
 				6925C0E522898A7D00B05E81 /* bluearrow.png */,
 				6925C0E022897EBA00B05E81 /* detector page.jpeg */,
@@ -873,6 +885,7 @@
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
+				6925C106228D451900B05E81 /* snvisited.png in Resources */,
 				695701B02287632C00849ED7 /* tmal.jpg in Resources */,
 				6948A18122750D3B0098AF3F /* heart.png in Resources */,
 				69587D17227433320051E4A6 /* gradual.jpg in Resources */,
@@ -908,6 +921,7 @@
 				69F7BABC2288508400C2D18C /* type.png in Resources */,
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
+				6925C102228D44F300B05E81 /* visited.png in Resources */,
 				6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */,
 				695701A122873D8200849ED7 /* list.png in Resources */,
 				69587CEA22739DB50051E4A6 /* navigation.png in Resources */,
@@ -922,6 +936,7 @@
 				69587D0422739F7C0051E4A6 /* smallpublicbuilding.png in Resources */,
 				690F49A72275D7FC00B249D7 /* calendar (2).png in Resources */,
 				695701772284408600849ED7 /* error.png in Resources */,
+				6925C107228D451900B05E81 /* nvisited.png in Resources */,
 				695701A322873D8200849ED7 /* emergency.png in Resources */,
 				69587CC1227367890051E4A6 /* bridge.png in Resources */,
 				69587D192274333F0051E4A6 /* cross-mark-on-a-black-circle-background.png in Resources */,
@@ -952,6 +967,7 @@
 				6925C0F02289967800B05E81 /* filter.png in Resources */,
 				69587CDD227369150051E4A6 /* success.png in Resources */,
 				695701AC2287632C00849ED7 /* bacc.jpg in Resources */,
+				6925C103228D44F300B05E81 /* svisited.png in Resources */,
 				69587CD9227368A30051E4A6 /* sculpture.png in Resources */,
 				69587CE5227373490051E4A6 /* landmarkicon.png in Resources */,
 				6948A163227476780098AF3F /* instructions.png in Resources */,

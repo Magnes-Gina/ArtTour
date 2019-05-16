@@ -35,10 +35,10 @@ struct artworktemp: Decodable{
 
 class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManagerDelegate{
 
-    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/landmark")
-    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/category")
-    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artist")
-    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artwork")
+    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/landmark")
+    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/category")
+    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artist")
+    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artwork")
     var landmarks = [Landmark]()
     var tempcats = [tempcat]()
     var artiststemp = [artisttemp]()
@@ -89,11 +89,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
         scrollView.delegate = self
         self.view.sendSubviewToBack(scrollView)
         getData()
-        //semaphore.wait()
         getData2()
-        //semaphore.wait()
         getData3()
-        //semaphore.wait()
         getData4()
     }
     //test
@@ -159,8 +156,6 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     newlandmark.video = item.video
                     try self.managedObjectContext?.save()
                 }
-                //self.getData2()
-                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -184,8 +179,6 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     newCategory.category_name = item.Category_name
                     try self.managedObjectContext2?.save()
                 }
-                //self.getData3()
-                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -264,14 +257,6 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
             UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
