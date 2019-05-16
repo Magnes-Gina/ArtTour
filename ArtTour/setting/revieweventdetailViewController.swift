@@ -305,6 +305,9 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
         eventmap.settings.rotateGestures = false
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.opengoogle))
         self.eventmap.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.imagereview))
+        self.image.isUserInteractionEnabled = true
+        self.image.addGestureRecognizer(gesture2)
         locationManger.requestAlwaysAuthorization()
         //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
@@ -315,6 +318,17 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
         self.byPublicButton.layer.cornerRadius = (self.byPublicButton.frame.height / 2)
         self.likeButton.layer.cornerRadius = (self.likeButton.frame.height / 2)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func imagereview(){
+        self.performSegue(withIdentifier: "review3", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? review3ViewController{
+            destination.img = self.image.image!
+        }
     }
     
     func checkLocationServices() {
