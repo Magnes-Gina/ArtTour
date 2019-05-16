@@ -236,7 +236,9 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     newartwork.artwork_date = Int16(item.ArtWork_date)
                     print(newartwork.artwork_id)
                     try self.managedObjectContext4?.save()
+                    
                 }
+                try self.managedObjectContext?.save()
                 //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")

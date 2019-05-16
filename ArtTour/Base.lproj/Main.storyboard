@@ -1747,10 +1747,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradual.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="reG-H3-S9X">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-bY-ux2">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4f-bY-ux2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="lH8-1h-1gz">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lH8-1h-1gz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -1773,8 +1772,12 @@
                             <constraint firstItem="6FT-wy-IEO" firstAttribute="leading" secondItem="1Qx-Y0-iuf" secondAttribute="leading" constant="16" id="4OV-pc-j6M"/>
                             <constraint firstItem="reG-H3-S9X" firstAttribute="leading" secondItem="1Qx-Y0-iuf" secondAttribute="leading" id="AOy-tJ-Ymv"/>
                             <constraint firstItem="6FT-wy-IEO" firstAttribute="top" secondItem="1Qx-Y0-iuf" secondAttribute="top" constant="20" id="FEC-jv-yfk"/>
+                            <constraint firstItem="z4f-bY-ux2" firstAttribute="trailing" secondItem="1Qx-Y0-iuf" secondAttribute="trailing" id="IGx-su-wOy"/>
                             <constraint firstItem="reG-H3-S9X" firstAttribute="trailing" secondItem="1Qx-Y0-iuf" secondAttribute="trailing" id="gAR-o1-c3p"/>
                             <constraint firstAttribute="bottom" secondItem="reG-H3-S9X" secondAttribute="bottom" id="gub-1a-Ug6"/>
+                            <constraint firstItem="z4f-bY-ux2" firstAttribute="leading" secondItem="1Qx-Y0-iuf" secondAttribute="leading" id="htZ-Ec-19m"/>
+                            <constraint firstAttribute="bottom" secondItem="z4f-bY-ux2" secondAttribute="bottom" id="iIL-aG-XaO"/>
+                            <constraint firstItem="z4f-bY-ux2" firstAttribute="top" secondItem="JcW-bU-tiD" secondAttribute="top" id="tPE-8i-u73"/>
                             <constraint firstItem="reG-H3-S9X" firstAttribute="top" secondItem="JcW-bU-tiD" secondAttribute="top" id="wAD-9e-cca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Qx-Y0-iuf"/>
