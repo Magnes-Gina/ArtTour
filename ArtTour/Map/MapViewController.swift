@@ -763,7 +763,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         geoLocation4.notifyOnEntry = true
         geos.append(geoLocation4)
         let marker5 = GMSMarker()
-        marker5.position = CLLocationCoordinate2DMake(-37816420, 144.963260)
+        marker5.position = CLLocationCoordinate2DMake(-37.816420, 144.963260)
         marker5.title = "Street Art 5"
         marker5.snippet = "Centre Place"
         marker5.icon = UIImage(named: "art.png")
@@ -1144,6 +1144,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             let distance = locationManger.location!.distance(from: CLLocation(latitude: geo.center.latitude, longitude: geo.center.longitude))
             if distance <= 1000{
                 count = count + 1
+                print(geo.identifier)
             }
         }
         if count == 0 || count == 1{

@@ -35,10 +35,10 @@ struct artworktemp: Decodable{
 
 class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManagerDelegate{
 
-    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/landmark")
-    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/category")
-    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artist")
-    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration2/artwork")
+    let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/landmark")
+    let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/category")
+    let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artist")
+    let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artwork")
     var landmarks = [Landmark]()
     var tempcats = [tempcat]()
     var artiststemp = [artisttemp]()
