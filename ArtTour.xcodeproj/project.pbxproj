@@ -14,7 +14,6 @@
 		6925C0D122889A1B00B05E81 /* licenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */; };
 		6925C0D322889B3A00B05E81 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D222889B3A00B05E81 /* gear.png */; };
 		6925C0D52288A39300B05E81 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0D42288A39300B05E81 /* profile2.png */; };
-		6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E022897EBA00B05E81 /* detector page.jpeg */; };
 		6925C0E322897FB200B05E81 /* artworkimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0E222897FB200B05E81 /* artworkimageViewController.swift */; };
 		6925C0E822898A7D00B05E81 /* bluearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0E522898A7D00B05E81 /* bluearrow.png */; };
 		6925C0EB22898F7F00B05E81 /* landmarkreimageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */; };
@@ -32,6 +31,7 @@
 		6925C103228D44F300B05E81 /* svisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C101228D44F300B05E81 /* svisited.png */; };
 		6925C106228D451900B05E81 /* snvisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C104228D451800B05E81 /* snvisited.png */; };
 		6925C107228D451900B05E81 /* nvisited.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C105228D451900B05E81 /* nvisited.png */; };
+		6925C109228DBAE600B05E81 /* detector page.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C108228DBAE600B05E81 /* detector page.jpeg */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -260,7 +260,6 @@
 		6925C0D022889A1B00B05E81 /* licenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = licenceTableViewCell.swift; sourceTree = "<group>"; };
 		6925C0D222889B3A00B05E81 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		6925C0D42288A39300B05E81 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
-		6925C0E022897EBA00B05E81 /* detector page.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "detector page.jpeg"; sourceTree = "<group>"; };
 		6925C0E222897FB200B05E81 /* artworkimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimageViewController.swift; sourceTree = "<group>"; };
 		6925C0E522898A7D00B05E81 /* bluearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluearrow.png; sourceTree = "<group>"; };
 		6925C0EA22898F7F00B05E81 /* landmarkreimageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = landmarkreimageViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +277,7 @@
 		6925C101228D44F300B05E81 /* svisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = svisited.png; sourceTree = "<group>"; };
 		6925C104228D451800B05E81 /* snvisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snvisited.png; sourceTree = "<group>"; };
 		6925C105228D451900B05E81 /* nvisited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nvisited.png; sourceTree = "<group>"; };
+		6925C108228DBAE600B05E81 /* detector page.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "detector page.jpeg"; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -585,13 +585,13 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C108228DBAE600B05E81 /* detector page.jpeg */,
 				6925C105228D451900B05E81 /* nvisited.png */,
 				6925C104228D451800B05E81 /* snvisited.png */,
 				6925C101228D44F300B05E81 /* svisited.png */,
 				6925C100228D44F300B05E81 /* visited.png */,
 				6925C0FE2289DF4300B05E81 /* loading.jpg */,
 				6925C0E522898A7D00B05E81 /* bluearrow.png */,
-				6925C0E022897EBA00B05E81 /* detector page.jpeg */,
 				6925C0D42288A39300B05E81 /* profile2.png */,
 				6925C0D222889B3A00B05E81 /* gear.png */,
 				69F7BAB722880D8400C2D18C /* landmarkdetector.jpg */,
@@ -875,10 +875,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				697B22732258E6FB009682BF /* mel4.png in Resources */,
-				6925C0E122897EBA00B05E81 /* detector page.jpeg in Resources */,
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
 				695701982286B72F00849ED7 /* hide.png in Resources */,
 				695701A422873D8200849ED7 /* youtube-logotype.png in Resources */,
+				6925C109228DBAE600B05E81 /* detector page.jpeg in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
 				6925C0F12289967800B05E81 /* path.png in Resources */,

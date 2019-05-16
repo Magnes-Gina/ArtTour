@@ -129,7 +129,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         self.sortby = newmood
         print(sortby)
         switch sortby {
-        case "Start Date: oldest first":
+        case "Start Date (Earliest)":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 var strtemp = item["start"]["local"].string!
                 var strtemp2 = item2["start"]["local"].string!
@@ -143,7 +143,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Start Date: newest first":
+        case "Start Date (Latest)":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 var strtemp = item["start"]["local"].string!
                 var strtemp2 = item2["start"]["local"].string!
@@ -157,7 +157,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Distance: nearest first":
+        case "Distance (Nearest)":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 switch CLLocationManager.authorizationStatus() {
                 case .notDetermined:
@@ -181,7 +181,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             }
             self.myTableView.reloadData()
             break
-        case "Distance: farthest first":
+        case "Distance (Farthest)":
             sortarray = sortarray.sorted{ (item,item2) -> Bool in
                 switch CLLocationManager.authorizationStatus() {
                 case .notDetermined:
