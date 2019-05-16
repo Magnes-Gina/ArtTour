@@ -45,7 +45,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
                 events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
                 print("saved to coredata")
-                CBToast.showToastAction(message: "Like successfully!")
+                CBToast.showToastAction(message: "Saved to favourite!")
             }catch{
                 fatalError("Fail to save CoreData")
             }
@@ -63,7 +63,7 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
                         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event2")
                         events = try managedObjectContext.fetch(fetchRequest) as! [Event2]
                        print("total events: \(events.count)")
-                       CBToast.showToastAction(message: "Unlike successfully!")
+                       CBToast.showToastAction(message: "Remove from favourite!")
                     }catch{
                         fatalError("Fail to save CoreData")
                     }
@@ -378,7 +378,14 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         self.bywalkbutton.layer.cornerRadius = (self.bywalkbutton.frame.height / 2)
         self.byPublicButton.layer.cornerRadius = (self.byPublicButton.frame.height / 2)
         self.likeButton.layer.cornerRadius = (self.likeButton.frame.height / 2)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(self.imagereview))
+        self.image.isUserInteractionEnabled = true
+        self.image.addGestureRecognizer(gesture2)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func imagereview(){
+        self.performSegue(withIdentifier: "review5", sender: self)
     }
     
     func checkLocationServices() {
@@ -464,6 +471,9 @@ class detailViewController: UIViewController,GMSMapViewDelegate,CLLocationManage
         if segue.identifier == "readmore"{
             let destination: readViewController = segue.destination as! readViewController
             destination.newstr = json!["description"]["text"].string!
+        }
+        if let destination = segue.destination as? eventImageReviewViewController{
+            destination.img = self.image.image!
         }
     }
  

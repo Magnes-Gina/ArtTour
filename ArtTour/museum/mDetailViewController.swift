@@ -23,6 +23,9 @@ class mDetailViewController: UIViewController {
         if let destination = segue.destination as? contentViewController{
             destination.str = newstr
         }
+        if let destination = segue.destination as? MuseumImageReviewViewController{
+            destination.img = self.contentimage.image!
+        }
     }
     
     
@@ -105,7 +108,15 @@ class mDetailViewController: UIViewController {
             let newstr = df2.string(from: datetemp!)
             datemodified.text = newstr
         }
+        
+        let gestrue = UITapGestureRecognizer(target: self, action: #selector(self.imagereview))
+        self.contentimage.isUserInteractionEnabled = true
+        self.contentimage.addGestureRecognizer(gestrue)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func imagereview(){
+        self.performSegue(withIdentifier: "review4", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -20,10 +20,6 @@
 		6925C0ED2289961B00B05E81 /* EFImageViewZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */; };
 		6925C0F02289967800B05E81 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0EE2289967600B05E81 /* filter.png */; };
 		6925C0F12289967800B05E81 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0EF2289967700B05E81 /* path.png */; };
-		6925C0F622899B1400B05E81 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F222899B1100B05E81 /* guide1.jpeg */; };
-		6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F322899B1200B05E81 /* guide2.jpeg */; };
-		6925C0F822899B1400B05E81 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F422899B1200B05E81 /* guide3.jpeg */; };
-		6925C0F922899B1400B05E81 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0F522899B1300B05E81 /* guide4.jpeg */; };
 		6925C0FB2289D7A700B05E81 /* artworkimagereviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */; };
 		6925C0FD2289DBA200B05E81 /* review2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C0FC2289DBA200B05E81 /* review2ViewController.swift */; };
 		6925C0FF2289DF4300B05E81 /* loading.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C0FE2289DF4300B05E81 /* loading.jpg */; };
@@ -35,6 +31,10 @@
 		6925C10D228DBC4800B05E81 /* eventImageReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C10C228DBC4800B05E81 /* eventImageReviewViewController.swift */; };
 		6925C10F228DBC7C00B05E81 /* MuseumImageReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925C10E228DBC7C00B05E81 /* MuseumImageReviewViewController.swift */; };
 		6925C111228DBE7000B05E81 /* detector page.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C110228DBE7000B05E81 /* detector page.jpeg */; };
+		6925C116228DC77B00B05E81 /* guide3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C112228DC77A00B05E81 /* guide3.jpeg */; };
+		6925C117228DC77B00B05E81 /* guide2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C113228DC77B00B05E81 /* guide2.jpeg */; };
+		6925C118228DC77B00B05E81 /* guide1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C114228DC77B00B05E81 /* guide1.jpeg */; };
+		6925C119228DC77B00B05E81 /* guide4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6925C115228DC77B00B05E81 /* guide4.jpeg */; };
 		6948A15222746B680098AF3F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 6948A15122746B680098AF3F /* settings.png */; };
 		6948A15522746DA70098AF3F /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A15422746DA70098AF3F /* settingViewController.swift */; };
 		6948A157227470370098AF3F /* settingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948A156227470370098AF3F /* settingTableViewCell.swift */; };
@@ -269,10 +269,6 @@
 		6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFImageViewZoom.swift; sourceTree = "<group>"; };
 		6925C0EE2289967600B05E81 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		6925C0EF2289967700B05E81 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
-		6925C0F222899B1100B05E81 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
-		6925C0F322899B1200B05E81 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
-		6925C0F422899B1200B05E81 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
-		6925C0F522899B1300B05E81 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		6925C0FA2289D7A700B05E81 /* artworkimagereviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artworkimagereviewViewController.swift; sourceTree = "<group>"; };
 		6925C0FC2289DBA200B05E81 /* review2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = review2ViewController.swift; sourceTree = "<group>"; };
 		6925C0FE2289DF4300B05E81 /* loading.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loading.jpg; sourceTree = "<group>"; };
@@ -284,6 +280,10 @@
 		6925C10C228DBC4800B05E81 /* eventImageReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventImageReviewViewController.swift; sourceTree = "<group>"; };
 		6925C10E228DBC7C00B05E81 /* MuseumImageReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumImageReviewViewController.swift; sourceTree = "<group>"; };
 		6925C110228DBE7000B05E81 /* detector page.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "detector page.jpeg"; sourceTree = "<group>"; };
+		6925C112228DC77A00B05E81 /* guide3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpeg; sourceTree = "<group>"; };
+		6925C113228DC77B00B05E81 /* guide2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpeg; sourceTree = "<group>"; };
+		6925C114228DC77B00B05E81 /* guide1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpeg; sourceTree = "<group>"; };
+		6925C115228DC77B00B05E81 /* guide4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide4.jpeg; sourceTree = "<group>"; };
 		6948A15122746B680098AF3F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		6948A15422746DA70098AF3F /* settingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
 		6948A156227470370098AF3F /* settingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewCell.swift; sourceTree = "<group>"; };
@@ -592,6 +592,10 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C114228DC77B00B05E81 /* guide1.jpeg */,
+				6925C113228DC77B00B05E81 /* guide2.jpeg */,
+				6925C112228DC77A00B05E81 /* guide3.jpeg */,
+				6925C115228DC77B00B05E81 /* guide4.jpeg */,
 				6925C110228DBE7000B05E81 /* detector page.jpeg */,
 				6925C105228D451900B05E81 /* nvisited.png */,
 				6925C104228D451800B05E81 /* snvisited.png */,
@@ -627,10 +631,6 @@
 				698D5004227611F300767F03 /* like.png */,
 				690F49A52275D7FB00B249D7 /* calendar (2).png */,
 				690F49A42275D7FB00B249D7 /* flow-chart.png */,
-				6925C0F222899B1100B05E81 /* guide1.jpeg */,
-				6925C0F322899B1200B05E81 /* guide2.jpeg */,
-				6925C0F422899B1200B05E81 /* guide3.jpeg */,
-				6925C0F522899B1300B05E81 /* guide4.jpeg */,
 				6948A18A2275B36D0098AF3F /* artevent.jpeg */,
 				6948A1882275ACBD0098AF3F /* thumbs-up.png */,
 				6948A1842275A32D0098AF3F /* camera.png */,
@@ -886,11 +886,14 @@
 				697B22732258E6FB009682BF /* mel4.png in Resources */,
 				69587CF822739F7C0051E4A6 /* smallbridge.png in Resources */,
 				695701982286B72F00849ED7 /* hide.png in Resources */,
+				6925C117228DC77B00B05E81 /* guide2.jpeg in Resources */,
+				6925C118228DC77B00B05E81 /* guide1.jpeg in Resources */,
 				695701A422873D8200849ED7 /* youtube-logotype.png in Resources */,
 				6925C111228DBE7000B05E81 /* detector page.jpeg in Resources */,
 				697B2292225A9FE0009682BF /* 404-permalink.png in Resources */,
 				69587D0A22739F7C0051E4A6 /* smallsculpture.png in Resources */,
 				6925C0F12289967800B05E81 /* path.png in Resources */,
+				6925C116228DC77B00B05E81 /* guide3.jpeg in Resources */,
 				69587CC9227367DD0051E4A6 /* fountain.png in Resources */,
 				69F7BAB822880D8400C2D18C /* landmarkdetector.jpg in Resources */,
 				6948A15F227476780098AF3F /* reloadsetting.png in Resources */,
@@ -911,13 +914,10 @@
 				69587CFB22739F7C0051E4A6 /* smallgallery.png in Resources */,
 				697B227B22590C3C009682BF /* map (1).png in Resources */,
 				694B0A6E2252DAC100111F0A /* Assets.xcassets in Resources */,
-				6925C0F622899B1400B05E81 /* guide1.jpeg in Resources */,
 				694B0AB722564C3C00111F0A /* singer.png in Resources */,
 				69587CED22739DB50051E4A6 /* filtering.png in Resources */,
-				6925C0F822899B1400B05E81 /* guide3.jpeg in Resources */,
 				6948A162227476780098AF3F /* landmarksetting.png in Resources */,
 				695701AE2287632C00849ED7 /* fccc.jpg in Resources */,
-				6925C0F922899B1400B05E81 /* guide4.jpeg in Resources */,
 				695701A222873D8200849ED7 /* star (1).png in Resources */,
 				6948A17E22750C8B0098AF3F /* car.png in Resources */,
 				694B0ABB22564CD000111F0A /* calendar.png in Resources */,
@@ -931,7 +931,6 @@
 				694B0AAD225638E500111F0A /* map.png in Resources */,
 				6948A159227471F10098AF3F /* right-arrow-angle.png in Resources */,
 				6925C102228D44F300B05E81 /* visited.png in Resources */,
-				6925C0F722899B1400B05E81 /* guide2.jpeg in Resources */,
 				695701A122873D8200849ED7 /* list.png in Resources */,
 				69587CEA22739DB50051E4A6 /* navigation.png in Resources */,
 				6948A17F22750C8B0098AF3F /* trekking.png in Resources */,
@@ -965,6 +964,7 @@
 				6957017C22844F2500849ED7 /* cal.png in Resources */,
 				698D502F2277015800767F03 /* heart-in-like-circular-button.png in Resources */,
 				694B0AA72256385100111F0A /* refresh.png in Resources */,
+				6925C119228DC77B00B05E81 /* guide4.jpeg in Resources */,
 				694B0AAC225638E500111F0A /* man-in-a-party-dancing-with-people.png in Resources */,
 				69587D1D227435B70051E4A6 /* satisfied.png in Resources */,
 				694B0A692252DAC000111F0A /* Main.storyboard in Resources */,

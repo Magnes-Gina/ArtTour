@@ -155,6 +155,7 @@
                         <outlet property="collectionButton" destination="EOJ-1c-cxO" id="k2V-QS-7Jq"/>
                         <outlet property="container1" destination="kwq-KF-xCz" id="CzX-ZE-byk"/>
                         <outlet property="container2" destination="5rH-8d-n0D" id="3bS-Wr-Iw5"/>
+                        <outlet property="downgesture" destination="1nw-6Y-Ky4" id="AHq-KD-BvL"/>
                         <outlet property="gallerybutton" destination="CYm-t8-wNQ" id="bRZ-bN-JZu"/>
                         <outlet property="gotButton" destination="YJm-ZB-Zt3" id="BGY-UR-TRT"/>
                         <outlet property="instructionView" destination="WxF-wZ-Mlv" id="cjg-ob-SWT"/>
@@ -175,6 +176,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmE-XY-pwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1nw-6Y-Ky4"/>
                 <view contentMode="scaleToFill" id="PXh-uu-cjV">
                     <rect key="frame" x="0.0" y="0.0" width="368" height="450"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2297,6 +2299,7 @@
                         <outlet property="link" destination="Cxi-8y-STf" id="Baw-6U-oZi"/>
                         <outlet property="venue" destination="ETk-Nc-y5z" id="QUg-iA-DpN"/>
                         <segue destination="UXK-Gb-KRA" kind="show" identifier="readmore" id="Utw-DF-gRV"/>
+                        <segue destination="cVd-lb-6UK" kind="show" identifier="review5" id="uvd-Th-8Vq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMG-dR-dIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2563,7 +2566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRY-fe-SD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6449" y="1237"/>
+            <point key="canvasLocation" x="6559" y="1117"/>
         </scene>
         <!--Description View Controller-->
         <scene sceneID="bf0-Gt-s9y">
@@ -2777,6 +2780,7 @@
                         <outlet property="displaytitle" destination="7TM-KU-U2a" id="ASx-9t-mfG"/>
                         <outlet property="recordtype" destination="THb-cL-Exs" id="hNE-TB-FtC"/>
                         <segue destination="gKu-wa-7Yb" kind="show" identifier="contentSegue" id="MDZ-y6-QLe"/>
+                        <segue destination="k6k-Ww-Gbw" kind="show" identifier="review4" id="wOj-fx-yDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnp-TL-X2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2814,7 +2818,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2RS-oJ-Ns9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8287" y="2305"/>
+            <point key="canvasLocation" x="8652" y="2517"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FhZ-yA-PE1">
@@ -4588,6 +4592,112 @@
             </objects>
             <point key="canvasLocation" x="28" y="5524"/>
         </scene>
+        <!--Museum Image Review View Controller-->
+        <scene sceneID="qHd-0M-7Ic">
+            <objects>
+                <viewController id="k6k-Ww-Gbw" customClass="MuseumImageReviewViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Mf-1k-ECg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDJ-L6-fEt">
+                                <rect key="frame" x="15" y="103" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="3Rw-ni-RHR"/>
+                                    <constraint firstAttribute="height" constant="35" id="AX3-xg-oKV"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="error.png"/>
+                                <connections>
+                                    <action selector="backaction:" destination="k6k-Ww-Gbw" eventType="touchUpInside" id="fdf-Ly-ImB"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYg-Rx-Fde" customClass="EFImageViewZoom" customModule="ArtTour" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumZoomScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumZoomScale">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="404-permalink.png"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jDJ-L6-fEt" firstAttribute="top" secondItem="dnk-cP-Txu" secondAttribute="top" constant="15" id="04e-3n-ELF"/>
+                            <constraint firstItem="uYg-Rx-Fde" firstAttribute="top" secondItem="9Mf-1k-ECg" secondAttribute="top" id="NuB-m9-TID"/>
+                            <constraint firstItem="jDJ-L6-fEt" firstAttribute="leading" secondItem="dnk-cP-Txu" secondAttribute="leading" constant="15" id="Tob-od-z6C"/>
+                            <constraint firstItem="uYg-Rx-Fde" firstAttribute="leading" secondItem="dnk-cP-Txu" secondAttribute="leading" id="rHY-Cf-rl8"/>
+                            <constraint firstItem="uYg-Rx-Fde" firstAttribute="trailing" secondItem="dnk-cP-Txu" secondAttribute="trailing" id="rTr-vz-2UV"/>
+                            <constraint firstAttribute="bottom" secondItem="uYg-Rx-Fde" secondAttribute="bottom" id="sLz-QA-OTr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dnk-cP-Txu"/>
+                    </view>
+                    <connections>
+                        <outlet property="backbutton" destination="jDJ-L6-fEt" id="f9t-f1-SF0"/>
+                        <outlet property="zoominage" destination="uYg-Rx-Fde" id="6H2-IB-Vbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3E5-aO-3wO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8582" y="1761"/>
+        </scene>
+        <!--Event Image Review View Controller-->
+        <scene sceneID="WUe-9W-elK">
+            <objects>
+                <viewController id="cVd-lb-6UK" customClass="eventImageReviewViewController" customModule="ArtTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ghb-Ay-FjG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npH-4E-mbZ">
+                                <rect key="frame" x="15" y="103" width="35" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="0M9-uy-ECM"/>
+                                    <constraint firstAttribute="height" constant="35" id="na5-Wy-9KT"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="error.png"/>
+                                <connections>
+                                    <action selector="backaction:" destination="cVd-lb-6UK" eventType="touchUpInside" id="ZCc-GF-mUX"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl1-bx-SZt" customClass="EFImageViewZoom" customModule="ArtTour" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_minimumZoomScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_maximumZoomScale">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="404-permalink.png"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nl1-bx-SZt" firstAttribute="top" secondItem="ghb-Ay-FjG" secondAttribute="top" id="J9U-e5-WzR"/>
+                            <constraint firstItem="nl1-bx-SZt" firstAttribute="trailing" secondItem="Kq8-Oo-1jZ" secondAttribute="trailing" id="JTg-9U-ftX"/>
+                            <constraint firstItem="npH-4E-mbZ" firstAttribute="top" secondItem="Kq8-Oo-1jZ" secondAttribute="top" constant="15" id="KyW-k4-wvN"/>
+                            <constraint firstAttribute="bottom" secondItem="nl1-bx-SZt" secondAttribute="bottom" id="PNI-KO-yW3"/>
+                            <constraint firstItem="npH-4E-mbZ" firstAttribute="leading" secondItem="Kq8-Oo-1jZ" secondAttribute="leading" constant="15" id="R1F-ED-Bai"/>
+                            <constraint firstItem="nl1-bx-SZt" firstAttribute="leading" secondItem="Kq8-Oo-1jZ" secondAttribute="leading" id="jiV-3C-GKr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kq8-Oo-1jZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="backbutton" destination="npH-4E-mbZ" id="AkI-JY-R9L"/>
+                        <outlet property="zoominage" destination="nl1-bx-SZt" id="wqx-Du-omM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqh-3g-ILe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6394" y="-494"/>
+        </scene>
     </scenes>
     <resources>
         <image name="404-permalink.png" width="4680" height="2080"/>
@@ -4601,7 +4711,7 @@
         <image name="car.png" width="396.3870849609375" height="396.3870849609375"/>
         <image name="church.png" width="384" height="384"/>
         <image name="dancing.png" width="376.16326904296875" height="376.16326904296875"/>
-        <image name="detector page.jpeg" width="552" height="616"/>
+        <image name="detector page.jpeg" width="552" height="666"/>
         <image name="emergency.png" width="384" height="384"/>
         <image name="error.png" width="384" height="384"/>
         <image name="eventsetting.png" width="46.428211212158203" height="46.428211212158203"/>

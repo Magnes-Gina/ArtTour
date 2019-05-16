@@ -65,6 +65,8 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         super.init(coder: aDecoder)!
     }
     
+    @IBOutlet var downgesture: UITapGestureRecognizer!
+    
     @IBOutlet weak var segmentcontrol: UISegmentedControl!
     
     @IBAction func segmentaction(_ sender: Any) {
@@ -144,6 +146,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     func animatedOut2(){
+        
         UIView.animate(withDuration: 0.4, animations: {
             self.instructionView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.instructionView.alpha = 0
@@ -970,7 +973,14 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         choiceView.layer.cornerRadius = 5
         self.container1.layer.cornerRadius = 10
         self.container2.layer.cornerRadius = 10
+        //let gesture = UITapGestureRecognizer(target: self, action: #selector(self.downview))
+        //downgesture.addTarget(self, action: #selector(self.downview))
+        
         //checkaround()
+    }
+    
+    @objc func downview(){
+        animatedOut()
     }
     
     func animatedIn(){
