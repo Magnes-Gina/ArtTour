@@ -1340,7 +1340,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH3-9Q-4He">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can not find any extra information from wikipedia" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH3-9Q-4He">
                                         <rect key="frame" x="166" y="71" width="193" height="94"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="3BF-Pd-vZU"/>
@@ -1486,19 +1486,10 @@
                                     <action selector="find:" destination="IZ1-7t-YtC" eventType="touchUpInside" id="S0j-uk-5Cr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artevent.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="DiR-tf-V8u">
-                                <rect key="frame" x="0.0" y="-5" width="375" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="artevent.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="DiR-tf-V8u">
+                                <rect key="frame" x="0.0" y="-5" width="375" height="299.66666666666669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="SQx-Ko-x2a"/>
-                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And I'm in the mood for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHt-bW-pCb">
-                                <rect key="frame" x="18" y="462" width="339" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to go out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Da-4i-DGM">
                                 <rect key="frame" x="20" y="368.66666666666669" width="335" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -1538,6 +1529,12 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="And I'm in the mood for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHt-bW-pCb">
+                                <rect key="frame" x="18" y="469" width="339" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1556,6 +1553,7 @@
                             <constraint firstItem="fQR-DE-cdy" firstAttribute="trailing" secondItem="PNW-yz-Fxr" secondAttribute="trailing" constant="20" id="qef-l2-2ni"/>
                             <constraint firstItem="fQR-DE-cdy" firstAttribute="trailing" secondItem="xZz-wo-fg4" secondAttribute="trailing" constant="18" id="rO4-20-Usy"/>
                             <constraint firstItem="xZz-wo-fg4" firstAttribute="top" secondItem="zHt-bW-pCb" secondAttribute="bottom" constant="15" id="sk6-gH-jTI"/>
+                            <constraint firstItem="7Da-4i-DGM" firstAttribute="top" secondItem="DiR-tf-V8u" secondAttribute="bottom" constant="74" id="um4-96-nfB"/>
                             <constraint firstItem="Dbq-KB-7mY" firstAttribute="leading" secondItem="fQR-DE-cdy" secondAttribute="leading" constant="50" id="wsN-sz-OTe"/>
                             <constraint firstItem="7Da-4i-DGM" firstAttribute="leading" secondItem="fQR-DE-cdy" secondAttribute="leading" constant="20" id="xTe-WA-cSY"/>
                             <constraint firstItem="zHt-bW-pCb" firstAttribute="leading" secondItem="fQR-DE-cdy" secondAttribute="leading" constant="18" id="xgD-01-XNf"/>
@@ -1641,7 +1639,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3057" y="-47"/>
+            <point key="canvasLocation" x="3056.8000000000002" y="-47.290640394088669"/>
         </scene>
         <!--Event2-->
         <scene sceneID="0B6-QX-1jp">
@@ -4536,6 +4534,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7ip-Dv-6MH"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LX-1u-L36" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4704,7 +4703,7 @@
     </scenes>
     <resources>
         <image name="404-permalink.png" width="4680" height="2080"/>
-        <image name="art.png" width="396.3870849609375" height="396.3870849609375"/>
+        <image name="art.png" width="27.096775054931641" height="27.096775054931641"/>
         <image name="artevent.jpeg" width="574" height="376"/>
         <image name="author.png" width="384" height="384"/>
         <image name="bicycle.png" width="409.60000610351562" height="409.60000610351562"/>
