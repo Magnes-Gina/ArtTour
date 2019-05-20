@@ -169,6 +169,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             sender.isSelected = false
         }else{
             buskerButton.isSelected = false
+            artButton.isSelected = false
             notVisitedButton.isSelected = false
             sender.isSelected = true
         }
@@ -183,6 +184,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             sender.isSelected = false
         }else{
             buskerButton.isSelected = false
+            artButton.isSelected = false
             visited.isSelected = false
             sender.isSelected = true
         }
@@ -299,8 +301,65 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
 
     @IBAction func confirmaction(_ sender: UIButton) {
         if !gallerybutton.isSelected && !memorialButton.isSelected && !publicbuildingButton.isSelected && !sculptureButton.isSelected && !othersbutton.isSelected && !buskerButton.isSelected && !artButton.isSelected{
+            if !visited.isSelected && !notVisitedButton.isSelected{
+                displayMessage("At least choose one Category", "Warning")
+            }else{
+                getData3()
+                getData4()
+                allbuskerbool = false
+                artbool = false
+                othersbool = true
+                scilpturebool = true
+                publicbuildingbool = true
+                memorialbool = true
+                gallerybool = true
+                geos = []
+                testview.clear()
+                clusterManager.clearItems()
+                if visited.isSelected{
+                    visitebool = true
+                    notvisitbool = false
+                    for landmark in self.likelandmarks{
+                        
+                        self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
+                        let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+                        geoLocation.notifyOnEntry = true
+                        geos.append(geoLocation)
+                        
+                    }
+                    for item in self.likeartworktemps{
+                        
+                        self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
+                        let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                        geoLocation.notifyOnEntry = true
+                        geos.append(geoLocation)
+                    }
+                }
+                if notVisitedButton.isSelected{
+                    visitebool = false
+                    notvisitbool = true
+                    for landmark in self.landmarks{
+                        self.generatePOIItems(accessibilityLabel: "\(landmark.Landmark_id)", position: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude),title: landmark.Landmark_name,snippet: "Click here for more information!",category: landmark.Category_id)
+                        let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(landmark.Landmark_latitude,landmark.Landmark_longtitude), radius: 70, identifier: landmark.Landmark_name)
+                        geoLocation.notifyOnEntry = true
+                        geos.append(geoLocation)
+                        
+                    }
+                    for item in self.artworktemps{
+                        self.generatePOIItems(accessibilityLabel: "\(item.ArtWork_id)", position: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude),title: item.ArtWork_name,snippet: "Click here for more information!",category: item.Category_id)
+                        let geoLocation = CLCircularRegion(center: CLLocationCoordinate2DMake(item.ArtWork_latitude,item.ArtWork_longtitude), radius: 70, identifier: item.ArtWork_name)
+                        geoLocation.notifyOnEntry = true
+                        geos.append(geoLocation)
+                        
+                    }
+                    
+                }
+                self.clusterManager.cluster()
+                checkaround()
+                animatedOut()
+            }
             //animatedOut()
-            displayMessage("At least choose one Category", "Warning")
+            
         }else{
             let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
             self.testview.camera = camera
@@ -406,6 +465,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
                         getData3()
                         getData4()
                         allbuskerbool = false
+                        artbool = false
                         if visited.isSelected{
                             visitebool = true
                             notvisitbool = false
