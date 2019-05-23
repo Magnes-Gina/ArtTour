@@ -115,7 +115,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -165,7 +165,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
                     return true
                     
                 case .denied:
-                    displayMessage("Our location request has been dined", "Denied Alert")
+                    displayMessage("Our location request has been denied", "Location")
                     return true
                 case .restricted:
                     displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -189,7 +189,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
                     return true
                     
                 case .denied:
-                    displayMessage("Our location request has been dined", "Denied Alert")
+                    displayMessage("Our location request has been denied", "Location")
                     return true
                 case .restricted:
                     displayMessage("Our location request has been Restricted", "Restricted Alert")

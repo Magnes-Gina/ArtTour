@@ -106,7 +106,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -149,7 +149,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -191,7 +191,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -234,7 +234,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -499,7 +499,7 @@ class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManag
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")

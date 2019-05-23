@@ -90,7 +90,7 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
                 self.locationManger.requestAlwaysAuthorization()
                 break
             case .denied:
-                self.displayMessage("Our location request has been dined", "Denied Alert")
+                self.displayMessage("Our location request has been denied", "Location")
                 break
             case .restricted:
                 self.displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -128,7 +128,7 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
                 self.locationManger.requestAlwaysAuthorization()
                 break
             case .denied:
-                self.displayMessage("Our location request has been dined", "Denied Alert")
+                self.displayMessage("Our location request has been denied", "Location")
                 break
             case .restricted:
                 self.displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -165,7 +165,7 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
                 self.locationManger.requestAlwaysAuthorization()
                 break
             case .denied:
-                self.displayMessage("Our location request has been dined", "Denied Alert")
+                self.displayMessage("Our location request has been denied", "Location")
                 break
             case .restricted:
                 self.displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -203,7 +203,7 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
                 self.locationManger.requestAlwaysAuthorization()
                 break
             case .denied:
-                self.displayMessage("Our location request has been dined", "Denied Alert")
+                self.displayMessage("Our location request has been denied", "Location")
                 break
             case .restricted:
                 self.displayMessage("Our location request has been Restricted", "Restricted Alert")
@@ -359,7 +359,7 @@ class revieweventdetailViewController: UIViewController,GMSMapViewDelegate,CLLoc
             locationManger.requestAlwaysAuthorization()
             break
         case .denied:
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             displayMessage("Our location request has been Restricted", "Restricted Alert")

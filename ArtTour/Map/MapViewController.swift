@@ -1481,7 +1481,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
             if ispop {
                 animatedOut()
             }
-            displayMessage("Our location request has been dined", "Denied Alert")
+            displayMessage("Our location request has been denied", "Location")
             break
         case .restricted:
             if ispop {

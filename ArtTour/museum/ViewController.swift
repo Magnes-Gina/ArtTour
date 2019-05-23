@@ -235,7 +235,7 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate,UINaviga
     
     func popmenu()
     {
-        let alertController = UIAlertController(title: nil,message:"Different Chocies for Image",preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil,message:"Select an image",preferredStyle: .actionSheet)
         
         //function for open image library, which get the idea from tutorial file
         let photoAction = UIAlertAction(title: "Photo by Image library", style: .default){
