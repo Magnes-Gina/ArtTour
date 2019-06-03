@@ -80,5 +80,5 @@ Some code to achieve complex functionalties is referenced from other forums, suc
 7. Victoria Museum API
 8. Wikipedia REST API
 9. Toast on GitHub: https://github.com/bolagong/Toast
-10. EFImageViewZoom on GitHub: 
+10. EFImageViewZoom on GitHub: https://github.com/ezefranca/EFImageViewZoom
 
