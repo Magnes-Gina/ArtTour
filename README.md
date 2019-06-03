@@ -1,6 +1,7 @@
 # ArtTour
-[![Version](https://github.com/ta13pioneer/ArtTour/releases/tag/v3.0)](https://github.com/ta13pioneer/ArtTour/releases/tag/v3.0)
-[![Swift Version][swift-image]][swift-url]
+[![Version](https://img.shields.io/badge/version-3.0-green.svg)](https://github.com/ta13pioneer/ArtTour/releases/tag/v3.0)
+[![Swift Version](https://img.shields.io/badge/swfit-5.0-blue.svg))](https://swift.org/)
+[![iOS Version](https://img.shields.io/badge/iOS-12.0-yellow.svg))](https://developer.apple.com/ios/)
 
 # ArtTour Project Description
 
