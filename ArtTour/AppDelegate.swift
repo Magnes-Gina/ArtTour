@@ -21,11 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyAJtfy0t8sETsS8_M50d3M9tWxLKdm59TQ")
+        
+        //set up your Google Map API key here
+        let mapkey = "AIzaSyAJtfy0t8sETsS8_M50d3M9tWxLKdm59TQ"
+        GMSServices.provideAPIKey(mapkey)
+        
+        //notification permission request
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) {(granted,error) in
             print("granted")
         }
+        //set up firebase for autoML
         FirebaseApp.configure()
+        
+        // if the application is first time to launch, display the instruction page first
         let lauchedBefore = UserDefaults.standard.bool(forKey: "lanchedBefore")
         let storyboard_1 = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard_1.instantiateViewController(withIdentifier: "test")

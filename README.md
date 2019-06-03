@@ -12,6 +12,17 @@ We can help when:
 
 •	Users want to know the ongoing and upcoming art event. And add interested events to the calendar.
 
+# Things you need to know before Installation
+There are several API Key or third party library configuration file need to be changed before you install and set up this App.
+
+First is the API Key for Google map. This is in the AppDelegate.swift file and inside the method which called "application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)"
+
+Second is the configuration file of Firebase which is used for Google AutoML feature to do the image recognition. This file is called GoogleService-info.plist and it is the root folder of this project.
+
+Third is the REST API URL of own server which is used to query landmarks and artworks information form our own server. These API URL is inside the file called testViewController.swift under the introduction folder.
+
+The last is the authtication token for eventbrite. It is inside the file called eventnewTableViewController.swift and under the folder called event. the variable of the eventbrite authentication token is called eventbritetoken, you need to change this token to your own eventbrite authentication token. 
+
 # Prerequisites
 iOS system 12.2 and above
 

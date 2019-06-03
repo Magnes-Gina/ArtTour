@@ -11,6 +11,8 @@ import CoreData
 
 class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //set number of cell to display to different section of table
+    //if the table is empty show placeholder text
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if saved.count == 0 && saved2.count == 0 {
             self.myTableview.setEmptyView(title: "Favourite list is empty!", message: "Find some attractions you want to visit")
@@ -34,7 +36,7 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
                     cell.categoryLabel.text = item.category_name
                     break
                 }
-            }
+            }//different type of attraction displat with different profile image
             if Int(saved[indexPath.row].category_id) == 1{
                 cell.cellimage.image = UIImage(named: "smallgallery.png")
             }
@@ -71,6 +73,7 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if the attraction is artwork, set all the information of this artwork and sent it to the next view
         if let destination = segue.destination as? reviewartworkdetailViewController{
             destination.categories = categorys
             destination.source = 1
@@ -78,6 +81,7 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
             destination.artwork3 = saved2[(self.myTableview.indexPathForSelectedRow?.row)!]
             destination.artwork = temp1
         }
+        // if the attraction is landmark, set all the information of this landmark and sent it to the next view
         if let destination = segue.destination as? reviewlandmarkdetailViewController{
             destination.categorys = categorys
             destination.source = 1
@@ -151,6 +155,7 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
         return 2
     }
     
+    //slide left to delet from table
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             if indexPath.section == 1{
@@ -175,17 +180,5 @@ class reviewlandmarkViewController: UIViewController,UITableViewDelegate,UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 69
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

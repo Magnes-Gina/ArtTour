@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+// same structure to reviewlandmarkViewController file
 class artworkreviewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if saved.count == 0 && saved2.count == 0{

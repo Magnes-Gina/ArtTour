@@ -24,6 +24,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
     var like = false
     let locationManger = CLLocationManager()
     let semphore = DispatchSemaphore(value: 0)
+    // set the information to description label
     var des : String = ""{
         didSet{
             switch des {
@@ -50,6 +51,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
             
         }
     }
+    // set the image to profile image of landmark
     var img : String = ""{
         didSet{
             print(img)
@@ -144,6 +146,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
     
     @IBOutlet weak var favouriteButton: UIButton!
     
+    // function for save to favourite list
     @IBAction func favouriteActuin(_ sender: UIButton) {
         if !like{
             //save
@@ -204,6 +207,7 @@ class mapDetailViewController: UIViewController,GMSMapViewDelegate,CLLocationMan
     @IBOutlet weak var myMapView: GMSMapView!
     @IBOutlet weak var linklabel: UITextView!
     
+    //below are for function for four navigation button
     @IBAction func carbutton(_ sender: Any) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:

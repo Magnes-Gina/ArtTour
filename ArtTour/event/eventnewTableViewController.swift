@@ -27,7 +27,10 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
     var totalcount = 0
     var searchingflag = false
     let semaphore = DispatchSemaphore(value: 0)
-    var orinrequesturl = "https://www.eventbriteapi.com/v3/events/search/?token=WEH7N6CEZAQ35WUQE6AM&location.address=Melbourne&expand=venue"
+    // Url for query event hold in Melbourne, you dont need to change this url otherwise you want search events in any other cities
+    var orinrequesturl = "https://www.eventbriteapi.com/v3/events/search/?location.address=Melbourne&expand=venue&token="
+    //individual token for eventbrite , you need apply this authtication token on offcial site of eventbrite api
+    let eventbritetoken = "WEH7N6CEZAQ35WUQE6AM"
     var requesturl = ""
     var time = "Anytime"
     var mood = "Anything"
@@ -40,7 +43,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         self.myTableView.dataSource = self
         self.myTableView.delegate = self
         self.searchBarEvent.delegate = self
-        requesturl = orinrequesturl
+        requesturl = orinrequesturl + eventbritetoken
         if time != "Anytime"{
             requesturl = requesturl + "&" + time
         }

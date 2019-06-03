@@ -11,6 +11,8 @@ import CoreData
 
 class revieweventViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    // set the number of cell will be display
+    //if the table is empty, display placeholder text
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if events.count == 0 {
             self.myTableview.setEmptyView(title: "Find something to do!", message: "Nothing else planned...yet")
@@ -21,6 +23,7 @@ class revieweventViewController: UIViewController,UITableViewDelegate,UITableVie
         return events.count
     }
     
+    //custormise the cell of table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventreviewcell", for: indexPath) as! revieweventTableViewCell
         cell.addresslabel.text = events[indexPath.row].address
@@ -98,9 +101,6 @@ class revieweventViewController: UIViewController,UITableViewDelegate,UITableVie
         self.myTableview.reloadData()
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? revieweventdetailViewController{
             destination.event = events[(self.myTableview.indexPathForSelectedRow?.row)!]

@@ -526,8 +526,8 @@
 				694B0A6F2252DAC100111F0A /* LaunchScreen.storyboard */,
 				694B0A6A2252DAC000111F0A /* ArtTour.xcdatamodeld */,
 				694B0A722252DAC100111F0A /* Info.plist */,
-				6948A15322746D850098AF3F /* setting */,
 				69587D1522742FE50051E4A6 /* Introduction */,
+				6948A15322746D850098AF3F /* setting */,
 				69587D1422742FC70051E4A6 /* CoreDataSource */,
 				697B228E225A553B009682BF /* museum */,
 				697B228D225A552F009682BF /* event */,
@@ -592,6 +592,8 @@
 		697B2286225A5361009682BF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6925C0EE2289967600B05E81 /* filter.png */,
+				6925C0EF2289967700B05E81 /* path.png */,
 				6925C114228DC77B00B05E81 /* guide1.jpeg */,
 				6925C113228DC77B00B05E81 /* guide2.jpeg */,
 				6925C112228DC77A00B05E81 /* guide3.jpeg */,
@@ -702,8 +704,6 @@
 			children = (
 				6925C0EC2289961B00B05E81 /* EFImageViewZoom.swift */,
 				694B0AB4225649E200111F0A /* CBToast.swift */,
-				6925C0EE2289967600B05E81 /* filter.png */,
-				6925C0EF2289967700B05E81 /* path.png */,
 				697B2280225A08BC009682BF /* UIUtilities.swift */,
 			);
 			path = plugin;
@@ -1453,7 +1453,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTourUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1473,7 +1473,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3Z6Y37AJ7;
+				DEVELOPMENT_TEAM = 22MSQM2FF5;
 				INFOPLIST_FILE = ArtTourUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

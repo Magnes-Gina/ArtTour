@@ -35,10 +35,13 @@ struct artworktemp: Decodable{
 
 class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManagerDelegate{
 
+    // REST API for our AWS server
     let url = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/landmark")
     let url2 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/category")
     let url3 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artist")
     let url4 = URL(string: "https://k2r7nrgvl1.execute-api.ap-southeast-2.amazonaws.com/iteration3/artwork")
+    //API key you need when you use REST API above
+    let apiKey = "sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf"
     var landmarks = [Landmark]()
     var tempcats = [tempcat]()
     var artiststemp = [artisttemp]()
@@ -51,6 +54,7 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     
     required init?(coder aDecoder: NSCoder) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        // set up multiple managedObjectContext for multiple threading downloading data by HTTP request
         managedObjectContext = (appDelegate?.persistentContainer.viewContext)!
         managedObjectContext2 = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         managedObjectContext2?.parent = managedObjectContext
@@ -81,19 +85,18 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
             self.scrollView.addSubview(imgView)
         }
         locationManger.requestAlwaysAuthorization()
-        //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
         checkLocationServices()
         // Do any additional setup after loading the view.
         scrollView.contentSize = CGSize(width:(scrollView.frame.size.width * CGFloat(images.count)),height: scrollView.frame.size.height)
         scrollView.delegate = self
         self.view.sendSubviewToBack(scrollView)
+        //call method for downloading data
         getData()
         getData2()
         getData3()
         getData4()
     }
-    //test
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
@@ -135,11 +138,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     
     func getData(){
         var downloadURL = URLRequest(url: url!)
-        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
-        
-        //guard let downloadURL = url else { return }
+        downloadURL.setValue(self.apiKey,forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data: Data?, urlResponse:URLResponse?, error:Error?) in
-            //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
                 return
@@ -164,9 +164,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     
     func getData2(){
         var downloadURL = URLRequest(url: url2!)
-        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
+        downloadURL.setValue(self.apiKey,forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
-            //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
                 return
@@ -187,9 +186,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     
     func getData3(){
         var downloadURL = URLRequest(url: url3!)
-        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
+        downloadURL.setValue(self.apiKey,forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
-            //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
                 return
@@ -203,8 +201,6 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     print(item.Artist_id)
                     try self.managedObjectContext3?.save()
                 }
-                //self.getData4()
-                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }
@@ -213,9 +209,8 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
     
     func getData4(){
         var downloadURL = URLRequest(url: url4!)
-        downloadURL.setValue("sVtkX3jZgIyCT3vJrQml5C87EXtef3TaUrkaX1Bf",forHTTPHeaderField:"X-API-KEY" )
+        downloadURL.setValue(self.apiKey,forHTTPHeaderField:"X-API-KEY" )
         URLSession.shared.dataTask(with: downloadURL) { (data, urlResponse, error) in
-            //CBToast.showToastAction(message: "Download Data!")
             guard let data = data, error == nil,urlResponse != nil else {
                 print("wrong")
                 return
@@ -239,7 +234,6 @@ class testViewController: UIViewController,UIScrollViewDelegate,CLLocationManage
                     
                 }
                 try self.managedObjectContext?.save()
-                //self.semaphore.signal()
             }catch let error as NSError{
                 print("error: \(error)")
             }

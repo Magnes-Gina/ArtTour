@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+//same structure to mapdetailviewcontrooler, this controller is for artworks
 class ArtWorkViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate{
 
     var artwork: artworktemp?

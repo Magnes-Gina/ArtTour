@@ -12,6 +12,7 @@ import CoreLocation
 import UserNotifications
 import CoreData
 
+//structure for information of landmark
 struct Landmark: Decodable {
     let Landmark_id: Int
     let Landmark_name: String
@@ -21,6 +22,7 @@ struct Landmark: Decodable {
     let video: String
 }
 
+//Nsobject class for google map cluster
 class POIItem: NSObject,GMUClusterItem{
     var position: CLLocationCoordinate2D
     var name: String!
@@ -69,6 +71,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     @IBOutlet weak var segmentcontrol: UISegmentedControl!
     
+    //different sement for different choice of filter
     @IBAction func segmentaction(_ sender: Any) {
         switch segmentcontrol.selectedSegmentIndex {
         case 0:
@@ -299,6 +302,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
 
+    // algorithm for tap confirm button on filter
     @IBAction func confirmaction(_ sender: UIButton) {
         if !gallerybutton.isSelected && !memorialButton.isSelected && !publicbuildingButton.isSelected && !sculptureButton.isSelected && !othersbutton.isSelected && !buskerButton.isSelected && !artButton.isSelected{
             if !visited.isSelected && !notVisitedButton.isSelected{
@@ -624,7 +628,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
     
-    
+    // function for tap all attraction button
     @IBAction func allaction(_ sender: UIButton) {
         let camera = GMSCameraPosition.camera(withLatitude: -37.813624, longitude: 144.964453, zoom: 11.0)
         self.testview.camera = camera
@@ -660,7 +664,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
     
-    
+    //function for adding busker
     func addbusker(){
         clusterManager.clearItems()
         geos = [];
@@ -976,6 +980,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     
     
     override func viewDidLoad() {
+        //UI set up
         super.viewDidLoad()
         self.view.sendSubviewToBack(testview)
         container1.isHidden = false
@@ -1015,7 +1020,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         self.button3.layer.cornerRadius = (self.button3.frame.height / 2)
         self.collectionButton.layer.cornerRadius = (self.collectionButton.frame.height / 2)
         locationManger.requestAlwaysAuthorization()
-        //locationManger.startMonitoringSignificantLocationChanges()
         locationManger.distanceFilter = 100
         checkLocationServices()
         let iconGenerator = GMUDefaultClusterIconGenerator()
@@ -1033,16 +1037,12 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         choiceView.layer.cornerRadius = 5
         self.container1.layer.cornerRadius = 10
         self.container2.layer.cornerRadius = 10
-        //let gesture = UITapGestureRecognizer(target: self, action: #selector(self.downview))
-        //downgesture.addTarget(self, action: #selector(self.downview))
-        
-        //checkaround()
     }
     
     @objc func downview(){
         animatedOut()
     }
-    
+    //animated function for the filter subview go into the main view
     func animatedIn(){
         if othersbool{
             othersbutton.isSelected = true
@@ -1088,6 +1088,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }, completion: nil)
     }
     
+    //animated function for remove the filter view from main view
     func animatedOut() {
         ispop = false
         gallerybutton.isSelected = false
@@ -1110,7 +1111,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
     
-    
+    //action after tap the info window
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         if let item2 = marker.userData as? POIItem{
             if item2.category == 1 || item2.category == 7 {
@@ -1224,6 +1225,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
     
+    //check if the nearest attractions are within your 50 meters
     func evaluateClosetRegions(){
         var allDistance : [Double] = []
         if geos.count != 0 {
@@ -1274,16 +1276,6 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
         
     }
-   /* func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("-------------------------------------")
-        displayMessage("You are near the \(region.identifier)", "Landmark Notification ")
-    }*/
-    
-    
-    
-    /*func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print(region.identifier)
-    }*/
     
     func generatePOIItems(accessibilityLabel: String,position: CLLocationCoordinate2D,title:String,snippet:String,category: Int){
         let item = POIItem(position: position, name: accessibilityLabel,title: title,snippet: snippet,category: category)
@@ -1299,7 +1291,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
     }
     
 
-    
+    //check if user tap the markers on map
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let item = marker.userData as? POIItem {
             let newCamra = GMSCameraPosition.camera(withTarget: item.position, zoom: self.testview.camera.zoom)
@@ -1318,6 +1310,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         return true
     }
     
+    //render the different icon for different type of attractions
     func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
         if let temp = (marker.userData as? POIItem){
             if temp.category! == 9{
@@ -1447,6 +1440,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
     
+    //method for display alert
     func displayMessage(_ message: String,_ title: String) {
         if activealert != nil{
             activealert?.dismiss(animated: false, completion: nil)
@@ -1494,6 +1488,7 @@ class MapViewController: UIViewController,GMSMapViewDelegate,GMUClusterManagerDe
         }
     }
  
+    //method for send notification
     func notificationCreated(message: String,title: String){
         let content = UNMutableNotificationContent()
         content.body =  message
