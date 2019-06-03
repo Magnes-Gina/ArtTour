@@ -29,7 +29,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
     let semaphore = DispatchSemaphore(value: 0)
     // Url for query event hold in Melbourne, you dont need to change this url otherwise you want search events in any other cities
     var orinrequesturl = "https://www.eventbriteapi.com/v3/events/search/?location.address=Melbourne&expand=venue&token="
-    //individual token for eventbrite , you need apply this authtication token on offcial site of eventbrite api
+    //individual token for eventbrite , you need apply this authtication token on offcial site of eventbrite api and replace this one
     let eventbritetoken = "WEH7N6CEZAQ35WUQE6AM"
     var requesturl = ""
     var time = "Anytime"
@@ -51,8 +51,9 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         {
             requesturl = requesturl + "&" + mood
         }
-        print(requesturl)
+        //get data from eventbrite
         self.getData(requestUrl: requesturl)
+        //wait until get all the databack then render the view to user
         semaphore.wait()
         self.myTableView.reloadData()
         page = json!["pagination"]["page_count"].int!
@@ -61,8 +62,6 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dissmisskeboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
-//        self.searchBarEvent.layer.borderWidth = 1
-//        self.searchBarEvent.layer.borderColor = UIColor.white.cgColor
         self.searchBarEvent.backgroundImage = UIImage()
         
         
@@ -127,7 +126,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
             break
         }
     }
-    
+    //sort function for result list
     func addsort(newmood: String){
         self.sortby = newmood
         print(sortby)
@@ -244,7 +243,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         }
         return sortcount
     }
-    
+    //search confirm for search bar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //
         searchingflag = true
@@ -294,7 +293,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         }
     }
     
-    
+    //render each event to each cell in the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventIdentifier", for: indexPath) as! EventTableViewCell
         let temp = sortarray[indexPath.row]
@@ -319,6 +318,7 @@ class eventnewTableViewController: UIViewController,UITableViewDelegate,UITableV
         return cell
     }
     
+    // when user scroll down to the last cell of current list, go get new data from eventbrite until get all the event data from eventbrite
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //
         if searchBarEvent.text == ""{

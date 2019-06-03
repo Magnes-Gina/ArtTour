@@ -62,5 +62,17 @@ This project is licensed under the Apache License, Version 2.0 (the "License").
 # Acknowledgments
 The data sets used in this application mainly are the APIs, which means it is possible to remain updated overtime automatically;
 
-Some code to achieve complex functionalties is referenced from other forums, such as the Stack Overflow.
+Some code to achieve complex functionalties is referenced from other forums, such as the Stack Overflow and GitHub.
+
+# Third Party Library or tool to support this application
+1. Google Map
+2. Google AutoML on Firebase
+3. PinRemoteImage on GitHub: https://github.com/pinterest/PINRemoteImage
+4. SwiftyJSON on GitHub: https://github.com/SwiftyJSON/SwiftyJSON
+5. YoutubePlayer-in-WKWebView on GitHub: https://github.com/hmhv/YoutubePlayer-in-WKWebView
+6. Eventbrite API
+7. Victoria Museum API
+8. Wikipedia REST API
+9. Toast on GitHub: https://github.com/bolagong/Toast
+10. EFImageViewZoom on GitHub: https://github.com/ezefranca/EFImageViewZoom
 

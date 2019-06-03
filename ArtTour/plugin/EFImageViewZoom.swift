@@ -1,10 +1,10 @@
 //
 //  EFImageViewZoom.swift
-//  EFImageViewZoom
+//  FIT5120-ArtTour
 //
-//  Created by Ezequiel França on 27/05/17.
-//  Copyright © 2017 Ezequiel França. All rights reserved.
-//
+//  Acknowledge to Ezequiel França(https://github.com/ezefranca)
+//  This imagezoom file is written by Ezequiel França on GitHub at: https://github.com/ezefranca/EFImageViewZoom
+
 import UIKit
 
 public protocol EFImageViewZoomDelegate : class {
