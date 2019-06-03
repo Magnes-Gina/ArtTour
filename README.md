@@ -1,3 +1,7 @@
+# ArtTour
+[![Version](https://github.com/ta13pioneer/ArtTour/releases/tag/v3.0)](https://github.com/ta13pioneer/ArtTour/releases/tag/v3.0)
+[![Swift Version][swift-image]][swift-url]
+
 # ArtTour Project Description
 
 “Art Tour”, is an iOS application which provides users with a map of landmarks and public artworks and image recognition that allows them to obtain information about landmark and public artwork easily. Also, the app provides a list of events related to arts and culture, and a little game that shows the numbers of landmark and public artwork visited by the user. The game allows users to share or compete with others.
@@ -74,5 +78,5 @@ Some code to achieve complex functionalties is referenced from other forums, suc
 7. Victoria Museum API
 8. Wikipedia REST API
 9. Toast on GitHub: https://github.com/bolagong/Toast
-10. EFImageViewZoom on GitHub: https://github.com/ezefranca/EFImageViewZoom
+10. EFImageViewZoom on GitHub: 
 
