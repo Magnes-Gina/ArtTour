@@ -29,7 +29,8 @@ Third is the REST API URL of own server which is used to query landmarks and art
 The last is the authtication token for eventbrite. It is inside the file called eventnewTableViewController.swift and under the folder called event. the variable of the eventbrite authentication token is called eventbritetoken, you need to change this token to your own eventbrite authentication token. 
 
 # Prerequisites
-iOS system 12.2 and above
+iOS system 8.0 and above
+recommendation: iOS 12.0 and above
 
 # Getting Started
 
